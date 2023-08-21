@@ -17,6 +17,7 @@
 		14EB6C172A933DB4006990BE /* TactileMapTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14EB6C162A933DB4006990BE /* TactileMapTests.swift */; };
 		14EB6C212A933DB4006990BE /* TactileMapUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14EB6C202A933DB4006990BE /* TactileMapUITests.swift */; };
 		14EB6C232A933DB4006990BE /* TactileMapUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14EB6C222A933DB4006990BE /* TactileMapUITestsLaunchTests.swift */; };
+		14EB6C372A934B70006990BE /* Resource.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 14EB6C362A934B70006990BE /* Resource.bundle */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		14EB6C1C2A933DB4006990BE /* TactileMapUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TactileMapUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		14EB6C202A933DB4006990BE /* TactileMapUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TactileMapUITests.swift; sourceTree = "<group>"; };
 		14EB6C222A933DB4006990BE /* TactileMapUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TactileMapUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		14EB6C362A934B70006990BE /* Resource.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Resource.bundle; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,12 +103,10 @@
 		14EB6BFB2A933DB3006990BE /* TactileMap */ = {
 			isa = PBXGroup;
 			children = (
-				14EB6BFC2A933DB3006990BE /* AppDelegate.swift */,
-				14EB6BFE2A933DB3006990BE /* SceneDelegate.swift */,
-				14EB6C002A933DB3006990BE /* ViewController.swift */,
-				14EB6C022A933DB3006990BE /* Main.storyboard */,
+				14EB6C312A934B31006990BE /* Shared */,
+				14EB6C302A9349DA006990BE /* Feature */,
+				14EB6C2F2A93483D006990BE /* App */,
 				14EB6C082A933DB4006990BE /* Assets.xcassets */,
-				14EB6C0A2A933DB4006990BE /* LaunchScreen.storyboard */,
 				14EB6C0D2A933DB4006990BE /* Info.plist */,
 				14EB6C052A933DB3006990BE /* TactileMap.xcdatamodeld */,
 			);
@@ -128,6 +128,81 @@
 				14EB6C222A933DB4006990BE /* TactileMapUITestsLaunchTests.swift */,
 			);
 			path = TactileMapUITests;
+			sourceTree = "<group>";
+		};
+		14EB6C2F2A93483D006990BE /* App */ = {
+			isa = PBXGroup;
+			children = (
+				14EB6C0A2A933DB4006990BE /* LaunchScreen.storyboard */,
+				14EB6C022A933DB3006990BE /* Main.storyboard */,
+				14EB6BFC2A933DB3006990BE /* AppDelegate.swift */,
+				14EB6BFE2A933DB3006990BE /* SceneDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		14EB6C302A9349DA006990BE /* Feature */ = {
+			isa = PBXGroup;
+			children = (
+				14EB6C002A933DB3006990BE /* ViewController.swift */,
+			);
+			path = Feature;
+			sourceTree = "<group>";
+		};
+		14EB6C312A934B31006990BE /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				14EB6C392A935204006990BE /* ViewModel */,
+				14EB6C382A934FCE006990BE /* Service */,
+				14EB6C352A934B53006990BE /* Constant */,
+				14EB6C342A934B4E006990BE /* Model */,
+				14EB6C332A934B48006990BE /* Extension */,
+				14EB6C322A934B40006990BE /* Protocol */,
+				14EB6C362A934B70006990BE /* Resource.bundle */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		14EB6C322A934B40006990BE /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		14EB6C332A934B48006990BE /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		14EB6C342A934B4E006990BE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		14EB6C352A934B53006990BE /* Constant */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Constant;
+			sourceTree = "<group>";
+		};
+		14EB6C382A934FCE006990BE /* Service */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		14EB6C392A935204006990BE /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -237,6 +312,7 @@
 				14EB6C0C2A933DB4006990BE /* LaunchScreen.storyboard in Resources */,
 				14EB6C092A933DB4006990BE /* Assets.xcassets in Resources */,
 				14EB6C042A933DB3006990BE /* Main.storyboard in Resources */,
+				14EB6C372A934B70006990BE /* Resource.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
