@@ -9,8 +9,7 @@
 /* Begin PBXBuildFile section */
 		14EB6BFD2A933DB3006990BE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14EB6BFC2A933DB3006990BE /* AppDelegate.swift */; };
 		14EB6BFF2A933DB3006990BE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14EB6BFE2A933DB3006990BE /* SceneDelegate.swift */; };
-		14EB6C012A933DB3006990BE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14EB6C002A933DB3006990BE /* ViewController.swift */; };
-		14EB6C042A933DB3006990BE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14EB6C022A933DB3006990BE /* Main.storyboard */; };
+		14EB6C012A933DB3006990BE /* AppMainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14EB6C002A933DB3006990BE /* AppMainCoordinator.swift */; };
 		14EB6C072A933DB3006990BE /* TactileMap.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 14EB6C052A933DB3006990BE /* TactileMap.xcdatamodeld */; };
 		14EB6C092A933DB4006990BE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 14EB6C082A933DB4006990BE /* Assets.xcassets */; };
 		14EB6C0C2A933DB4006990BE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14EB6C0A2A933DB4006990BE /* LaunchScreen.storyboard */; };
@@ -18,6 +17,25 @@
 		14EB6C212A933DB4006990BE /* TactileMapUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14EB6C202A933DB4006990BE /* TactileMapUITests.swift */; };
 		14EB6C232A933DB4006990BE /* TactileMapUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14EB6C222A933DB4006990BE /* TactileMapUITestsLaunchTests.swift */; };
 		14EB6C372A934B70006990BE /* Resource.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 14EB6C362A934B70006990BE /* Resource.bundle */; };
+		14EB6C3F2A95D0A0006990BE /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14EB6C3E2A95D0A0006990BE /* Coordinator.swift */; };
+		14EB6C472A95D3E0006990BE /* HomepageContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14EB6C452A95D3E0006990BE /* HomepageContainerViewController.swift */; };
+		14EB6C482A95D3E0006990BE /* HomepageContainerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14EB6C462A95D3E0006990BE /* HomepageContainerViewController.xib */; };
+		14EB6C4B2A95D579006990BE /* HomepageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14EB6C492A95D579006990BE /* HomepageViewController.swift */; };
+		14EB6C4C2A95D579006990BE /* HomepageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14EB6C4A2A95D579006990BE /* HomepageViewController.xib */; };
+		14EB6C4F2A95D583006990BE /* MyMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14EB6C4D2A95D583006990BE /* MyMapViewController.swift */; };
+		14EB6C502A95D583006990BE /* MyMapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14EB6C4E2A95D583006990BE /* MyMapViewController.xib */; };
+		14EB6C532A95D593006990BE /* SocietyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14EB6C512A95D593006990BE /* SocietyViewController.swift */; };
+		14EB6C542A95D593006990BE /* SocietyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14EB6C522A95D593006990BE /* SocietyViewController.xib */; };
+		14EB6C572A95D5A6006990BE /* PersonalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14EB6C552A95D5A6006990BE /* PersonalViewController.swift */; };
+		14EB6C582A95D5A6006990BE /* PersonalViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14EB6C562A95D5A6006990BE /* PersonalViewController.xib */; };
+		14EB6C5A2A95D5EB006990BE /* UIView+Nib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14EB6C592A95D5EB006990BE /* UIView+Nib.swift */; };
+		14EB6C5F2A95E591006990BE /* SingleMapInfoCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14EB6C5E2A95E591006990BE /* SingleMapInfoCellView.swift */; };
+		14EB6C612A95E59C006990BE /* SingleMapInfoCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14EB6C602A95E59C006990BE /* SingleMapInfoCellView.xib */; };
+		14EB6C632A95F266006990BE /* MapInfoListCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14EB6C622A95F266006990BE /* MapInfoListCollectionView.swift */; };
+		14EB6C652A95F26F006990BE /* MapInfoListCollectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14EB6C642A95F26F006990BE /* MapInfoListCollectionView.xib */; };
+		14EB6C672A95F324006990BE /* MapInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14EB6C662A95F324006990BE /* MapInfoModel.swift */; };
+		14EB6C6B2A96003E006990BE /* HomePageMapInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14EB6C692A96003E006990BE /* HomePageMapInfoTableViewCell.swift */; };
+		14EB6C6C2A96003E006990BE /* HomePageMapInfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14EB6C6A2A96003E006990BE /* HomePageMapInfoTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,8 +59,7 @@
 		14EB6BF92A933DB3006990BE /* TactileMap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TactileMap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		14EB6BFC2A933DB3006990BE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		14EB6BFE2A933DB3006990BE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		14EB6C002A933DB3006990BE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		14EB6C032A933DB3006990BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		14EB6C002A933DB3006990BE /* AppMainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppMainCoordinator.swift; sourceTree = "<group>"; };
 		14EB6C062A933DB3006990BE /* TactileMap.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TactileMap.xcdatamodel; sourceTree = "<group>"; };
 		14EB6C082A933DB4006990BE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		14EB6C0B2A933DB4006990BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -53,6 +70,25 @@
 		14EB6C202A933DB4006990BE /* TactileMapUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TactileMapUITests.swift; sourceTree = "<group>"; };
 		14EB6C222A933DB4006990BE /* TactileMapUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TactileMapUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		14EB6C362A934B70006990BE /* Resource.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Resource.bundle; sourceTree = "<group>"; };
+		14EB6C3E2A95D0A0006990BE /* Coordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		14EB6C452A95D3E0006990BE /* HomepageContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomepageContainerViewController.swift; sourceTree = "<group>"; };
+		14EB6C462A95D3E0006990BE /* HomepageContainerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomepageContainerViewController.xib; sourceTree = "<group>"; };
+		14EB6C492A95D579006990BE /* HomepageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomepageViewController.swift; sourceTree = "<group>"; };
+		14EB6C4A2A95D579006990BE /* HomepageViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomepageViewController.xib; sourceTree = "<group>"; };
+		14EB6C4D2A95D583006990BE /* MyMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyMapViewController.swift; sourceTree = "<group>"; };
+		14EB6C4E2A95D583006990BE /* MyMapViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyMapViewController.xib; sourceTree = "<group>"; };
+		14EB6C512A95D593006990BE /* SocietyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocietyViewController.swift; sourceTree = "<group>"; };
+		14EB6C522A95D593006990BE /* SocietyViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SocietyViewController.xib; sourceTree = "<group>"; };
+		14EB6C552A95D5A6006990BE /* PersonalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalViewController.swift; sourceTree = "<group>"; };
+		14EB6C562A95D5A6006990BE /* PersonalViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PersonalViewController.xib; sourceTree = "<group>"; };
+		14EB6C592A95D5EB006990BE /* UIView+Nib.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Nib.swift"; sourceTree = "<group>"; };
+		14EB6C5E2A95E591006990BE /* SingleMapInfoCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleMapInfoCellView.swift; sourceTree = "<group>"; };
+		14EB6C602A95E59C006990BE /* SingleMapInfoCellView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SingleMapInfoCellView.xib; sourceTree = "<group>"; };
+		14EB6C622A95F266006990BE /* MapInfoListCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapInfoListCollectionView.swift; sourceTree = "<group>"; };
+		14EB6C642A95F26F006990BE /* MapInfoListCollectionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MapInfoListCollectionView.xib; sourceTree = "<group>"; };
+		14EB6C662A95F324006990BE /* MapInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapInfoModel.swift; sourceTree = "<group>"; };
+		14EB6C692A96003E006990BE /* HomePageMapInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageMapInfoTableViewCell.swift; sourceTree = "<group>"; };
+		14EB6C6A2A96003E006990BE /* HomePageMapInfoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomePageMapInfoTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,8 +169,8 @@
 		14EB6C2F2A93483D006990BE /* App */ = {
 			isa = PBXGroup;
 			children = (
+				14EB6C002A933DB3006990BE /* AppMainCoordinator.swift */,
 				14EB6C0A2A933DB4006990BE /* LaunchScreen.storyboard */,
-				14EB6C022A933DB3006990BE /* Main.storyboard */,
 				14EB6BFC2A933DB3006990BE /* AppDelegate.swift */,
 				14EB6BFE2A933DB3006990BE /* SceneDelegate.swift */,
 			);
@@ -144,7 +180,12 @@
 		14EB6C302A9349DA006990BE /* Feature */ = {
 			isa = PBXGroup;
 			children = (
-				14EB6C002A933DB3006990BE /* ViewController.swift */,
+				14EB6C5B2A95DD56006990BE /* Components */,
+				14EB6C412A95D2C7006990BE /* HomepageTabbarContainer */,
+				14EB6C402A95D2BF006990BE /* Homepage */,
+				14EB6C422A95D324006990BE /* MyMap */,
+				14EB6C432A95D395006990BE /* Society */,
+				14EB6C442A95D39C006990BE /* Personal */,
 			);
 			path = Feature;
 			sourceTree = "<group>";
@@ -166,6 +207,7 @@
 		14EB6C322A934B40006990BE /* Protocol */ = {
 			isa = PBXGroup;
 			children = (
+				14EB6C3E2A95D0A0006990BE /* Coordinator.swift */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -173,6 +215,7 @@
 		14EB6C332A934B48006990BE /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				14EB6C592A95D5EB006990BE /* UIView+Nib.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -180,6 +223,7 @@
 		14EB6C342A934B4E006990BE /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				14EB6C662A95F324006990BE /* MapInfoModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -203,6 +247,88 @@
 			children = (
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		14EB6C402A95D2BF006990BE /* Homepage */ = {
+			isa = PBXGroup;
+			children = (
+				14EB6C492A95D579006990BE /* HomepageViewController.swift */,
+				14EB6C4A2A95D579006990BE /* HomepageViewController.xib */,
+			);
+			path = Homepage;
+			sourceTree = "<group>";
+		};
+		14EB6C412A95D2C7006990BE /* HomepageTabbarContainer */ = {
+			isa = PBXGroup;
+			children = (
+				14EB6C452A95D3E0006990BE /* HomepageContainerViewController.swift */,
+				14EB6C462A95D3E0006990BE /* HomepageContainerViewController.xib */,
+			);
+			path = HomepageTabbarContainer;
+			sourceTree = "<group>";
+		};
+		14EB6C422A95D324006990BE /* MyMap */ = {
+			isa = PBXGroup;
+			children = (
+				14EB6C4D2A95D583006990BE /* MyMapViewController.swift */,
+				14EB6C4E2A95D583006990BE /* MyMapViewController.xib */,
+			);
+			path = MyMap;
+			sourceTree = "<group>";
+		};
+		14EB6C432A95D395006990BE /* Society */ = {
+			isa = PBXGroup;
+			children = (
+				14EB6C512A95D593006990BE /* SocietyViewController.swift */,
+				14EB6C522A95D593006990BE /* SocietyViewController.xib */,
+			);
+			path = Society;
+			sourceTree = "<group>";
+		};
+		14EB6C442A95D39C006990BE /* Personal */ = {
+			isa = PBXGroup;
+			children = (
+				14EB6C552A95D5A6006990BE /* PersonalViewController.swift */,
+				14EB6C562A95D5A6006990BE /* PersonalViewController.xib */,
+			);
+			path = Personal;
+			sourceTree = "<group>";
+		};
+		14EB6C5B2A95DD56006990BE /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				14EB6C682A960004006990BE /* HomePageMapInfoTableViewCell */,
+				14EB6C5D2A95DD95006990BE /* MapInfoList */,
+				14EB6C5C2A95DD61006990BE /* SingleMapInfoCell */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		14EB6C5C2A95DD61006990BE /* SingleMapInfoCell */ = {
+			isa = PBXGroup;
+			children = (
+				14EB6C5E2A95E591006990BE /* SingleMapInfoCellView.swift */,
+				14EB6C602A95E59C006990BE /* SingleMapInfoCellView.xib */,
+			);
+			path = SingleMapInfoCell;
+			sourceTree = "<group>";
+		};
+		14EB6C5D2A95DD95006990BE /* MapInfoList */ = {
+			isa = PBXGroup;
+			children = (
+				14EB6C622A95F266006990BE /* MapInfoListCollectionView.swift */,
+				14EB6C642A95F26F006990BE /* MapInfoListCollectionView.xib */,
+			);
+			path = MapInfoList;
+			sourceTree = "<group>";
+		};
+		14EB6C682A960004006990BE /* HomePageMapInfoTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				14EB6C692A96003E006990BE /* HomePageMapInfoTableViewCell.swift */,
+				14EB6C6A2A96003E006990BE /* HomePageMapInfoTableViewCell.xib */,
+			);
+			path = HomePageMapInfoTableViewCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -309,10 +435,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				14EB6C482A95D3E0006990BE /* HomepageContainerViewController.xib in Resources */,
+				14EB6C6C2A96003E006990BE /* HomePageMapInfoTableViewCell.xib in Resources */,
 				14EB6C0C2A933DB4006990BE /* LaunchScreen.storyboard in Resources */,
 				14EB6C092A933DB4006990BE /* Assets.xcassets in Resources */,
-				14EB6C042A933DB3006990BE /* Main.storyboard in Resources */,
+				14EB6C652A95F26F006990BE /* MapInfoListCollectionView.xib in Resources */,
 				14EB6C372A934B70006990BE /* Resource.bundle in Resources */,
+				14EB6C4C2A95D579006990BE /* HomepageViewController.xib in Resources */,
+				14EB6C612A95E59C006990BE /* SingleMapInfoCellView.xib in Resources */,
+				14EB6C542A95D593006990BE /* SocietyViewController.xib in Resources */,
+				14EB6C582A95D5A6006990BE /* PersonalViewController.xib in Resources */,
+				14EB6C502A95D583006990BE /* MyMapViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -337,10 +470,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				14EB6C012A933DB3006990BE /* ViewController.swift in Sources */,
+				14EB6C672A95F324006990BE /* MapInfoModel.swift in Sources */,
+				14EB6C6B2A96003E006990BE /* HomePageMapInfoTableViewCell.swift in Sources */,
+				14EB6C012A933DB3006990BE /* AppMainCoordinator.swift in Sources */,
+				14EB6C5F2A95E591006990BE /* SingleMapInfoCellView.swift in Sources */,
+				14EB6C632A95F266006990BE /* MapInfoListCollectionView.swift in Sources */,
 				14EB6BFD2A933DB3006990BE /* AppDelegate.swift in Sources */,
+				14EB6C3F2A95D0A0006990BE /* Coordinator.swift in Sources */,
+				14EB6C4B2A95D579006990BE /* HomepageViewController.swift in Sources */,
 				14EB6BFF2A933DB3006990BE /* SceneDelegate.swift in Sources */,
+				14EB6C532A95D593006990BE /* SocietyViewController.swift in Sources */,
+				14EB6C572A95D5A6006990BE /* PersonalViewController.swift in Sources */,
+				14EB6C5A2A95D5EB006990BE /* UIView+Nib.swift in Sources */,
+				14EB6C472A95D3E0006990BE /* HomepageContainerViewController.swift in Sources */,
 				14EB6C072A933DB3006990BE /* TactileMap.xcdatamodeld in Sources */,
+				14EB6C4F2A95D583006990BE /* MyMapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -377,14 +521,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		14EB6C022A933DB3006990BE /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				14EB6C032A933DB3006990BE /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		14EB6C0A2A933DB4006990BE /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -446,7 +582,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -500,7 +636,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -522,9 +658,10 @@
 				INFOPLIST_FILE = TactileMap/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIRequiresFullScreen = NO;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -532,9 +669,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = tw.com.visionsecurity.swdept3.TactileMap;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Debug;
 		};
@@ -550,9 +690,10 @@
 				INFOPLIST_FILE = TactileMap/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIRequiresFullScreen = NO;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -560,9 +701,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = tw.com.visionsecurity.swdept3.TactileMap;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Release;
 		};
@@ -575,7 +719,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 5VA65MHU77;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = tw.com.visionsecurity.swdept3.TactileMapTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -595,7 +739,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 5VA65MHU77;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = tw.com.visionsecurity.swdept3.TactileMapTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";

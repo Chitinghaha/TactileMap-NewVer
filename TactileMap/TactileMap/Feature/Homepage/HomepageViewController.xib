@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="ipad10_9rounded" orientation="landscape" layout="fullscreen" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomepageViewController" customModule="TactileMap" customModuleProvider="target">
+            <connections>
+                <outlet property="mainImageView" destination="oPf-k1-tk7" id="h9x-ps-8sB"/>
+                <outlet property="mapContentsTableView" destination="agH-Az-vbK" id="zby-To-Ibd"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="1180" height="820"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wcZ-WM-pYW">
+                    <rect key="frame" x="0.0" y="24" width="1180" height="776"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="aoR-Rq-ou2">
+                            <rect key="frame" x="0.0" y="0.0" width="1180" height="628"/>
+                            <subviews>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="soup1" translatesAutoresizingMaskIntoConstraints="NO" id="oPf-k1-tk7">
+                                    <rect key="frame" x="0.0" y="0.0" width="1180" height="500"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="500" id="ZRk-Bt-LVy"/>
+                                    </constraints>
+                                </imageView>
+                                <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" estimatedSectionHeaderHeight="-1" sectionFooterHeight="28" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="agH-Az-vbK">
+                                    <rect key="frame" x="0.0" y="500" width="1180" height="128"/>
+                                </tableView>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="aoR-Rq-ou2" firstAttribute="bottom" secondItem="Y30-Xp-zAe" secondAttribute="bottom" id="Cn1-Fp-SHY"/>
+                        <constraint firstItem="aoR-Rq-ou2" firstAttribute="top" secondItem="Y30-Xp-zAe" secondAttribute="top" id="HZV-lL-qFL"/>
+                        <constraint firstItem="aoR-Rq-ou2" firstAttribute="trailing" secondItem="Y30-Xp-zAe" secondAttribute="trailing" id="S9w-7S-Njh"/>
+                        <constraint firstItem="aoR-Rq-ou2" firstAttribute="leading" secondItem="Y30-Xp-zAe" secondAttribute="leading" id="ir6-Mu-wTB"/>
+                        <constraint firstItem="aoR-Rq-ou2" firstAttribute="leading" secondItem="u7j-cu-9ci" secondAttribute="leading" id="k1h-lR-qfY"/>
+                        <constraint firstItem="aoR-Rq-ou2" firstAttribute="trailing" secondItem="u7j-cu-9ci" secondAttribute="trailing" id="tzR-rp-g2a"/>
+                    </constraints>
+                    <viewLayoutGuide key="contentLayoutGuide" id="Y30-Xp-zAe"/>
+                    <viewLayoutGuide key="frameLayoutGuide" id="u7j-cu-9ci"/>
+                </scrollView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" red="0.97254902119999997" green="0.97254902119999997" blue="0.96862745289999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <constraints>
+                <constraint firstItem="wcZ-WM-pYW" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="6UC-Fe-Vdk"/>
+                <constraint firstItem="wcZ-WM-pYW" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="9jx-6O-akI"/>
+                <constraint firstItem="wcZ-WM-pYW" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="MhB-8N-p9y"/>
+                <constraint firstItem="wcZ-WM-pYW" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="vQa-O2-TFS"/>
+            </constraints>
+            <point key="canvasLocation" x="22" y="20"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="soup1" width="1200" height="800"/>
+    </resources>
+</document>
