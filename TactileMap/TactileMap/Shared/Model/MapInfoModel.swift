@@ -21,6 +21,6 @@ struct MapInfoListModel: Hashable {
     let infos: [SingleMapInfoModel]
 }
 
-struct multiMapInfoListModel: Hashable {
+struct MultiMapInfoListModel: Hashable {
     let contents: [MapInfoListModel]
 }

@@ -13,39 +13,31 @@ fileprivate enum Section: CaseIterable {
 
 class MapInfoListCollectionView: UICollectionView {
     
-    @IBOutlet var collectionView: UICollectionView!
     // Create a Diffable Data Source
     private lazy var diffableDataSource: UICollectionViewDiffableDataSource<Section, SingleMapInfoModel> = makeDataSource()
     
-    var mapInfoListModel: MapInfoListModel
+    var mapInfoListModel: MapInfoListModel!
     
-    init(mapInfoListModel: MapInfoListModel) {
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        self.delegate = self
+        self.showsHorizontalScrollIndicator = false
+        self.showsVerticalScrollIndicator = false
+    }
+    
+    func setupbinding(mapInfoListModel: MapInfoListModel) {
         self.mapInfoListModel = mapInfoListModel
         
-        super.init(frame: .zero, collectionViewLayout: UICollectionViewLayout())
+        self.register(UINib(nibName: "SingleMapInfoCellView", bundle: nil), forCellWithReuseIdentifier: "SingleMapInfoCellView")
         
         // Load initial data
         var snapshot = NSDiffableDataSourceSnapshot<Section, SingleMapInfoModel>()
         snapshot.appendSections([.main])
         snapshot.appendItems(
-            self.mapInfoListModel.infos ??
-            [SingleMapInfoModel(imageName: "soup2", title: "小吃部test", description: "2023083", descriptionIconName: "clock", favoriteEnabled: true, isFavorite: true)]
+            self.mapInfoListModel.infos
         )
-        diffableDataSource.apply(snapshot, animatingDifferences: false)
+        self.diffableDataSource.apply(snapshot, animatingDifferences: false)
     }
-
-    required init?(coder: NSCoder) {
-        super.init(coder: coder)
-        addViewFromNib()
-    }
-    
-    /*
-     // Only override draw() if you perform custom drawing.
-     // An empty implementation adversely affects performance during animation.
-     override func draw(_ rect: CGRect) {
-     // Drawing code
-     }
-     */
     
 }
 
@@ -54,31 +46,45 @@ fileprivate extension MapInfoListCollectionView {
     
     func makeDataSource() -> UICollectionViewDiffableDataSource<Section, SingleMapInfoModel> {
         
-        return UICollectionViewDiffableDataSource<Section, SingleMapInfoModel>(collectionView: collectionView) {
-            (collectionView: UICollectionView, indexPath: IndexPath, model: SingleMapInfoModel) -> SingleMapInfoCellView? in
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: SingleMapInfoCellView.self), for: indexPath) as! SingleMapInfoCellView
+        return UICollectionViewDiffableDataSource<Section, SingleMapInfoModel>(collectionView: self) {
+            (collectionView: UICollectionView, indexPath: IndexPath, model: SingleMapInfoModel) -> UICollectionViewCell in
+            
+            let cell: SingleMapInfoCellView = collectionView.dequeueReusableCell(withReuseIdentifier: "SingleMapInfoCellView", for: indexPath) as! SingleMapInfoCellView
             
             cell.mapImageView.image = UIImage(named: model.imageName)
             cell.mapTitleLabel.text = model.title
             cell.subtitleLabel.text = model.description
-            
+
             if (model.descriptionIconName.count != 0) {
                 cell.subtitleIconImageView.isHidden = false
-                cell.subtitleIconImageView.image = UIImage(named: model.descriptionIconName)
+//                cell.subtitleIconImageView.image = UIImage(named: model.descriptionIconName)
             }
             else {
                 cell.subtitleIconImageView.isHidden = true
             }
-            
+
             if (model.favoriteEnabled) {
                 cell.favoriteButton.isHidden = false
                 cell.favoriteButton.isSelected = model.isFavorite
+                cell.favoriteImageView.isHidden = false
             }
             else {
                 cell.favoriteButton.isHidden = true
+                cell.favoriteImageView.isHidden = true
             }
             
+            if (model.isFavorite) {
+                cell.favoriteImageView.image = UIImage(systemName: "heart.fill")
+            }
+            else {
+                cell.favoriteImageView.image = UIImage(systemName: "heart")
+            }
+
             return cell
         }
     }
+}
+
+extension MapInfoListCollectionView: UICollectionViewDelegate {
+    
 }

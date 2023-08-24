@@ -9,7 +9,11 @@ import UIKit
 
 class SingleMapInfoCellView: UICollectionViewCell {
 
-    @IBOutlet weak var mapImageView: UIImageView!
+    @IBOutlet weak var mapImageView: UIImageView! { didSet {
+        mapImageView.layer.cornerRadius = 10
+    }}
+    
+    @IBOutlet weak var favoriteImageView: UIImageView!
     
     @IBOutlet weak var favoriteButton: UIButton!
     

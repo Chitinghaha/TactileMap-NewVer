@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -23,19 +24,23 @@
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wcZ-WM-pYW">
                     <rect key="frame" x="0.0" y="24" width="1180" height="776"/>
                     <subviews>
-                        <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="aoR-Rq-ou2">
-                            <rect key="frame" x="0.0" y="0.0" width="1180" height="628"/>
+                        <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="aoR-Rq-ou2">
+                            <rect key="frame" x="0.0" y="0.0" width="1180" height="1565"/>
                             <subviews>
-                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="soup1" translatesAutoresizingMaskIntoConstraints="NO" id="oPf-k1-tk7">
-                                    <rect key="frame" x="0.0" y="0.0" width="1180" height="500"/>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tmpImage7" translatesAutoresizingMaskIntoConstraints="NO" id="oPf-k1-tk7">
+                                    <rect key="frame" x="30" y="30" width="1120" height="500"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="500" id="ZRk-Bt-LVy"/>
                                     </constraints>
                                 </imageView>
-                                <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" estimatedSectionHeaderHeight="-1" sectionFooterHeight="28" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="agH-Az-vbK">
-                                    <rect key="frame" x="0.0" y="500" width="1180" height="128"/>
+                                <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" showsVerticalScrollIndicator="NO" style="plain" rowHeight="400" estimatedRowHeight="-1" sectionHeaderHeight="28" estimatedSectionHeaderHeight="-1" sectionFooterHeight="28" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="agH-Az-vbK">
+                                    <rect key="frame" x="30" y="535" width="1120" height="1000"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </tableView>
                             </subviews>
+                            <directionalEdgeInsets key="directionalLayoutMargins" top="30" leading="30" bottom="30" trailing="30"/>
                         </stackView>
                     </subviews>
                     <constraints>
@@ -51,7 +56,7 @@
                 </scrollView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <color key="backgroundColor" red="0.97254902119999997" green="0.97254902119999997" blue="0.96862745289999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <color key="backgroundColor" name="defaultBackgroundColor"/>
             <constraints>
                 <constraint firstItem="wcZ-WM-pYW" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="6UC-Fe-Vdk"/>
                 <constraint firstItem="wcZ-WM-pYW" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="9jx-6O-akI"/>
@@ -62,6 +67,9 @@
         </view>
     </objects>
     <resources>
-        <image name="soup1" width="1200" height="800"/>
+        <image name="tmpImage7" width="1170" height="658"/>
+        <namedColor name="defaultBackgroundColor">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
     </resources>
 </document>
