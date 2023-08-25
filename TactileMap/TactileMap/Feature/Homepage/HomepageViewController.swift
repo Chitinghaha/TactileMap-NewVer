@@ -33,45 +33,8 @@ class HomepageViewController: UIViewController {
         self.mapContentsTableView.separatorStyle = .none
         
         mapContentsTableView.register(UINib(nibName: String(describing: HomePageMapInfoTableViewCell.self), bundle: nil), forCellReuseIdentifier: String(describing: HomePageMapInfoTableViewCell.self))
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        let mapInfoListModels: MultiMapInfoListModel = MultiMapInfoListModel(
-            contents: [
-                MapInfoListModel(
-                    title: "學餐",
-                    infos: [
-                        SingleMapInfoModel(imageName: "tmpMap1", title: "testTitle1", description: "testDescription1", descriptionIconName: "1", favoriteEnabled: true, isFavorite: true),
-                        SingleMapInfoModel(imageName: "tmpMap2", title: "testTitle2", description: "testDescription2", descriptionIconName: "1", favoriteEnabled: true, isFavorite: true),
-                        SingleMapInfoModel(imageName: "tmpMap3", title: "testTitle3", description: "testDescription3", descriptionIconName: "1", favoriteEnabled: true, isFavorite: false),
-                        SingleMapInfoModel(imageName: "tmpMap4", title: "testTitle2", description: "testDescription2", descriptionIconName: "1", favoriteEnabled: true, isFavorite: true),
-                        SingleMapInfoModel(imageName: "tmpMap5", title: "testTitle3", description: "testDescription3", descriptionIconName: "1", favoriteEnabled: true, isFavorite: true)
-                        
-                    ]
-                ),
-                MapInfoListModel(
-                    title: "系館",
-                    infos: [
-                        SingleMapInfoModel(imageName: "tmpMap4", title: "testTitle1", description: "testDescription1", descriptionIconName: "", favoriteEnabled: true, isFavorite: true),
-                        SingleMapInfoModel(imageName: "tmpMap5", title: "testTitle2", description: "testDescription2", descriptionIconName: "", favoriteEnabled: true, isFavorite: false),
-                        SingleMapInfoModel(imageName: "tmpMap6", title: "testTitle3", description: "testDescription3", descriptionIconName: "", favoriteEnabled: true, isFavorite: true),
-                        SingleMapInfoModel(imageName: "tmpMap1", title: "testTitle2", description: "testDescription2", descriptionIconName: "", favoriteEnabled: true, isFavorite: true),
-                        SingleMapInfoModel(imageName: "tmpMap2", title: "testTitle3", description: "testDescription3", descriptionIconName: "", favoriteEnabled: true, isFavorite: true)
-                    ]
-                ),
-                MapInfoListModel(
-                    title: "常用區域",
-                    infos: [
-                        SingleMapInfoModel(imageName: "tmpMap4", title: "testTitle1", description: "testDescription1", descriptionIconName: "", favoriteEnabled: true, isFavorite: false),
-                        SingleMapInfoModel(imageName: "tmpMap5", title: "testTitle2", description: "testDescription2", descriptionIconName: "", favoriteEnabled: true, isFavorite: true),
-                        SingleMapInfoModel(imageName: "tmpMap6", title: "testTitle3", description: "testDescription3", descriptionIconName: "", favoriteEnabled: true, isFavorite: true),
-                        SingleMapInfoModel(imageName: "tmpMap1", title: "testTitle2", description: "testDescription2", descriptionIconName: "", favoriteEnabled: true, isFavorite: true),
-                        SingleMapInfoModel(imageName: "tmpMap2", title: "testTitle3", description: "testDescription3", descriptionIconName: "", favoriteEnabled: true, isFavorite: true)
-                    ]
-                )
-            ]
-        )
         
+        let mapInfoListModels = MapInfosViewModel.shared.getMapListsFake(withClock: true, canSetFavorite: true)
         
         var snapshot = NSDiffableDataSourceSnapshot<Section, MapInfoListModel>()
         
@@ -89,6 +52,9 @@ class HomepageViewController: UIViewController {
         self.mapContentsTableView.heightAnchor.constraint(equalToConstant: estimatedHeight).isActive = true
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.setNavigationBarHidden(true, animated: animated)
+    }
 }
 
 extension HomepageViewController: UITableViewDelegate {
@@ -131,7 +97,7 @@ fileprivate extension HomepageViewController {
         return UITableViewDiffableDataSource(
             tableView: mapContentsTableView) { tableView, indexPath, listModel in
                 let cell = self.mapContentsTableView.dequeueReusableCell(withIdentifier: String(describing: HomePageMapInfoTableViewCell.self), for: indexPath) as! HomePageMapInfoTableViewCell
-                cell.setupMapInfoListModel(mapInfoListModel: listModel)
+                cell.setupMapInfoListModel(mapsInfo: listModel.infos)
                 return cell
             }
     }

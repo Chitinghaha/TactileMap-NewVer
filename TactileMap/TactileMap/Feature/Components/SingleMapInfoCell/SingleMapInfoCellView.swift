@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Combine
 
 class SingleMapInfoCellView: UICollectionViewCell {
 
@@ -23,7 +24,20 @@ class SingleMapInfoCellView: UICollectionViewCell {
     
     @IBOutlet weak var subtitleLabel: UILabel!
     
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        self.setupBinding()
+    }
     
+    func setupBinding() {
+        
+    }
+    
+    @IBAction func onClickFavoriteButton(_ sender: UIButton) {
+        sender.isSelected.toggle()
+        self.favoriteImageView.image = sender.isSelected ? UIImage(systemName: "heart.fill") : UIImage(systemName: "heart")
+        //todo: send save favorite event
+    }
     /*
     // Only override draw() if you perform custom drawing.
     // An empty implementation adversely affects performance during animation.

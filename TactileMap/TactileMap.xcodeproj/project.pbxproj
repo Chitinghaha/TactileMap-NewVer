@@ -36,6 +36,9 @@
 		14EB6C672A95F324006990BE /* MapInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14EB6C662A95F324006990BE /* MapInfoModel.swift */; };
 		14EB6C6B2A96003E006990BE /* HomePageMapInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14EB6C692A96003E006990BE /* HomePageMapInfoTableViewCell.swift */; };
 		14EB6C6C2A96003E006990BE /* HomePageMapInfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14EB6C6A2A96003E006990BE /* HomePageMapInfoTableViewCell.xib */; };
+		14EB6C702A98809D006990BE /* MapInfosViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14EB6C6F2A98809D006990BE /* MapInfosViewModel.swift */; };
+		14EB6C722A98844F006990BE /* SocietyInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14EB6C712A98844F006990BE /* SocietyInfoViewModel.swift */; };
+		14EB6C742A9891EF006990BE /* FileReadWriteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14EB6C732A9891EF006990BE /* FileReadWriteService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,6 +92,9 @@
 		14EB6C662A95F324006990BE /* MapInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapInfoModel.swift; sourceTree = "<group>"; };
 		14EB6C692A96003E006990BE /* HomePageMapInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageMapInfoTableViewCell.swift; sourceTree = "<group>"; };
 		14EB6C6A2A96003E006990BE /* HomePageMapInfoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomePageMapInfoTableViewCell.xib; sourceTree = "<group>"; };
+		14EB6C6F2A98809D006990BE /* MapInfosViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapInfosViewModel.swift; sourceTree = "<group>"; };
+		14EB6C712A98844F006990BE /* SocietyInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocietyInfoViewModel.swift; sourceTree = "<group>"; };
+		14EB6C732A9891EF006990BE /* FileReadWriteService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileReadWriteService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -238,6 +244,7 @@
 		14EB6C382A934FCE006990BE /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				14EB6C732A9891EF006990BE /* FileReadWriteService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -245,6 +252,8 @@
 		14EB6C392A935204006990BE /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				14EB6C6F2A98809D006990BE /* MapInfosViewModel.swift */,
+				14EB6C712A98844F006990BE /* SocietyInfoViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -478,9 +487,12 @@
 				14EB6BFD2A933DB3006990BE /* AppDelegate.swift in Sources */,
 				14EB6C3F2A95D0A0006990BE /* Coordinator.swift in Sources */,
 				14EB6C4B2A95D579006990BE /* HomepageViewController.swift in Sources */,
+				14EB6C722A98844F006990BE /* SocietyInfoViewModel.swift in Sources */,
 				14EB6BFF2A933DB3006990BE /* SceneDelegate.swift in Sources */,
 				14EB6C532A95D593006990BE /* SocietyViewController.swift in Sources */,
 				14EB6C572A95D5A6006990BE /* PersonalViewController.swift in Sources */,
+				14EB6C702A98809D006990BE /* MapInfosViewModel.swift in Sources */,
+				14EB6C742A9891EF006990BE /* FileReadWriteService.swift in Sources */,
 				14EB6C5A2A95D5EB006990BE /* UIView+Nib.swift in Sources */,
 				14EB6C472A95D3E0006990BE /* HomepageContainerViewController.swift in Sources */,
 				14EB6C072A933DB3006990BE /* TactileMap.xcdatamodeld in Sources */,

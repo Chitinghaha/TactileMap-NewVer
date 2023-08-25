@@ -44,6 +44,9 @@
                                                 <state key="normal" image="heart" catalog="system"/>
                                                 <state key="selected" image="heart.fill" catalog="system"/>
                                                 <buttonConfiguration key="configuration" style="plain"/>
+                                                <connections>
+                                                    <action selector="onClickFavoriteButton:" destination="YGh-hR-u9v" eventType="touchUpInside" id="sTg-Ro-vh0"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

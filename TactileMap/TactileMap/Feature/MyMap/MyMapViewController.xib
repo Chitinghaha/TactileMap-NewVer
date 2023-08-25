@@ -21,10 +21,10 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="p6S-lM-1d1">
-                    <rect key="frame" x="0.0" y="24" width="1180" height="108"/>
+                    <rect key="frame" x="0.0" y="24" width="1180" height="78"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="我的地圖" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6wt-ch-dZJ">
-                            <rect key="frame" x="30" y="30" width="1120" height="48"/>
+                            <rect key="frame" x="30" y="15" width="1120" height="48"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="100" id="khG-gq-Qeu"/>
                             </constraints>
@@ -33,7 +33,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                     </subviews>
-                    <directionalEdgeInsets key="directionalLayoutMargins" top="30" leading="30" bottom="30" trailing="30"/>
+                    <directionalEdgeInsets key="directionalLayoutMargins" top="15" leading="30" bottom="15" trailing="30"/>
                 </stackView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>

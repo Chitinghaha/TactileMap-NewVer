@@ -11,7 +11,7 @@ class HomePageMapInfoTableViewCell: UITableViewCell {
         
     var mapInfoListCollectionView: MapInfoListCollectionView!
     
-    var mapInfoListModel: MapInfoListModel?
+    var mapsInfo: [SingleMapInfoModel]?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -27,7 +27,7 @@ class HomePageMapInfoTableViewCell: UITableViewCell {
         
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
         layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 20)
-        layout.itemSize = CGSize(width: (self.mapInfoListCollectionView.frame.size.width - 30) / 3, height: self.mapInfoListCollectionView.frame.height)
+        layout.itemSize = CGSize(width: (self.mapInfoListCollectionView.frame.size.width - 100) / 3, height: self.mapInfoListCollectionView.frame.height)
         layout.minimumLineSpacing = CGFloat(integerLiteral: 50)
         layout.minimumInteritemSpacing = CGFloat(integerLiteral: 50)
         layout.scrollDirection = UICollectionView.ScrollDirection.horizontal
@@ -35,10 +35,10 @@ class HomePageMapInfoTableViewCell: UITableViewCell {
         self.mapInfoListCollectionView.setContentOffset(CGPoint(x: 0.0, y: 0.0), animated: false)
     }
     
-    func setupMapInfoListModel(mapInfoListModel: MapInfoListModel ) {
-        self.mapInfoListModel = mapInfoListModel
+    func setupMapInfoListModel(mapsInfo: [SingleMapInfoModel] ) {
+        self.mapsInfo = mapsInfo
         
-        self.mapInfoListCollectionView.setupbinding(mapInfoListModel: self.mapInfoListModel!)
+        self.mapInfoListCollectionView.setupbinding(mapsInfo: self.mapsInfo!)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

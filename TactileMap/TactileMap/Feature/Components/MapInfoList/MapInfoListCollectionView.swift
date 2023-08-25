@@ -16,7 +16,7 @@ class MapInfoListCollectionView: UICollectionView {
     // Create a Diffable Data Source
     private lazy var diffableDataSource: UICollectionViewDiffableDataSource<Section, SingleMapInfoModel> = makeDataSource()
     
-    var mapInfoListModel: MapInfoListModel!
+    var mapsInfo: [SingleMapInfoModel]!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -25,8 +25,8 @@ class MapInfoListCollectionView: UICollectionView {
         self.showsVerticalScrollIndicator = false
     }
     
-    func setupbinding(mapInfoListModel: MapInfoListModel) {
-        self.mapInfoListModel = mapInfoListModel
+    func setupbinding(mapsInfo: [SingleMapInfoModel]) {
+        self.mapsInfo = mapsInfo
         
         self.register(UINib(nibName: "SingleMapInfoCellView", bundle: nil), forCellWithReuseIdentifier: "SingleMapInfoCellView")
         
@@ -34,7 +34,7 @@ class MapInfoListCollectionView: UICollectionView {
         var snapshot = NSDiffableDataSourceSnapshot<Section, SingleMapInfoModel>()
         snapshot.appendSections([.main])
         snapshot.appendItems(
-            self.mapInfoListModel.infos
+            self.mapsInfo
         )
         self.diffableDataSource.apply(snapshot, animatingDifferences: false)
     }
@@ -62,22 +62,29 @@ fileprivate extension MapInfoListCollectionView {
             else {
                 cell.subtitleIconImageView.isHidden = true
             }
-
-            if (model.favoriteEnabled) {
-                cell.favoriteButton.isHidden = false
-                cell.favoriteButton.isSelected = model.isFavorite
-                cell.favoriteImageView.isHidden = false
+            
+            if let favoriteEnabled = model.favoriteEnabled,
+               let isFavorite = model.isFavorite {
+                if (favoriteEnabled) {
+                    cell.favoriteButton.isHidden = false
+                    cell.favoriteButton.isSelected = isFavorite
+                    cell.favoriteImageView.isHidden = false
+                }
+                else {
+                    cell.favoriteButton.isHidden = true
+                    cell.favoriteImageView.isHidden = true
+                }
+                
+                if (isFavorite) {
+                    cell.favoriteImageView.image = UIImage(systemName: "heart.fill")
+                }
+                else {
+                    cell.favoriteImageView.image = UIImage(systemName: "heart")
+                }
             }
             else {
                 cell.favoriteButton.isHidden = true
                 cell.favoriteImageView.isHidden = true
-            }
-            
-            if (model.isFavorite) {
-                cell.favoriteImageView.image = UIImage(systemName: "heart.fill")
-            }
-            else {
-                cell.favoriteImageView.image = UIImage(systemName: "heart")
             }
 
             return cell
