@@ -10,6 +10,7 @@ import XCTest
 
 final class TactileMapTests: XCTestCase {
 
+    let fileService = FileReadWriteService()
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
     }
@@ -18,6 +19,21 @@ final class TactileMapTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
+    func testSaveFavoriteMapsToJson() {
+        let favorites = FavoriteMaps(mapNames: ["小吃部", "台達館"])
+        
+        XCTAssertEqual(fileService.saveFavoritesJson(favorites: favorites), true)
+        
+    }
+    
+    func testReadFavoriteMapsToJson() {
+        let favorites = FavoriteMaps(mapNames: ["小吃部", "台達館"])
+        
+        XCTAssertEqual(fileService.saveFavoritesJson(favorites: favorites), true)
+        XCTAssertEqual(fileService.readFavoritesJson(), favorites)
+        
+    }
+    
     func testExample() throws {
         
         // This is an example of a functional test case.

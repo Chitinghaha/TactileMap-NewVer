@@ -25,7 +25,7 @@ class MapInfoListCollectionView: UICollectionView {
         self.showsVerticalScrollIndicator = false
     }
     
-    func setupbinding(mapsInfo: [SingleMapInfoModel]) {
+    func setUp(mapsInfo: [SingleMapInfoModel]) {
         self.mapsInfo = mapsInfo
         
         self.register(UINib(nibName: "SingleMapInfoCellView", bundle: nil), forCellWithReuseIdentifier: "SingleMapInfoCellView")
@@ -51,13 +51,13 @@ fileprivate extension MapInfoListCollectionView {
             
             let cell: SingleMapInfoCellView = collectionView.dequeueReusableCell(withReuseIdentifier: "SingleMapInfoCellView", for: indexPath) as! SingleMapInfoCellView
             
-            cell.mapImageView.image = UIImage(named: model.imageName)
+            cell.mapImageView.image = UIImage(named: model.mapName)
             cell.mapTitleLabel.text = model.title
             cell.subtitleLabel.text = model.description
 
             if (model.descriptionIconName.count != 0) {
                 cell.subtitleIconImageView.isHidden = false
-//                cell.subtitleIconImageView.image = UIImage(named: model.descriptionIconName)
+                cell.subtitleIconImageView.image = UIImage(systemName: model.descriptionIconName)
             }
             else {
                 cell.subtitleIconImageView.isHidden = true
@@ -93,5 +93,7 @@ fileprivate extension MapInfoListCollectionView {
 }
 
 extension MapInfoListCollectionView: UICollectionViewDelegate {
-    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+    }
 }

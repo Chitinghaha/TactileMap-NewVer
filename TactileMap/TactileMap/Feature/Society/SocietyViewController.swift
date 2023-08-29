@@ -22,7 +22,7 @@ class SocietyViewController: UIViewController {
         self.mapInfoListCollectionView = MapInfoListCollectionView.loadFromNib()
         //        self.view.addSubview(self.mapInfoListCollectionView)
         
-        self.mapInfoListCollectionView.setupbinding(mapsInfo: maps)
+        self.mapInfoListCollectionView.setUp(mapsInfo: maps)
         
         self.mapInfoListCollectionView.frame = CGRect(x: 0, y: 0, width: self.view.bounds.width, height: self.view.bounds.height)
         

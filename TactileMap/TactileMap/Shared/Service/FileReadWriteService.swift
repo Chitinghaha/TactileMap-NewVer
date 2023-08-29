@@ -29,7 +29,26 @@ class FileReadWriteService {
         return allMapInfos
     }
     
-    func setFavoritesJson(favorites: FavoritesMapModel) {
+    func readFavoritesJson() -> FavoriteMaps? {
+        if let documentDirectory = FileManager.default.urls(for: .documentDirectory,
+                                                            in: .userDomainMask).first {
+            let pathWithFilename = documentDirectory.appendingPathComponent("FavoriteMaps.json")
+
+            do {
+                let savedJSONData = try Data(contentsOf: pathWithFilename)
+                let favoriteMaps = try? JSONDecoder().decode(FavoriteMaps.self, from: savedJSONData)
+                
+                return favoriteMaps
+            }
+            catch {
+                print("read FavoritesJson failed, error: \(error)")
+            }
+        }
+        
+        return nil
+    }
+    
+    func saveFavoritesJson(favorites: FavoriteMaps) -> Bool{
         
         if let documentDirectory = FileManager.default.urls(for: .documentDirectory,
                                                             in: .userDomainMask).first {
@@ -43,12 +62,15 @@ class FileReadWriteService {
                 
                 let jsonData = try jsonEncoder.encode(favorites)
                 try jsonData.write(to: pathWithFilename)
-                
+                return true
             } catch {
-                print("setFavoritesJson failed, error: \(error)")
+                print("save FavoritesJson failed, error: \(error)")
+                return false
             }
         }
-        
+        else {
+            return false
+        }
     }
     
 }

@@ -13,18 +13,31 @@ fileprivate struct Section: Hashable {
 }
 
 class HomepageViewController: UIViewController {
+    // MARK: Constants
+    let tableViewCellHeight: CGFloat = 400
+    let tableViewHeaderHeight: CGFloat = 100
+    let tableViewSeparatorHeight: CGFloat = 10
     
+    // MARK: IBOutlets
     @IBOutlet weak var mainImageView: UIImageView! { didSet {
         mainImageView.layer.cornerRadius = 15
     }}
     
     @IBOutlet weak var mapContentsTableView: UITableView!
     
-    let tableViewCellHeight: CGFloat = 400
-    let tableViewHeaderHeight: CGFloat = 100
-    let tableViewSeparatorHeight: CGFloat = 10
-    
+    // MARK: Member var
     private lazy var tableDataSource = makeDataSource()
+    var viewModel: HomepageViewModel
+    
+    // MARK: Life Cycle
+    init(viewModel: HomepageViewModel) {
+        self.viewModel = viewModel
+        super.init(nibName: String(describing: Self.self), bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,11 +47,10 @@ class HomepageViewController: UIViewController {
         
         mapContentsTableView.register(UINib(nibName: String(describing: HomePageMapInfoTableViewCell.self), bundle: nil), forCellReuseIdentifier: String(describing: HomePageMapInfoTableViewCell.self))
         
-        let mapInfoListModels = MapInfosViewModel.shared.getMapListsFake(withClock: true, canSetFavorite: true)
         
         var snapshot = NSDiffableDataSourceSnapshot<Section, MapInfoListModel>()
         
-        mapInfoListModels.contents.forEach {
+        self.viewModel.mapInfoListModels.contents.forEach {
             let section = Section(id: UUID(), title: $0.title)
             snapshot.appendSections([section])
             snapshot.appendItems([$0], toSection: section)
@@ -47,7 +59,7 @@ class HomepageViewController: UIViewController {
         self.tableDataSource.defaultRowAnimation = .fade
         self.tableDataSource.apply(snapshot, animatingDifferences: true)
     
-        let estimatedHeight = CGFloat(mapInfoListModels.contents.count) * (self.tableViewCellHeight + self.tableViewHeaderHeight + 50)
+        let estimatedHeight = CGFloat(self.viewModel.mapInfoListModels.contents.count) * (self.tableViewCellHeight + self.tableViewHeaderHeight + 50)
 
         self.mapContentsTableView.heightAnchor.constraint(equalToConstant: estimatedHeight).isActive = true
     }
@@ -95,7 +107,7 @@ fileprivate extension HomepageViewController {
     
     func makeDataSource() -> UITableViewDiffableDataSource<Section, MapInfoListModel> {
         return UITableViewDiffableDataSource(
-            tableView: mapContentsTableView) { tableView, indexPath, listModel in
+            tableView: self.mapContentsTableView) { tableView, indexPath, listModel in
                 let cell = self.mapContentsTableView.dequeueReusableCell(withIdentifier: String(describing: HomePageMapInfoTableViewCell.self), for: indexPath) as! HomePageMapInfoTableViewCell
                 cell.setupMapInfoListModel(mapsInfo: listModel.infos)
                 return cell

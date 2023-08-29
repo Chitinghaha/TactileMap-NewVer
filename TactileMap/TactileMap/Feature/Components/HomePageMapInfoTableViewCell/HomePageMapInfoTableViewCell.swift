@@ -38,7 +38,7 @@ class HomePageMapInfoTableViewCell: UITableViewCell {
     func setupMapInfoListModel(mapsInfo: [SingleMapInfoModel] ) {
         self.mapsInfo = mapsInfo
         
-        self.mapInfoListCollectionView.setupbinding(mapsInfo: self.mapsInfo!)
+        self.mapInfoListCollectionView.setUp(mapsInfo: self.mapsInfo!)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

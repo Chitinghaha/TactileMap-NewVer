@@ -7,31 +7,29 @@
 
 import Foundation
 
-struct FavoriteMapID: Hashable, Codable {
-    let mapID: [Int]
-    let mapListID: Int
-}
-
-struct FavoritesMapModel: Hashable, Codable {
-    let contents: [FavoriteMapID]
+struct FavoriteMaps: Hashable, Codable {
+    let mapNames: [String]
 }
 
 struct SingleMapInfoModel: Hashable, Decodable {
-    let imageName: String
+    let mapName: String
     let title: String
     let description: String
     let descriptionIconName: String
-    let favoriteEnabled: Bool?
-    let isFavorite: Bool?
-    let mapID: Int
+    var favoriteEnabled: Bool?
+    var isFavorite: Bool?
+    
+    mutating func updateFavorite(favoriteEnabled: Bool, isFavorite: Bool) {
+        self.favoriteEnabled = favoriteEnabled
+        self.isFavorite = isFavorite
+    }
 }
 
 struct MapInfoListModel: Hashable, Decodable {
     let title: String
-    let infos: [SingleMapInfoModel]
-    let mapListID: Int
+    var infos: [SingleMapInfoModel]
 }
 
 struct MultiMapInfoListModel: Hashable, Decodable {
-    let contents: [MapInfoListModel]
+    var contents: [MapInfoListModel]
 }
