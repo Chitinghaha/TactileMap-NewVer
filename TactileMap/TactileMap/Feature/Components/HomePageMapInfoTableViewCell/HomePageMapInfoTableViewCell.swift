@@ -13,6 +13,8 @@ class HomePageMapInfoTableViewCell: UITableViewCell {
     
     var mapsInfo: [SingleMapInfoModel]?
     
+    var coordinator: MapInfoListCollectionViewCoordinator!
+
     override func awakeFromNib() {
         super.awakeFromNib()
         
@@ -24,7 +26,8 @@ class HomePageMapInfoTableViewCell: UITableViewCell {
     override func layoutSubviews() {
         super.layoutSubviews()
         self.mapInfoListCollectionView.frame = self.contentView.bounds
-        
+        self.mapInfoListCollectionView.coordinator = self.coordinator
+
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
         layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 20)
         layout.itemSize = CGSize(width: (self.mapInfoListCollectionView.frame.size.width - 100) / 3, height: self.mapInfoListCollectionView.frame.height)

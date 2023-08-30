@@ -7,7 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		029EC6CA9B95591A8FDED52C /* Pods_TactileMap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 794FCFBF6C9E380A67D8C47C /* Pods_TactileMap.framework */; };
 		14C18AF82A9DC958004FF809 /* HomepageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C18AF72A9DC958004FF809 /* HomepageViewModel.swift */; };
+		14C18AFA2A9DE534004FF809 /* HomepageContainerCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C18AF92A9DE534004FF809 /* HomepageContainerCoordinator.swift */; };
+		14C18AFF2A9ECA0A004FF809 /* MapInfoListCollectionViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C18AFE2A9ECA0A004FF809 /* MapInfoListCollectionViewCoordinator.swift */; };
+		14C18B042A9ED2CB004FF809 /* TactileMapPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C18B022A9ED2CB004FF809 /* TactileMapPageViewController.swift */; };
+		14C18B052A9ED2CB004FF809 /* TactileMapPageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14C18B032A9ED2CB004FF809 /* TactileMapPageViewController.xib */; };
+		14C18B082A9ED2D9004FF809 /* PathTraingPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C18B062A9ED2D9004FF809 /* PathTraingPageViewController.swift */; };
+		14C18B092A9ED2D9004FF809 /* PathTraingPageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14C18B072A9ED2D9004FF809 /* PathTraingPageViewController.xib */; };
+		14C18B0B2A9ED2F7004FF809 /* TactileMapPageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C18B0A2A9ED2F7004FF809 /* TactileMapPageViewModel.swift */; };
+		14C18B0D2A9ED405004FF809 /* TactileMapGridCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C18B0C2A9ED405004FF809 /* TactileMapGridCellView.swift */; };
+		14C18B0F2A9EDC76004FF809 /* HomepageCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C18B0E2A9EDC76004FF809 /* HomepageCoordinator.swift */; };
+		14C18B112A9F1824004FF809 /* TactileMapGridModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C18B102A9F1824004FF809 /* TactileMapGridModel.swift */; };
+		14C18B132A9F1C3B004FF809 /* TactileMapGridViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C18B122A9F1C3B004FF809 /* TactileMapGridViewModel.swift */; };
+		14C18B162A9F226E004FF809 /* DrawRectanglesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C18B152A9F226E004FF809 /* DrawRectanglesView.swift */; };
+		14C18B192A9F2771004FF809 /* AVSpeechSynthesizerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C18B182A9F2771004FF809 /* AVSpeechSynthesizerService.swift */; };
 		14EB6BFD2A933DB3006990BE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14EB6BFC2A933DB3006990BE /* AppDelegate.swift */; };
 		14EB6BFF2A933DB3006990BE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14EB6BFE2A933DB3006990BE /* SceneDelegate.swift */; };
 		14EB6C012A933DB3006990BE /* AppMainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14EB6C002A933DB3006990BE /* AppMainCoordinator.swift */; };
@@ -40,6 +54,8 @@
 		14EB6C702A98809D006990BE /* MapInfosViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14EB6C6F2A98809D006990BE /* MapInfosViewModel.swift */; };
 		14EB6C722A98844F006990BE /* SocietyInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14EB6C712A98844F006990BE /* SocietyInfoViewModel.swift */; };
 		14EB6C742A9891EF006990BE /* FileReadWriteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14EB6C732A9891EF006990BE /* FileReadWriteService.swift */; };
+		9E838E69D2138FAB50C42D3F /* Pods_TactileMap_TactileMapUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F322D48531325E8171EF9A66 /* Pods_TactileMap_TactileMapUITests.framework */; };
+		BB862D2197F387EAF79A069F /* Pods_TactileMapTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFB5C0467ACC29891CE111BF /* Pods_TactileMapTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +77,19 @@
 
 /* Begin PBXFileReference section */
 		14C18AF72A9DC958004FF809 /* HomepageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomepageViewModel.swift; sourceTree = "<group>"; };
+		14C18AF92A9DE534004FF809 /* HomepageContainerCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomepageContainerCoordinator.swift; sourceTree = "<group>"; };
+		14C18AFE2A9ECA0A004FF809 /* MapInfoListCollectionViewCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapInfoListCollectionViewCoordinator.swift; sourceTree = "<group>"; };
+		14C18B022A9ED2CB004FF809 /* TactileMapPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TactileMapPageViewController.swift; sourceTree = "<group>"; };
+		14C18B032A9ED2CB004FF809 /* TactileMapPageViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TactileMapPageViewController.xib; sourceTree = "<group>"; };
+		14C18B062A9ED2D9004FF809 /* PathTraingPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PathTraingPageViewController.swift; sourceTree = "<group>"; };
+		14C18B072A9ED2D9004FF809 /* PathTraingPageViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PathTraingPageViewController.xib; sourceTree = "<group>"; };
+		14C18B0A2A9ED2F7004FF809 /* TactileMapPageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TactileMapPageViewModel.swift; sourceTree = "<group>"; };
+		14C18B0C2A9ED405004FF809 /* TactileMapGridCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TactileMapGridCellView.swift; sourceTree = "<group>"; };
+		14C18B0E2A9EDC76004FF809 /* HomepageCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomepageCoordinator.swift; sourceTree = "<group>"; };
+		14C18B102A9F1824004FF809 /* TactileMapGridModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TactileMapGridModel.swift; sourceTree = "<group>"; };
+		14C18B122A9F1C3B004FF809 /* TactileMapGridViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TactileMapGridViewModel.swift; sourceTree = "<group>"; };
+		14C18B152A9F226E004FF809 /* DrawRectanglesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawRectanglesView.swift; sourceTree = "<group>"; };
+		14C18B182A9F2771004FF809 /* AVSpeechSynthesizerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AVSpeechSynthesizerService.swift; sourceTree = "<group>"; };
 		14EB6BF92A933DB3006990BE /* TactileMap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TactileMap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		14EB6BFC2A933DB3006990BE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		14EB6BFE2A933DB3006990BE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -97,6 +126,15 @@
 		14EB6C6F2A98809D006990BE /* MapInfosViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapInfosViewModel.swift; sourceTree = "<group>"; };
 		14EB6C712A98844F006990BE /* SocietyInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocietyInfoViewModel.swift; sourceTree = "<group>"; };
 		14EB6C732A9891EF006990BE /* FileReadWriteService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileReadWriteService.swift; sourceTree = "<group>"; };
+		2DF67D921E7EC42F874332A4 /* Pods-TactileMapTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TactileMapTests.release.xcconfig"; path = "Target Support Files/Pods-TactileMapTests/Pods-TactileMapTests.release.xcconfig"; sourceTree = "<group>"; };
+		625BDE250D9443AC9AB03CDE /* Pods-TactileMap-TactileMapUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TactileMap-TactileMapUITests.release.xcconfig"; path = "Target Support Files/Pods-TactileMap-TactileMapUITests/Pods-TactileMap-TactileMapUITests.release.xcconfig"; sourceTree = "<group>"; };
+		794FCFBF6C9E380A67D8C47C /* Pods_TactileMap.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TactileMap.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B46CE4E39531D58C8E413803 /* Pods-TactileMap.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TactileMap.debug.xcconfig"; path = "Target Support Files/Pods-TactileMap/Pods-TactileMap.debug.xcconfig"; sourceTree = "<group>"; };
+		CFB5C0467ACC29891CE111BF /* Pods_TactileMapTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TactileMapTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D00E1B5AEE01E2F2BABD8236 /* Pods-TactileMapTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TactileMapTests.debug.xcconfig"; path = "Target Support Files/Pods-TactileMapTests/Pods-TactileMapTests.debug.xcconfig"; sourceTree = "<group>"; };
+		D3A13F1AAEEBA3BDF4819406 /* Pods-TactileMap.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TactileMap.release.xcconfig"; path = "Target Support Files/Pods-TactileMap/Pods-TactileMap.release.xcconfig"; sourceTree = "<group>"; };
+		E6DE7297685BDBB7FAC1301E /* Pods-TactileMap-TactileMapUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TactileMap-TactileMapUITests.debug.xcconfig"; path = "Target Support Files/Pods-TactileMap-TactileMapUITests/Pods-TactileMap-TactileMapUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		F322D48531325E8171EF9A66 /* Pods_TactileMap_TactileMapUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TactileMap_TactileMapUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +142,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				029EC6CA9B95591A8FDED52C /* Pods_TactileMap.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -111,6 +150,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BB862D2197F387EAF79A069F /* Pods_TactileMapTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -118,12 +158,58 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9E838E69D2138FAB50C42D3F /* Pods_TactileMap_TactileMapUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		14C18AFB2A9DEA6F004FF809 /* MapDetail */ = {
+			isa = PBXGroup;
+			children = (
+				14C18B172A9F24A4004FF809 /* GridCell */,
+				14C18AFD2A9DEB04004FF809 /* PathTraingPage */,
+				14C18AFC2A9DEACC004FF809 /* TactileMapPage */,
+			);
+			path = MapDetail;
+			sourceTree = "<group>";
+		};
+		14C18AFC2A9DEACC004FF809 /* TactileMapPage */ = {
+			isa = PBXGroup;
+			children = (
+				14C18B022A9ED2CB004FF809 /* TactileMapPageViewController.swift */,
+				14C18B032A9ED2CB004FF809 /* TactileMapPageViewController.xib */,
+				14C18B0A2A9ED2F7004FF809 /* TactileMapPageViewModel.swift */,
+			);
+			path = TactileMapPage;
+			sourceTree = "<group>";
+		};
+		14C18AFD2A9DEB04004FF809 /* PathTraingPage */ = {
+			isa = PBXGroup;
+			children = (
+				14C18B062A9ED2D9004FF809 /* PathTraingPageViewController.swift */,
+				14C18B072A9ED2D9004FF809 /* PathTraingPageViewController.xib */,
+			);
+			path = PathTraingPage;
+			sourceTree = "<group>";
+		};
+		14C18B142A9F2265004FF809 /* DrawRectanglesView */ = {
+			isa = PBXGroup;
+			children = (
+				14C18B152A9F226E004FF809 /* DrawRectanglesView.swift */,
+			);
+			path = DrawRectanglesView;
+			sourceTree = "<group>";
+		};
+		14C18B172A9F24A4004FF809 /* GridCell */ = {
+			isa = PBXGroup;
+			children = (
+				14C18B0C2A9ED405004FF809 /* TactileMapGridCellView.swift */,
+			);
+			path = GridCell;
+			sourceTree = "<group>";
+		};
 		14EB6BF02A933DB2006990BE = {
 			isa = PBXGroup;
 			children = (
@@ -131,6 +217,8 @@
 				14EB6C152A933DB4006990BE /* TactileMapTests */,
 				14EB6C1F2A933DB4006990BE /* TactileMapUITests */,
 				14EB6BFA2A933DB3006990BE /* Products */,
+				C1671145CF719D486548E96F /* Pods */,
+				34E419EF86097587509FCEF4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -188,6 +276,7 @@
 		14EB6C302A9349DA006990BE /* Feature */ = {
 			isa = PBXGroup;
 			children = (
+				14C18AFB2A9DEA6F004FF809 /* MapDetail */,
 				14EB6C5B2A95DD56006990BE /* Components */,
 				14EB6C412A95D2C7006990BE /* HomepageTabbarContainer */,
 				14EB6C402A95D2BF006990BE /* Homepage */,
@@ -231,6 +320,7 @@
 		14EB6C342A934B4E006990BE /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				14C18B102A9F1824004FF809 /* TactileMapGridModel.swift */,
 				14EB6C662A95F324006990BE /* MapInfoModel.swift */,
 			);
 			path = Model;
@@ -247,6 +337,7 @@
 			isa = PBXGroup;
 			children = (
 				14EB6C732A9891EF006990BE /* FileReadWriteService.swift */,
+				14C18B182A9F2771004FF809 /* AVSpeechSynthesizerService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -256,6 +347,7 @@
 			children = (
 				14EB6C6F2A98809D006990BE /* MapInfosViewModel.swift */,
 				14EB6C712A98844F006990BE /* SocietyInfoViewModel.swift */,
+				14C18B122A9F1C3B004FF809 /* TactileMapGridViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -266,6 +358,7 @@
 				14EB6C492A95D579006990BE /* HomepageViewController.swift */,
 				14EB6C4A2A95D579006990BE /* HomepageViewController.xib */,
 				14C18AF72A9DC958004FF809 /* HomepageViewModel.swift */,
+				14C18B0E2A9EDC76004FF809 /* HomepageCoordinator.swift */,
 			);
 			path = Homepage;
 			sourceTree = "<group>";
@@ -275,6 +368,7 @@
 			children = (
 				14EB6C452A95D3E0006990BE /* HomepageContainerViewController.swift */,
 				14EB6C462A95D3E0006990BE /* HomepageContainerViewController.xib */,
+				14C18AF92A9DE534004FF809 /* HomepageContainerCoordinator.swift */,
 			);
 			path = HomepageTabbarContainer;
 			sourceTree = "<group>";
@@ -309,29 +403,31 @@
 		14EB6C5B2A95DD56006990BE /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				14C18B142A9F2265004FF809 /* DrawRectanglesView */,
 				14EB6C682A960004006990BE /* HomePageMapInfoTableViewCell */,
-				14EB6C5D2A95DD95006990BE /* MapInfoList */,
-				14EB6C5C2A95DD61006990BE /* SingleMapInfoCell */,
+				14EB6C5D2A95DD95006990BE /* MapInfoListCollection */,
 			);
 			path = Components;
 			sourceTree = "<group>";
 		};
-		14EB6C5C2A95DD61006990BE /* SingleMapInfoCell */ = {
+		14EB6C5C2A95DD61006990BE /* MapInfoCollectionCell */ = {
 			isa = PBXGroup;
 			children = (
 				14EB6C5E2A95E591006990BE /* SingleMapInfoCellView.swift */,
 				14EB6C602A95E59C006990BE /* SingleMapInfoCellView.xib */,
 			);
-			path = SingleMapInfoCell;
+			path = MapInfoCollectionCell;
 			sourceTree = "<group>";
 		};
-		14EB6C5D2A95DD95006990BE /* MapInfoList */ = {
+		14EB6C5D2A95DD95006990BE /* MapInfoListCollection */ = {
 			isa = PBXGroup;
 			children = (
 				14EB6C622A95F266006990BE /* MapInfoListCollectionView.swift */,
 				14EB6C642A95F26F006990BE /* MapInfoListCollectionView.xib */,
+				14EB6C5C2A95DD61006990BE /* MapInfoCollectionCell */,
+				14C18AFE2A9ECA0A004FF809 /* MapInfoListCollectionViewCoordinator.swift */,
 			);
-			path = MapInfoList;
+			path = MapInfoListCollection;
 			sourceTree = "<group>";
 		};
 		14EB6C682A960004006990BE /* HomePageMapInfoTableViewCell */ = {
@@ -343,6 +439,29 @@
 			path = HomePageMapInfoTableViewCell;
 			sourceTree = "<group>";
 		};
+		34E419EF86097587509FCEF4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				794FCFBF6C9E380A67D8C47C /* Pods_TactileMap.framework */,
+				F322D48531325E8171EF9A66 /* Pods_TactileMap_TactileMapUITests.framework */,
+				CFB5C0467ACC29891CE111BF /* Pods_TactileMapTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C1671145CF719D486548E96F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B46CE4E39531D58C8E413803 /* Pods-TactileMap.debug.xcconfig */,
+				D3A13F1AAEEBA3BDF4819406 /* Pods-TactileMap.release.xcconfig */,
+				E6DE7297685BDBB7FAC1301E /* Pods-TactileMap-TactileMapUITests.debug.xcconfig */,
+				625BDE250D9443AC9AB03CDE /* Pods-TactileMap-TactileMapUITests.release.xcconfig */,
+				D00E1B5AEE01E2F2BABD8236 /* Pods-TactileMapTests.debug.xcconfig */,
+				2DF67D921E7EC42F874332A4 /* Pods-TactileMapTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -350,9 +469,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 14EB6C262A933DB4006990BE /* Build configuration list for PBXNativeTarget "TactileMap" */;
 			buildPhases = (
+				BAEE9E39868B54EFBB773A6B /* [CP] Check Pods Manifest.lock */,
 				14EB6BF52A933DB2006990BE /* Sources */,
 				14EB6BF62A933DB2006990BE /* Frameworks */,
 				14EB6BF72A933DB2006990BE /* Resources */,
+				12E78926F12A727354B9475D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -367,6 +488,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 14EB6C292A933DB4006990BE /* Build configuration list for PBXNativeTarget "TactileMapTests" */;
 			buildPhases = (
+				C95129C13FC427ED5939A123 /* [CP] Check Pods Manifest.lock */,
 				14EB6C0E2A933DB4006990BE /* Sources */,
 				14EB6C0F2A933DB4006990BE /* Frameworks */,
 				14EB6C102A933DB4006990BE /* Resources */,
@@ -385,9 +507,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 14EB6C2C2A933DB4006990BE /* Build configuration list for PBXNativeTarget "TactileMapUITests" */;
 			buildPhases = (
+				A5E437EA63EA39BC16AACD83 /* [CP] Check Pods Manifest.lock */,
 				14EB6C182A933DB4006990BE /* Sources */,
 				14EB6C192A933DB4006990BE /* Frameworks */,
 				14EB6C1A2A933DB4006990BE /* Resources */,
+				9205CB01EF4880E1672F4555 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -453,7 +577,9 @@
 				14EB6C092A933DB4006990BE /* Assets.xcassets in Resources */,
 				14EB6C652A95F26F006990BE /* MapInfoListCollectionView.xib in Resources */,
 				14EB6C372A934B70006990BE /* Resource.bundle in Resources */,
+				14C18B052A9ED2CB004FF809 /* TactileMapPageViewController.xib in Resources */,
 				14EB6C4C2A95D579006990BE /* HomepageViewController.xib in Resources */,
+				14C18B092A9ED2D9004FF809 /* PathTraingPageViewController.xib in Resources */,
 				14EB6C612A95E59C006990BE /* SingleMapInfoCellView.xib in Resources */,
 				14EB6C542A95D593006990BE /* SocietyViewController.xib in Resources */,
 				14EB6C582A95D5A6006990BE /* PersonalViewController.xib in Resources */,
@@ -477,25 +603,139 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		12E78926F12A727354B9475D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TactileMap/Pods-TactileMap-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TactileMap/Pods-TactileMap-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TactileMap/Pods-TactileMap-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9205CB01EF4880E1672F4555 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TactileMap-TactileMapUITests/Pods-TactileMap-TactileMapUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TactileMap-TactileMapUITests/Pods-TactileMap-TactileMapUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TactileMap-TactileMapUITests/Pods-TactileMap-TactileMapUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A5E437EA63EA39BC16AACD83 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TactileMap-TactileMapUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BAEE9E39868B54EFBB773A6B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TactileMap-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C95129C13FC427ED5939A123 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TactileMapTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		14EB6BF52A933DB2006990BE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				14EB6C672A95F324006990BE /* MapInfoModel.swift in Sources */,
+				14C18B112A9F1824004FF809 /* TactileMapGridModel.swift in Sources */,
 				14C18AF82A9DC958004FF809 /* HomepageViewModel.swift in Sources */,
+				14C18B0D2A9ED405004FF809 /* TactileMapGridCellView.swift in Sources */,
 				14EB6C6B2A96003E006990BE /* HomePageMapInfoTableViewCell.swift in Sources */,
+				14C18B042A9ED2CB004FF809 /* TactileMapPageViewController.swift in Sources */,
+				14C18AFF2A9ECA0A004FF809 /* MapInfoListCollectionViewCoordinator.swift in Sources */,
 				14EB6C012A933DB3006990BE /* AppMainCoordinator.swift in Sources */,
 				14EB6C5F2A95E591006990BE /* SingleMapInfoCellView.swift in Sources */,
 				14EB6C632A95F266006990BE /* MapInfoListCollectionView.swift in Sources */,
 				14EB6BFD2A933DB3006990BE /* AppDelegate.swift in Sources */,
 				14EB6C3F2A95D0A0006990BE /* Coordinator.swift in Sources */,
+				14C18B082A9ED2D9004FF809 /* PathTraingPageViewController.swift in Sources */,
 				14EB6C4B2A95D579006990BE /* HomepageViewController.swift in Sources */,
+				14C18B132A9F1C3B004FF809 /* TactileMapGridViewModel.swift in Sources */,
+				14C18B162A9F226E004FF809 /* DrawRectanglesView.swift in Sources */,
 				14EB6C722A98844F006990BE /* SocietyInfoViewModel.swift in Sources */,
+				14C18B0F2A9EDC76004FF809 /* HomepageCoordinator.swift in Sources */,
+				14C18B0B2A9ED2F7004FF809 /* TactileMapPageViewModel.swift in Sources */,
 				14EB6BFF2A933DB3006990BE /* SceneDelegate.swift in Sources */,
 				14EB6C532A95D593006990BE /* SocietyViewController.swift in Sources */,
 				14EB6C572A95D5A6006990BE /* PersonalViewController.swift in Sources */,
 				14EB6C702A98809D006990BE /* MapInfosViewModel.swift in Sources */,
+				14C18AFA2A9DE534004FF809 /* HomepageContainerCoordinator.swift in Sources */,
+				14C18B192A9F2771004FF809 /* AVSpeechSynthesizerService.swift in Sources */,
 				14EB6C742A9891EF006990BE /* FileReadWriteService.swift in Sources */,
 				14EB6C5A2A95D5EB006990BE /* UIView+Nib.swift in Sources */,
 				14EB6C472A95D3E0006990BE /* HomepageContainerViewController.swift in Sources */,
@@ -664,6 +904,7 @@
 		};
 		14EB6C272A933DB4006990BE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B46CE4E39531D58C8E413803 /* Pods-TactileMap.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -696,6 +937,7 @@
 		};
 		14EB6C282A933DB4006990BE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D3A13F1AAEEBA3BDF4819406 /* Pods-TactileMap.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -728,6 +970,7 @@
 		};
 		14EB6C2A2A933DB4006990BE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D00E1B5AEE01E2F2BABD8236 /* Pods-TactileMapTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -748,6 +991,7 @@
 		};
 		14EB6C2B2A933DB4006990BE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2DF67D921E7EC42F874332A4 /* Pods-TactileMapTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -768,6 +1012,7 @@
 		};
 		14EB6C2D2A933DB4006990BE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E6DE7297685BDBB7FAC1301E /* Pods-TactileMap-TactileMapUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -786,6 +1031,7 @@
 		};
 		14EB6C2E2A933DB4006990BE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 625BDE250D9443AC9AB03CDE /* Pods-TactileMap-TactileMapUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

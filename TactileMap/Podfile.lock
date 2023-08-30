@@ -1,0 +1,20 @@
+PODS:
+  - Hue (5.0.0)
+  - SideMenu (6.5.0)
+
+DEPENDENCIES:
+  - Hue
+  - SideMenu
+
+SPEC REPOS:
+  trunk:
+    - Hue
+    - SideMenu
+
+SPEC CHECKSUMS:
+  Hue: c129cb67be7d093a82bbbc30ce8a96757bf6f37a
+  SideMenu: f583187d21c5b1dd04c72002be544b555a2627a2
+
+PODFILE CHECKSUM: 9664ac47ac63c307f8031c9a8bba83900dd2ce92
+
+COCOAPODS: 1.12.1

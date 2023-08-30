@@ -28,10 +28,12 @@ class HomepageViewController: UIViewController {
     // MARK: Member var
     private lazy var tableDataSource = makeDataSource()
     var viewModel: HomepageViewModel
+    var coordinator: HomepageCoordinator
     
     // MARK: Life Cycle
-    init(viewModel: HomepageViewModel) {
+    init(viewModel: HomepageViewModel, coordinator: HomepageCoordinator) {
         self.viewModel = viewModel
+        self.coordinator = coordinator
         super.init(nibName: String(describing: Self.self), bundle: nil)
     }
     
@@ -110,6 +112,7 @@ fileprivate extension HomepageViewController {
             tableView: self.mapContentsTableView) { tableView, indexPath, listModel in
                 let cell = self.mapContentsTableView.dequeueReusableCell(withIdentifier: String(describing: HomePageMapInfoTableViewCell.self), for: indexPath) as! HomePageMapInfoTableViewCell
                 cell.setupMapInfoListModel(mapsInfo: listModel.infos)
+                cell.coordinator = self.coordinator
                 return cell
             }
     }

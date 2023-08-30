@@ -12,7 +12,7 @@ struct FavoriteMaps: Hashable, Codable {
 }
 
 struct SingleMapInfoModel: Hashable, Decodable {
-    let mapName: String
+    let imageName: String
     let title: String
     let description: String
     let descriptionIconName: String

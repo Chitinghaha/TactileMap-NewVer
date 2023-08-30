@@ -17,6 +17,7 @@ class MapInfoListCollectionView: UICollectionView {
     private lazy var diffableDataSource: UICollectionViewDiffableDataSource<Section, SingleMapInfoModel> = makeDataSource()
     
     var mapsInfo: [SingleMapInfoModel]!
+    var coordinator: MapInfoListCollectionViewCoordinator!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -51,7 +52,7 @@ fileprivate extension MapInfoListCollectionView {
             
             let cell: SingleMapInfoCellView = collectionView.dequeueReusableCell(withReuseIdentifier: "SingleMapInfoCellView", for: indexPath) as! SingleMapInfoCellView
             
-            cell.mapImageView.image = UIImage(named: model.mapName)
+            cell.mapImageView.image = UIImage(named: model.imageName)
             cell.mapTitleLabel.text = model.title
             cell.subtitleLabel.text = model.description
 
@@ -94,6 +95,6 @@ fileprivate extension MapInfoListCollectionView {
 
 extension MapInfoListCollectionView: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
+        self.coordinator.goToMapDetail(with: self.mapsInfo[indexPath.row])
     }
 }

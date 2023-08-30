@@ -28,9 +28,10 @@ class AppMainCoordinator: Coordinator {
     }
     
     func gotoHomePage() {
-        let homepageContainerVC = HomepageContainerViewController(nibName: "HomepageContainerViewController", bundle: nil)
-        self.navigationController.pushViewController(homepageContainerVC, animated: false)
+        let homepageContainerCoordinator = HomepageContainerCoordinator(navigationController: self.navigationController)
+        self.childCoordinators.append(homepageContainerCoordinator)
         
+        homepageContainerCoordinator.start()
     }
 
 }

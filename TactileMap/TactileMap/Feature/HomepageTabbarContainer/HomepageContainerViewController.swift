@@ -9,14 +9,26 @@ import UIKit
 
 class HomepageContainerViewController: UITabBarController {
 
+    var coordinator: HomepageContainerCoordinator
+    var homepageCoordinator: HomepageCoordinator
+    
+    // MARK: Life Cycle
+    init(coordinator: HomepageContainerCoordinator, homepageCoordinator: HomepageCoordinator) {
+        self.coordinator = coordinator
+        self.homepageCoordinator = homepageCoordinator
+        super.init(nibName: String(describing: Self.self), bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
         
         let homepageVM = HomepageViewModel()
-        let homepageVC = HomepageViewController(viewModel: homepageVM)
+        let homepageVC = HomepageViewController(viewModel: homepageVM, coordinator: self.homepageCoordinator)
         homepageVC.tabBarItem = UITabBarItem(title: "首頁", image: UIImage(systemName: "house"), selectedImage: UIImage(systemName: "house.fill"))
-        
 //        let myMapVC = MyMapViewController(nibName: "MyMapViewController", bundle: nil)
 //        myMapVC.tabBarItem = UITabBarItem(title: "我的地圖", image: UIImage(systemName: "map"), selectedImage: UIImage(systemName: "map.fill"))
 //
