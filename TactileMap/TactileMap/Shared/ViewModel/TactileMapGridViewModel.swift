@@ -15,13 +15,14 @@ class TactileMapGridViewModel {
         var gridModels: [TactileMapGridModel] = []
         
         do {
-            let url = Bundle.main.url(
+            if let url = Bundle.main.url(
                 forResource: "Resource.bundle/Map_\(mapName)",
                 withExtension: "json"
-            )
-            let data = try Data(contentsOf: url!, options: .alwaysMapped)
-            
-            gridModels = try JSONDecoder().decode([TactileMapGridModel].self, from: data)
+            ) {
+                let data = try Data(contentsOf: url, options: .alwaysMapped)
+                
+                gridModels = try JSONDecoder().decode([TactileMapGridModel].self, from: data)
+            }
             
         } catch {
             print("getAllMapInfomation failed, error :\(error)")

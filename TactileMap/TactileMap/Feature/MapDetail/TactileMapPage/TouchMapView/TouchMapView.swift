@@ -1,5 +1,5 @@
 //
-//  DrawRectanglesView.swift
+//  TouchMapView.swift
 //  TactileMap
 //
 //  Created by 陳邦亢 on 2023/8/30.
@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class DrawRectanglesView: UIView {
+class TouchMapView: UIView {
     
     var rectangles: [TactileMapGridCellView] = []
     var selectedRectangleIndex: Int? = nil

@@ -16,10 +16,15 @@ class MapDetailCoordinator: Coordinator {
     
     var mapInfo: SingleMapInfoModel
     
+    var leftMenuNavigationController: SideMenuNavigationController!
+    let sideMenuManager = SideMenuManager()
+    
     init(parentCoordinators: HomepageCoordinator, navigationController: UINavigationController, mapInfo: SingleMapInfoModel) {
         self.parentCoordinators = parentCoordinators
         self.navigationController = navigationController
         self.mapInfo = mapInfo
+
+        self.setupSideMenu()
     }
     
     func start() {
@@ -31,6 +36,7 @@ class MapDetailCoordinator: Coordinator {
     }
     
     func goToHomePage() {
+        
         self.parentCoordinators.backToHomePage()
     }
     
@@ -41,14 +47,50 @@ class MapDetailCoordinator: Coordinator {
             }
             return
         }
-    
         
         let vm = TactileMapPageViewModel(mapInfo: mapInfo)
         let vc = TactileMapPageViewController(viewModel: vm, coordinator: self)
         self.navigationController.pushViewController(vc, animated: true)
+        
+        if let leftMenuNavigationController = self.sideMenuManager.leftMenuNavigationController {
+            leftMenuNavigationController.dismiss(animated: false)
+        }
     }
     
-    func goToPathTraningPage() {
+    func goToPathTrainingPage(with mapInfo: SingleMapInfoModel) {
+        guard Thread.isMainThread else {
+            DispatchQueue.main.async {
+                self.goToPathTrainingPage(with: mapInfo)
+            }
+            return
+        }
         
+        let vm = PathTrainingPageViewModel(mapInfo: self.mapInfo)
+        let vc = PathTrainingPageViewController(viewModel: vm, coordinator: self)
+        
+        self.navigationController.pushViewController(vc, animated: true)
+        if let leftMenuNavigationController = self.sideMenuManager.leftMenuNavigationController {
+            leftMenuNavigationController.dismiss(animated: false)
+        }
     }
+    
+    func setupSideMenu() {
+        let vm = MapDetailSideMenuViewModel(currentMap: self.mapInfo)
+        let leftSideMenuController = MapDetailSideMenuViewController(coodinator: self, viewModel: vm)
+        
+        self.leftMenuNavigationController = SideMenuNavigationController(rootViewController: leftSideMenuController)
+        
+        let presentationStyle = SideMenuPresentationStyle.menuSlideIn
+        presentationStyle.onTopShadowOpacity = 0.8
+
+        var settings = SideMenuSettings()
+        settings.presentationStyle = presentationStyle
+        settings.menuWidth = 700
+        leftMenuNavigationController.settings = settings
+        
+        self.sideMenuManager.leftMenuNavigationController = leftMenuNavigationController
+        self.sideMenuManager.addScreenEdgePanGesturesToPresent(toView: self.navigationController.view, forMenu: .left)
+
+    }
+
 }

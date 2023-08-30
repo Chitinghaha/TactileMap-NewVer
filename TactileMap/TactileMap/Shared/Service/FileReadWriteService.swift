@@ -41,7 +41,7 @@ class FileReadWriteService {
                 return favoriteMaps
             }
             catch {
-                self.saveFavoritesJson(favorites: FavoriteMaps(mapNames: []))
+                _ = self.saveFavoritesJson(favorites: FavoriteMaps(mapNames: []))
                 print("read FavoritesJson failed, error: \(error)")
             }
         }

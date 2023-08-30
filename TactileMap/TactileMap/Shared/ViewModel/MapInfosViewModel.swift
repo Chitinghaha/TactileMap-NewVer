@@ -12,12 +12,14 @@ class MapInfosViewModel {
     
     static let shared = MapInfosViewModel()
     
-    var allMapsInfo: MultiMapInfoListModel
+    let mapInfoLists: MultiMapInfoListModel
+    
+    let allMapsInfo: [SingleMapInfoModel]
     
     var myMapsInfo: [SingleMapInfoModel] { get {
         var myMapsInfo: [SingleMapInfoModel] = []
         
-        self.allMapsInfo.contents.forEach { mapList in
+        self.mapInfoLists.contents.forEach { mapList in
             mapList.infos.forEach {
                 if (self.favoriteMaps.mapNames.contains($0.imageName)) {
                     myMapsInfo.append($0)
@@ -31,13 +33,17 @@ class MapInfosViewModel {
     var favoriteMaps: FavoriteMaps
     
     init() {
-        self.allMapsInfo = FileReadWriteService.shared.getAllMapInfomation()
+        self.mapInfoLists = FileReadWriteService.shared.getAllMapInfomation()
+        
+        self.allMapsInfo = mapInfoLists.contents.flatMap {
+            $0.infos
+        }
         
         self.favoriteMaps = FileReadWriteService.shared.readFavoritesJson() ?? FavoriteMaps(mapNames: [])
     }
     
     func getMapLists(withClock: Bool, canSetFavorite: Bool) -> MultiMapInfoListModel  {
-        var lists = self.allMapsInfo
+        var lists = self.mapInfoLists
         
         for i in 0..<lists.contents.count {
             for j in 0..<lists.contents[i].infos.count {

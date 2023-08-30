@@ -13,14 +13,14 @@
 		14C18AFF2A9ECA0A004FF809 /* MapInfoListCollectionViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C18AFE2A9ECA0A004FF809 /* MapInfoListCollectionViewCoordinator.swift */; };
 		14C18B042A9ED2CB004FF809 /* TactileMapPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C18B022A9ED2CB004FF809 /* TactileMapPageViewController.swift */; };
 		14C18B052A9ED2CB004FF809 /* TactileMapPageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14C18B032A9ED2CB004FF809 /* TactileMapPageViewController.xib */; };
-		14C18B082A9ED2D9004FF809 /* PathTraingPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C18B062A9ED2D9004FF809 /* PathTraingPageViewController.swift */; };
-		14C18B092A9ED2D9004FF809 /* PathTraingPageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14C18B072A9ED2D9004FF809 /* PathTraingPageViewController.xib */; };
+		14C18B082A9ED2D9004FF809 /* PathTrainingPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C18B062A9ED2D9004FF809 /* PathTrainingPageViewController.swift */; };
+		14C18B092A9ED2D9004FF809 /* PathTrainingPageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14C18B072A9ED2D9004FF809 /* PathTrainingPageViewController.xib */; };
 		14C18B0B2A9ED2F7004FF809 /* TactileMapPageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C18B0A2A9ED2F7004FF809 /* TactileMapPageViewModel.swift */; };
 		14C18B0D2A9ED405004FF809 /* TactileMapGridCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C18B0C2A9ED405004FF809 /* TactileMapGridCellView.swift */; };
 		14C18B0F2A9EDC76004FF809 /* HomepageCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C18B0E2A9EDC76004FF809 /* HomepageCoordinator.swift */; };
 		14C18B112A9F1824004FF809 /* TactileMapGridModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C18B102A9F1824004FF809 /* TactileMapGridModel.swift */; };
 		14C18B132A9F1C3B004FF809 /* TactileMapGridViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C18B122A9F1C3B004FF809 /* TactileMapGridViewModel.swift */; };
-		14C18B162A9F226E004FF809 /* DrawRectanglesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C18B152A9F226E004FF809 /* DrawRectanglesView.swift */; };
+		14C18B162A9F226E004FF809 /* TouchMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C18B152A9F226E004FF809 /* TouchMapView.swift */; };
 		14C18B192A9F2771004FF809 /* AVSpeechSynthesizerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C18B182A9F2771004FF809 /* AVSpeechSynthesizerService.swift */; };
 		14C18B1B2A9F2DCF004FF809 /* MapDetailCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C18B1A2A9F2DCF004FF809 /* MapDetailCoordinator.swift */; };
 		14C18B1F2A9F3892004FF809 /* MapDetailSideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C18B1D2A9F3892004FF809 /* MapDetailSideMenuViewController.swift */; };
@@ -57,6 +57,8 @@
 		14EB6C702A98809D006990BE /* MapInfosViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14EB6C6F2A98809D006990BE /* MapInfosViewModel.swift */; };
 		14EB6C722A98844F006990BE /* SocietyInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14EB6C712A98844F006990BE /* SocietyInfoViewModel.swift */; };
 		14EB6C742A9891EF006990BE /* FileReadWriteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14EB6C732A9891EF006990BE /* FileReadWriteService.swift */; };
+		2ADD09802A9F7173004C14CD /* MapDetailSideMenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ADD097F2A9F7173004C14CD /* MapDetailSideMenuViewModel.swift */; };
+		2AE86B0B2A9F831900F1FCEA /* PathTrainingPageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AE86B0A2A9F831900F1FCEA /* PathTrainingPageViewModel.swift */; };
 		9E838E69D2138FAB50C42D3F /* Pods_TactileMap_TactileMapUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F322D48531325E8171EF9A66 /* Pods_TactileMap_TactileMapUITests.framework */; };
 		BB862D2197F387EAF79A069F /* Pods_TactileMapTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFB5C0467ACC29891CE111BF /* Pods_TactileMapTests.framework */; };
 /* End PBXBuildFile section */
@@ -84,14 +86,14 @@
 		14C18AFE2A9ECA0A004FF809 /* MapInfoListCollectionViewCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapInfoListCollectionViewCoordinator.swift; sourceTree = "<group>"; };
 		14C18B022A9ED2CB004FF809 /* TactileMapPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TactileMapPageViewController.swift; sourceTree = "<group>"; };
 		14C18B032A9ED2CB004FF809 /* TactileMapPageViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TactileMapPageViewController.xib; sourceTree = "<group>"; };
-		14C18B062A9ED2D9004FF809 /* PathTraingPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PathTraingPageViewController.swift; sourceTree = "<group>"; };
-		14C18B072A9ED2D9004FF809 /* PathTraingPageViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PathTraingPageViewController.xib; sourceTree = "<group>"; };
+		14C18B062A9ED2D9004FF809 /* PathTrainingPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PathTrainingPageViewController.swift; sourceTree = "<group>"; };
+		14C18B072A9ED2D9004FF809 /* PathTrainingPageViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PathTrainingPageViewController.xib; sourceTree = "<group>"; };
 		14C18B0A2A9ED2F7004FF809 /* TactileMapPageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TactileMapPageViewModel.swift; sourceTree = "<group>"; };
 		14C18B0C2A9ED405004FF809 /* TactileMapGridCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TactileMapGridCellView.swift; sourceTree = "<group>"; };
 		14C18B0E2A9EDC76004FF809 /* HomepageCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomepageCoordinator.swift; sourceTree = "<group>"; };
 		14C18B102A9F1824004FF809 /* TactileMapGridModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TactileMapGridModel.swift; sourceTree = "<group>"; };
 		14C18B122A9F1C3B004FF809 /* TactileMapGridViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TactileMapGridViewModel.swift; sourceTree = "<group>"; };
-		14C18B152A9F226E004FF809 /* DrawRectanglesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawRectanglesView.swift; sourceTree = "<group>"; };
+		14C18B152A9F226E004FF809 /* TouchMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchMapView.swift; sourceTree = "<group>"; };
 		14C18B182A9F2771004FF809 /* AVSpeechSynthesizerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AVSpeechSynthesizerService.swift; sourceTree = "<group>"; };
 		14C18B1A2A9F2DCF004FF809 /* MapDetailCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapDetailCoordinator.swift; sourceTree = "<group>"; };
 		14C18B1D2A9F3892004FF809 /* MapDetailSideMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapDetailSideMenuViewController.swift; sourceTree = "<group>"; };
@@ -132,6 +134,8 @@
 		14EB6C6F2A98809D006990BE /* MapInfosViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapInfosViewModel.swift; sourceTree = "<group>"; };
 		14EB6C712A98844F006990BE /* SocietyInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocietyInfoViewModel.swift; sourceTree = "<group>"; };
 		14EB6C732A9891EF006990BE /* FileReadWriteService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileReadWriteService.swift; sourceTree = "<group>"; };
+		2ADD097F2A9F7173004C14CD /* MapDetailSideMenuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapDetailSideMenuViewModel.swift; sourceTree = "<group>"; };
+		2AE86B0A2A9F831900F1FCEA /* PathTrainingPageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PathTrainingPageViewModel.swift; sourceTree = "<group>"; };
 		2DF67D921E7EC42F874332A4 /* Pods-TactileMapTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TactileMapTests.release.xcconfig"; path = "Target Support Files/Pods-TactileMapTests/Pods-TactileMapTests.release.xcconfig"; sourceTree = "<group>"; };
 		625BDE250D9443AC9AB03CDE /* Pods-TactileMap-TactileMapUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TactileMap-TactileMapUITests.release.xcconfig"; path = "Target Support Files/Pods-TactileMap-TactileMapUITests/Pods-TactileMap-TactileMapUITests.release.xcconfig"; sourceTree = "<group>"; };
 		794FCFBF6C9E380A67D8C47C /* Pods_TactileMap.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TactileMap.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -175,9 +179,7 @@
 			isa = PBXGroup;
 			children = (
 				14C18B1C2A9F385E004FF809 /* SideMenuView */,
-				14C18B142A9F2265004FF809 /* DrawRectanglesView */,
-				14C18B172A9F24A4004FF809 /* GridCell */,
-				14C18AFD2A9DEB04004FF809 /* PathTraingPage */,
+				14C18AFD2A9DEB04004FF809 /* PathTrainingPage */,
 				14C18AFC2A9DEACC004FF809 /* TactileMapPage */,
 				14C18B1A2A9F2DCF004FF809 /* MapDetailCoordinator.swift */,
 			);
@@ -187,6 +189,7 @@
 		14C18AFC2A9DEACC004FF809 /* TactileMapPage */ = {
 			isa = PBXGroup;
 			children = (
+				14C18B142A9F2265004FF809 /* TouchMapView */,
 				14C18B022A9ED2CB004FF809 /* TactileMapPageViewController.swift */,
 				14C18B032A9ED2CB004FF809 /* TactileMapPageViewController.xib */,
 				14C18B0A2A9ED2F7004FF809 /* TactileMapPageViewModel.swift */,
@@ -194,29 +197,24 @@
 			path = TactileMapPage;
 			sourceTree = "<group>";
 		};
-		14C18AFD2A9DEB04004FF809 /* PathTraingPage */ = {
+		14C18AFD2A9DEB04004FF809 /* PathTrainingPage */ = {
 			isa = PBXGroup;
 			children = (
-				14C18B062A9ED2D9004FF809 /* PathTraingPageViewController.swift */,
-				14C18B072A9ED2D9004FF809 /* PathTraingPageViewController.xib */,
+				2AE86B0C2A9F877500F1FCEA /* PathTrainingView */,
+				14C18B062A9ED2D9004FF809 /* PathTrainingPageViewController.swift */,
+				14C18B072A9ED2D9004FF809 /* PathTrainingPageViewController.xib */,
+				2AE86B0A2A9F831900F1FCEA /* PathTrainingPageViewModel.swift */,
 			);
-			path = PathTraingPage;
+			path = PathTrainingPage;
 			sourceTree = "<group>";
 		};
-		14C18B142A9F2265004FF809 /* DrawRectanglesView */ = {
+		14C18B142A9F2265004FF809 /* TouchMapView */ = {
 			isa = PBXGroup;
 			children = (
-				14C18B152A9F226E004FF809 /* DrawRectanglesView.swift */,
-			);
-			path = DrawRectanglesView;
-			sourceTree = "<group>";
-		};
-		14C18B172A9F24A4004FF809 /* GridCell */ = {
-			isa = PBXGroup;
-			children = (
+				14C18B152A9F226E004FF809 /* TouchMapView.swift */,
 				14C18B0C2A9ED405004FF809 /* TactileMapGridCellView.swift */,
 			);
-			path = GridCell;
+			path = TouchMapView;
 			sourceTree = "<group>";
 		};
 		14C18B1C2A9F385E004FF809 /* SideMenuView */ = {
@@ -224,6 +222,7 @@
 			children = (
 				14C18B1D2A9F3892004FF809 /* MapDetailSideMenuViewController.swift */,
 				14C18B1E2A9F3892004FF809 /* MapDetailSideMenuViewController.xib */,
+				2ADD097F2A9F7173004C14CD /* MapDetailSideMenuViewModel.swift */,
 			);
 			path = SideMenuView;
 			sourceTree = "<group>";
@@ -456,6 +455,13 @@
 			path = HomePageMapInfoTableViewCell;
 			sourceTree = "<group>";
 		};
+		2AE86B0C2A9F877500F1FCEA /* PathTrainingView */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = PathTrainingView;
+			sourceTree = "<group>";
+		};
 		34E419EF86097587509FCEF4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -597,7 +603,7 @@
 				14EB6C372A934B70006990BE /* Resource.bundle in Resources */,
 				14C18B052A9ED2CB004FF809 /* TactileMapPageViewController.xib in Resources */,
 				14EB6C4C2A95D579006990BE /* HomepageViewController.xib in Resources */,
-				14C18B092A9ED2D9004FF809 /* PathTraingPageViewController.xib in Resources */,
+				14C18B092A9ED2D9004FF809 /* PathTrainingPageViewController.xib in Resources */,
 				14EB6C612A95E59C006990BE /* SingleMapInfoCellView.xib in Resources */,
 				14EB6C542A95D593006990BE /* SocietyViewController.xib in Resources */,
 				14EB6C582A95D5A6006990BE /* PersonalViewController.xib in Resources */,
@@ -742,17 +748,19 @@
 				14C18B1F2A9F3892004FF809 /* MapDetailSideMenuViewController.swift in Sources */,
 				14EB6BFD2A933DB3006990BE /* AppDelegate.swift in Sources */,
 				14EB6C3F2A95D0A0006990BE /* Coordinator.swift in Sources */,
-				14C18B082A9ED2D9004FF809 /* PathTraingPageViewController.swift in Sources */,
+				14C18B082A9ED2D9004FF809 /* PathTrainingPageViewController.swift in Sources */,
 				14EB6C4B2A95D579006990BE /* HomepageViewController.swift in Sources */,
 				14C18B132A9F1C3B004FF809 /* TactileMapGridViewModel.swift in Sources */,
-				14C18B162A9F226E004FF809 /* DrawRectanglesView.swift in Sources */,
+				14C18B162A9F226E004FF809 /* TouchMapView.swift in Sources */,
 				14EB6C722A98844F006990BE /* SocietyInfoViewModel.swift in Sources */,
 				14C18B0F2A9EDC76004FF809 /* HomepageCoordinator.swift in Sources */,
+				2AE86B0B2A9F831900F1FCEA /* PathTrainingPageViewModel.swift in Sources */,
 				14C18B0B2A9ED2F7004FF809 /* TactileMapPageViewModel.swift in Sources */,
 				14EB6BFF2A933DB3006990BE /* SceneDelegate.swift in Sources */,
 				14EB6C532A95D593006990BE /* SocietyViewController.swift in Sources */,
 				14EB6C572A95D5A6006990BE /* PersonalViewController.swift in Sources */,
 				14EB6C702A98809D006990BE /* MapInfosViewModel.swift in Sources */,
+				2ADD09802A9F7173004C14CD /* MapDetailSideMenuViewModel.swift in Sources */,
 				14C18B1B2A9F2DCF004FF809 /* MapDetailCoordinator.swift in Sources */,
 				14C18AFA2A9DE534004FF809 /* HomepageContainerCoordinator.swift in Sources */,
 				14C18B192A9F2771004FF809 /* AVSpeechSynthesizerService.swift in Sources */,
