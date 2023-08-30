@@ -44,11 +44,18 @@ class HomepageViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.initTableView()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.setNavigationBarHidden(true, animated: animated)
+    }
+    
+    func initTableView() {
         self.mapContentsTableView.delegate = self
         self.mapContentsTableView.separatorStyle = .none
         
         mapContentsTableView.register(UINib(nibName: String(describing: HomePageMapInfoTableViewCell.self), bundle: nil), forCellReuseIdentifier: String(describing: HomePageMapInfoTableViewCell.self))
-        
         
         var snapshot = NSDiffableDataSourceSnapshot<Section, MapInfoListModel>()
         
@@ -60,14 +67,10 @@ class HomepageViewController: UIViewController {
         
         self.tableDataSource.defaultRowAnimation = .fade
         self.tableDataSource.apply(snapshot, animatingDifferences: true)
-    
+        
         let estimatedHeight = CGFloat(self.viewModel.mapInfoListModels.contents.count) * (self.tableViewCellHeight + self.tableViewHeaderHeight + 50)
-
+        
         self.mapContentsTableView.heightAnchor.constraint(equalToConstant: estimatedHeight).isActive = true
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        self.navigationController?.setNavigationBarHidden(true, animated: animated)
     }
 }
 
@@ -106,7 +109,6 @@ extension HomepageViewController: UITableViewDelegate {
 
 @available(iOS 13.0, *)
 fileprivate extension HomepageViewController {
-    
     func makeDataSource() -> UITableViewDiffableDataSource<Section, MapInfoListModel> {
         return UITableViewDiffableDataSource(
             tableView: self.mapContentsTableView) { tableView, indexPath, listModel in

@@ -20,7 +20,6 @@ class HomePageMapInfoTableViewCell: UITableViewCell {
         
         self.mapInfoListCollectionView = MapInfoListCollectionView.loadFromNib()
         self.addSubview(self.mapInfoListCollectionView)
-        
     }
     
     override func layoutSubviews() {
@@ -43,11 +42,4 @@ class HomePageMapInfoTableViewCell: UITableViewCell {
         
         self.mapInfoListCollectionView.setUp(mapsInfo: self.mapsInfo!)
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-    
 }

@@ -7,6 +7,7 @@
 
 import Foundation
 
-protocol HomepageCoordinator: MapInfoListCollectionViewCoordinator {
+protocol HomepageCoordinator: Coordinator, MapInfoListCollectionViewCoordinator {
     func goToMapDetail(with mapInfo: SingleMapInfoModel)
+    func backToHomePage()
 }

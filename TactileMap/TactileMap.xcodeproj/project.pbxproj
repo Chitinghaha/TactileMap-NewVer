@@ -22,6 +22,9 @@
 		14C18B132A9F1C3B004FF809 /* TactileMapGridViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C18B122A9F1C3B004FF809 /* TactileMapGridViewModel.swift */; };
 		14C18B162A9F226E004FF809 /* DrawRectanglesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C18B152A9F226E004FF809 /* DrawRectanglesView.swift */; };
 		14C18B192A9F2771004FF809 /* AVSpeechSynthesizerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C18B182A9F2771004FF809 /* AVSpeechSynthesizerService.swift */; };
+		14C18B1B2A9F2DCF004FF809 /* MapDetailCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C18B1A2A9F2DCF004FF809 /* MapDetailCoordinator.swift */; };
+		14C18B1F2A9F3892004FF809 /* MapDetailSideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C18B1D2A9F3892004FF809 /* MapDetailSideMenuViewController.swift */; };
+		14C18B202A9F3892004FF809 /* MapDetailSideMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14C18B1E2A9F3892004FF809 /* MapDetailSideMenuViewController.xib */; };
 		14EB6BFD2A933DB3006990BE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14EB6BFC2A933DB3006990BE /* AppDelegate.swift */; };
 		14EB6BFF2A933DB3006990BE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14EB6BFE2A933DB3006990BE /* SceneDelegate.swift */; };
 		14EB6C012A933DB3006990BE /* AppMainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14EB6C002A933DB3006990BE /* AppMainCoordinator.swift */; };
@@ -90,6 +93,9 @@
 		14C18B122A9F1C3B004FF809 /* TactileMapGridViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TactileMapGridViewModel.swift; sourceTree = "<group>"; };
 		14C18B152A9F226E004FF809 /* DrawRectanglesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawRectanglesView.swift; sourceTree = "<group>"; };
 		14C18B182A9F2771004FF809 /* AVSpeechSynthesizerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AVSpeechSynthesizerService.swift; sourceTree = "<group>"; };
+		14C18B1A2A9F2DCF004FF809 /* MapDetailCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapDetailCoordinator.swift; sourceTree = "<group>"; };
+		14C18B1D2A9F3892004FF809 /* MapDetailSideMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapDetailSideMenuViewController.swift; sourceTree = "<group>"; };
+		14C18B1E2A9F3892004FF809 /* MapDetailSideMenuViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MapDetailSideMenuViewController.xib; sourceTree = "<group>"; };
 		14EB6BF92A933DB3006990BE /* TactileMap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TactileMap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		14EB6BFC2A933DB3006990BE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		14EB6BFE2A933DB3006990BE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -168,9 +174,12 @@
 		14C18AFB2A9DEA6F004FF809 /* MapDetail */ = {
 			isa = PBXGroup;
 			children = (
+				14C18B1C2A9F385E004FF809 /* SideMenuView */,
+				14C18B142A9F2265004FF809 /* DrawRectanglesView */,
 				14C18B172A9F24A4004FF809 /* GridCell */,
 				14C18AFD2A9DEB04004FF809 /* PathTraingPage */,
 				14C18AFC2A9DEACC004FF809 /* TactileMapPage */,
+				14C18B1A2A9F2DCF004FF809 /* MapDetailCoordinator.swift */,
 			);
 			path = MapDetail;
 			sourceTree = "<group>";
@@ -208,6 +217,15 @@
 				14C18B0C2A9ED405004FF809 /* TactileMapGridCellView.swift */,
 			);
 			path = GridCell;
+			sourceTree = "<group>";
+		};
+		14C18B1C2A9F385E004FF809 /* SideMenuView */ = {
+			isa = PBXGroup;
+			children = (
+				14C18B1D2A9F3892004FF809 /* MapDetailSideMenuViewController.swift */,
+				14C18B1E2A9F3892004FF809 /* MapDetailSideMenuViewController.xib */,
+			);
+			path = SideMenuView;
 			sourceTree = "<group>";
 		};
 		14EB6BF02A933DB2006990BE = {
@@ -403,7 +421,6 @@
 		14EB6C5B2A95DD56006990BE /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				14C18B142A9F2265004FF809 /* DrawRectanglesView */,
 				14EB6C682A960004006990BE /* HomePageMapInfoTableViewCell */,
 				14EB6C5D2A95DD95006990BE /* MapInfoListCollection */,
 			);
@@ -573,6 +590,7 @@
 			files = (
 				14EB6C482A95D3E0006990BE /* HomepageContainerViewController.xib in Resources */,
 				14EB6C6C2A96003E006990BE /* HomePageMapInfoTableViewCell.xib in Resources */,
+				14C18B202A9F3892004FF809 /* MapDetailSideMenuViewController.xib in Resources */,
 				14EB6C0C2A933DB4006990BE /* LaunchScreen.storyboard in Resources */,
 				14EB6C092A933DB4006990BE /* Assets.xcassets in Resources */,
 				14EB6C652A95F26F006990BE /* MapInfoListCollectionView.xib in Resources */,
@@ -721,6 +739,7 @@
 				14EB6C012A933DB3006990BE /* AppMainCoordinator.swift in Sources */,
 				14EB6C5F2A95E591006990BE /* SingleMapInfoCellView.swift in Sources */,
 				14EB6C632A95F266006990BE /* MapInfoListCollectionView.swift in Sources */,
+				14C18B1F2A9F3892004FF809 /* MapDetailSideMenuViewController.swift in Sources */,
 				14EB6BFD2A933DB3006990BE /* AppDelegate.swift in Sources */,
 				14EB6C3F2A95D0A0006990BE /* Coordinator.swift in Sources */,
 				14C18B082A9ED2D9004FF809 /* PathTraingPageViewController.swift in Sources */,
@@ -734,6 +753,7 @@
 				14EB6C532A95D593006990BE /* SocietyViewController.swift in Sources */,
 				14EB6C572A95D5A6006990BE /* PersonalViewController.swift in Sources */,
 				14EB6C702A98809D006990BE /* MapInfosViewModel.swift in Sources */,
+				14C18B1B2A9F2DCF004FF809 /* MapDetailCoordinator.swift in Sources */,
 				14C18AFA2A9DE534004FF809 /* HomepageContainerCoordinator.swift in Sources */,
 				14C18B192A9F2771004FF809 /* AVSpeechSynthesizerService.swift in Sources */,
 				14EB6C742A9891EF006990BE /* FileReadWriteService.swift in Sources */,

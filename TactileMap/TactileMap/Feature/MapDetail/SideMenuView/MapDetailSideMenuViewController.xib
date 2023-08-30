@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="ipad10_9rounded" orientation="landscape" layout="fullscreen" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MapDetailSideMenuViewController" customModule="TactileMap" customModuleProvider="target">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="1180" height="820"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="j0g-7m-fTM">
+                    <rect key="frame" x="0.0" y="24" width="1180" height="776"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Qi-l0-3EY">
+                            <rect key="frame" x="0.0" y="0.0" width="1180" height="20.5"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CfY-KM-BSf">
+                            <rect key="frame" x="0.0" y="20.5" width="1180" height="20.5"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NGr-4v-SWR">
+                            <rect key="frame" x="0.0" y="41" width="1180" height="500.5"/>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                        </button>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="tys-Ou-GWx">
+                            <rect key="frame" x="0.0" y="541.5" width="1180" height="200"/>
+                        </stackView>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="luW-1q-cSx">
+                            <rect key="frame" x="0.0" y="741.5" width="1180" height="34.5"/>
+                            <subviews>
+                                <stackView opaque="NO" contentMode="scaleToFill" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="4gd-kk-arW">
+                                    <rect key="frame" x="0.0" y="0.0" width="1180" height="34.5"/>
+                                    <subviews>
+                                        <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YmN-HO-iJi">
+                                            <rect key="frame" x="0.0" y="0.0" width="51" height="34.5"/>
+                                        </switch>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="進入地圖播放地圖名稱" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wTX-UF-PZo">
+                                            <rect key="frame" x="79" y="0.0" width="1101" height="34.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </stackView>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bLH-I6-odL">
+                                    <rect key="frame" x="0.0" y="0.0" width="1180" height="34.5"/>
+                                    <state key="normal" title="Button"/>
+                                    <buttonConfiguration key="configuration" style="plain" title=" "/>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <constraints>
+                                <constraint firstItem="bLH-I6-odL" firstAttribute="leading" secondItem="luW-1q-cSx" secondAttribute="leading" id="2gT-Cg-wdd"/>
+                                <constraint firstAttribute="bottom" secondItem="bLH-I6-odL" secondAttribute="bottom" id="3zw-fR-9Cz"/>
+                                <constraint firstItem="4gd-kk-arW" firstAttribute="top" secondItem="luW-1q-cSx" secondAttribute="top" id="NHH-Ld-0zU"/>
+                                <constraint firstItem="bLH-I6-odL" firstAttribute="top" secondItem="luW-1q-cSx" secondAttribute="top" id="No9-CU-m6K"/>
+                                <constraint firstAttribute="trailing" secondItem="4gd-kk-arW" secondAttribute="trailing" id="hCY-Fl-emu"/>
+                                <constraint firstAttribute="bottom" secondItem="4gd-kk-arW" secondAttribute="bottom" id="imc-AV-ScM"/>
+                                <constraint firstAttribute="trailing" secondItem="bLH-I6-odL" secondAttribute="trailing" id="x4F-SF-GEB"/>
+                                <constraint firstItem="4gd-kk-arW" firstAttribute="leading" secondItem="luW-1q-cSx" secondAttribute="leading" id="xal-yF-SQc"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                </stackView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="j0g-7m-fTM" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="1MQ-e9-V1V"/>
+                <constraint firstItem="j0g-7m-fTM" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="bGH-oo-jfO"/>
+                <constraint firstItem="j0g-7m-fTM" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="q0s-tq-s3T"/>
+                <constraint firstItem="j0g-7m-fTM" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="riQ-87-6Gz"/>
+            </constraints>
+            <point key="canvasLocation" x="31" y="20"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

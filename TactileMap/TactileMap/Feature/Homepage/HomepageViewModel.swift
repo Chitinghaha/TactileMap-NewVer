@@ -14,7 +14,6 @@ class HomepageViewModel {
     
     init() {
         self.mapInfoListModels = MapInfosViewModel.shared.getMapLists(withClock: true, canSetFavorite: false)
-        
     }
     
     

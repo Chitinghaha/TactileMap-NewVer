@@ -7,6 +7,6 @@
 
 import Foundation
 
-protocol MapInfoListCollectionViewCoordinator {
+protocol MapInfoListCollectionViewCoordinator: Coordinator {
     func goToMapDetail(with mapInfo: SingleMapInfoModel)
 }
