@@ -7,7 +7,8 @@ target 'TactileMap' do
 
   # Pods for TactileMap
   pod 'Hue'
-  pod 'SideMenu'  
+  pod 'SideMenu'
+  pod 'DropDown'
 
   target 'TactileMapTests' do
     inherit! :search_paths

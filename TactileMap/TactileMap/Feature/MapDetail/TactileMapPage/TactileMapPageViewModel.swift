@@ -15,12 +15,21 @@ class TactileMapPageViewModel {
         TactileMapGridViewModel.shared.getGridModels(mapName: self.mapInfo.title)
     }}
 
+    var shouldPlayMapName: Bool {
+        get {
+            UserDefaults.standard.register(defaults: ["EnterMapShouldPlayMapName" : true])
+            return UserDefaults.standard.bool(forKey: "EnterMapShouldPlayMapName")
+        }
+    }
+    
     init(mapInfo: SingleMapInfoModel) {
         self.mapInfo = mapInfo
     }
     
     func viewDidAppear() {
-        AVSpeechSynthesizerService.shared.speak(content: self.mapInfo.title)
+        if (self.shouldPlayMapName) {
+            AVSpeechSynthesizerService.shared.speak(content: self.mapInfo.title)
+        }
     }
     
     func getRectangleViews(in view: UIView) -> [TactileMapGridCellView]{

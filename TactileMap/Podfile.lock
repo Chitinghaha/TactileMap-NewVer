@@ -1,20 +1,24 @@
 PODS:
+  - DropDown (2.3.13)
   - Hue (5.0.0)
   - SideMenu (6.5.0)
 
 DEPENDENCIES:
+  - DropDown
   - Hue
   - SideMenu
 
 SPEC REPOS:
   trunk:
+    - DropDown
     - Hue
     - SideMenu
 
 SPEC CHECKSUMS:
+  DropDown: 8a2116376c1981888557f72ec2ffc9a5e0e456ec
   Hue: c129cb67be7d093a82bbbc30ce8a96757bf6f37a
   SideMenu: f583187d21c5b1dd04c72002be544b555a2627a2
 
-PODFILE CHECKSUM: 9664ac47ac63c307f8031c9a8bba83900dd2ce92
+PODFILE CHECKSUM: 0461844c2840a89c7c816125297f8aaecc3d221c
 
 COCOAPODS: 1.12.1

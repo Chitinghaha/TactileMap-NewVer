@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Combine
 
 class MapDetailSideMenuViewController: UIViewController {
     
@@ -41,23 +42,40 @@ class MapDetailSideMenuViewController: UIViewController {
     
     @IBOutlet weak var startPointContainerView: UIView! { didSet {
         startPointContainerView.layer.cornerRadius = 10
+        startPointContainerView.layer.borderColor = UIColor.systemGray4.cgColor
+        startPointContainerView.layer.borderWidth = 1
     }}
     @IBOutlet weak var startPointLabel: UILabel!
     
     @IBOutlet weak var endPointContainerView: UIView!{ didSet {
         endPointContainerView.layer.cornerRadius = 10
+        endPointContainerView.layer.borderColor = UIColor.systemGray4.cgColor
+        endPointContainerView.layer.borderWidth = 1
     }}
     
     @IBOutlet weak var endPointLabel: UILabel!
     
-    var coodinator: MapDetailCoordinator
+    @IBOutlet weak var confirmPathButton: UIButton!
+    
     var viewModel: MapDetailSideMenuViewModel
     
-    init(coodinator: MapDetailCoordinator, viewModel: MapDetailSideMenuViewModel) {
-        self.coodinator = coodinator
+    var isInTactileMap: Bool = true
+    
+    var shouldPlayMapName: Bool {
+        get {
+            UserDefaults.standard.bool(forKey: "EnterMapShouldPlayMapName")
+        }
+        set {
+            UserDefaults.standard.setValue(newValue, forKey: "EnterMapShouldPlayMapName")
+        }
+    }
+    
+    private var cancellables = Set<AnyCancellable>()
+
+    init(viewModel: MapDetailSideMenuViewModel) {
         self.viewModel = viewModel
-        
         super.init(nibName: String(describing: Self.self), bundle: nil)
+        
     }
     
     required init?(coder: NSCoder) {
@@ -67,35 +85,72 @@ class MapDetailSideMenuViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Do any additional setup after loading the view.
+        self.initView()
+        self.setupBinding()
+
     }
     
-    
+    func initView() {
+        self.shouldPlayMapNameSwitch.isOn = self.shouldPlayMapName
+        
+        self.isInTactileMap = true
+        self.trainingPathPageRelatedStackView.isHidden = true
+        self.tactileMapPageRelatedStackView.isHidden = false
+    }
     
     @IBAction func onclickGoBackButton(_ sender: Any) {
-        self.coodinator.goToTactileMapPage()
+        self.viewModel.onclickGoBackButton()
+        
     }
     
     @IBAction func onClickGoToHomePageButton(_ sender: Any) {
-        self.coodinator.goToHomePage()
+        self.viewModel.onClickGoToHomePageButton()
     }
     
-    @IBAction func onclickenterPathPageButton(_ sender: Any) {
-        self.coodinator.goToPathTrainingPage(with: self.viewModel.currentMap)
+    @IBAction func onclickEnterPathPageButton(_ sender: Any) {
+        self.viewModel.onclickEnterPathPageButton()
     }
-    
     
     @IBAction func onclickShouldPlayMapNameSwitchOutterButton(_ sender: Any) {
-        
+        self.shouldPlayMapName.toggle()
+        self.shouldPlayMapNameSwitch.isOn.toggle()
     }
     
-    @IBAction func onClickSelectStartPoint(_ sender: Any) {
-        
+    @IBAction func onClickSelectStartPoint(_ sender: UIButton) {
+        self.viewModel.onClickSelectStartPoint(sender)
+    }
+    
+    @IBAction func onClickSelectEndPoint(_ sender: UIButton) {
+        self.viewModel.onClickSelectEndPoint(sender)
+
+    }
+    
+    @IBAction func onclickConfirmPathButton(_ sender: Any) {
+        self.viewModel.onclickConfirmPathButton()
     }
     
     
-    @IBAction func onClickSelectEndPoint(_ sender: Any) {
+    func setupBinding() {
+        self.viewModel.$currentStartPoint
+            .sink { [weak self] in
+                guard let self = self else { return }
+                self.startPointLabel.text = $0
+            }
+            .store(in: &cancellables)
         
+        self.viewModel.$currentEndPoint
+            .sink { [weak self] in
+                guard let self = self else { return }
+                self.endPointLabel.text = $0
+            }
+            .store(in: &cancellables)
+        
+        self.viewModel.$menuPosition
+            .sink { [weak self] in
+                guard let self = self else { return }
+                self.trainingPathPageRelatedStackView.isHidden = $0 == .tactileMap
+                self.tactileMapPageRelatedStackView.isHidden = $0 == .pathTraining
+            }
+            .store(in: &cancellables)
     }
-    
 }

@@ -32,13 +32,19 @@ class PathTrainingPageViewController: UIViewController {
 
     override func viewDidAppear(_ animated: Bool) {
         self.initView()
+        self.setupBinding()
     }
     
     func initView() {
-        let drawRectanglesView = TouchMapView()
+        let drawRectanglesView = PathTrainingView()
         drawRectanglesView.rectangles = self.viewModel.getRectangleViews(in: self.view)
 
         self.mapContainerStackView.addArrangedSubview(drawRectanglesView)
+        
     }
 
+    func setupBinding() {
+        
+    }
+    
 }

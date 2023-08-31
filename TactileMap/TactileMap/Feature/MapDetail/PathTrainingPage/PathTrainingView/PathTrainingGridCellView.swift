@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 import Hue
 
-class TactileMapGridCellView: UIView {
+class PathTrainingViewGridCellView: UIView {
     let frameRect: CGRect
     let color: UIColor
     let name: String
@@ -24,16 +24,16 @@ class TactileMapGridCellView: UIView {
         super.init(frame: frameRect)
 
         self.backgroundColor = self.color
-        
+
         self.label.text = name
         self.label.textAlignment = .center
+        self.label.font = UIFont.systemFont(ofSize: 24, weight: .bold)
         self.label.textColor = .white
 //        self.label.textColor = self.color.complementaryColor()
-        
+
         self.addSubview(label)
 
         self.label.translatesAutoresizingMaskIntoConstraints = false
-        self.label.font = UIFont.systemFont(ofSize: 24)
         NSLayoutConstraint.activate([
             self.label.centerXAnchor.constraint(equalTo: self.centerXAnchor),
             self.label.centerYAnchor.constraint(equalTo: self.centerYAnchor)

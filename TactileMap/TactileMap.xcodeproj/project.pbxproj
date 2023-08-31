@@ -25,6 +25,10 @@
 		14C18B1B2A9F2DCF004FF809 /* MapDetailCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C18B1A2A9F2DCF004FF809 /* MapDetailCoordinator.swift */; };
 		14C18B1F2A9F3892004FF809 /* MapDetailSideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C18B1D2A9F3892004FF809 /* MapDetailSideMenuViewController.swift */; };
 		14C18B202A9F3892004FF809 /* MapDetailSideMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14C18B1E2A9F3892004FF809 /* MapDetailSideMenuViewController.xib */; };
+		14C18B282AA02005004FF809 /* PathTrainingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C18B262AA02005004FF809 /* PathTrainingView.swift */; };
+		14C18B292AA02005004FF809 /* PathTrainingGridCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C18B272AA02005004FF809 /* PathTrainingGridCellView.swift */; };
+		14C18B2D2AA044C2004FF809 /* UIView+Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C18B2C2AA044C2004FF809 /* UIView+Toast.swift */; };
+		14C18B2F2AA06049004FF809 /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C18B2E2AA06049004FF809 /* UIColor+.swift */; };
 		14EB6BFD2A933DB3006990BE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14EB6BFC2A933DB3006990BE /* AppDelegate.swift */; };
 		14EB6BFF2A933DB3006990BE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14EB6BFE2A933DB3006990BE /* SceneDelegate.swift */; };
 		14EB6C012A933DB3006990BE /* AppMainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14EB6C002A933DB3006990BE /* AppMainCoordinator.swift */; };
@@ -98,6 +102,10 @@
 		14C18B1A2A9F2DCF004FF809 /* MapDetailCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapDetailCoordinator.swift; sourceTree = "<group>"; };
 		14C18B1D2A9F3892004FF809 /* MapDetailSideMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapDetailSideMenuViewController.swift; sourceTree = "<group>"; };
 		14C18B1E2A9F3892004FF809 /* MapDetailSideMenuViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MapDetailSideMenuViewController.xib; sourceTree = "<group>"; };
+		14C18B262AA02005004FF809 /* PathTrainingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PathTrainingView.swift; sourceTree = "<group>"; };
+		14C18B272AA02005004FF809 /* PathTrainingGridCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PathTrainingGridCellView.swift; sourceTree = "<group>"; };
+		14C18B2C2AA044C2004FF809 /* UIView+Toast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Toast.swift"; sourceTree = "<group>"; };
+		14C18B2E2AA06049004FF809 /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
 		14EB6BF92A933DB3006990BE /* TactileMap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TactileMap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		14EB6BFC2A933DB3006990BE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		14EB6BFE2A933DB3006990BE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -200,7 +208,7 @@
 		14C18AFD2A9DEB04004FF809 /* PathTrainingPage */ = {
 			isa = PBXGroup;
 			children = (
-				2AE86B0C2A9F877500F1FCEA /* PathTrainingView */,
+				14C18B212AA01FCC004FF809 /* PathTrainingView */,
 				14C18B062A9ED2D9004FF809 /* PathTrainingPageViewController.swift */,
 				14C18B072A9ED2D9004FF809 /* PathTrainingPageViewController.xib */,
 				2AE86B0A2A9F831900F1FCEA /* PathTrainingPageViewModel.swift */,
@@ -225,6 +233,15 @@
 				2ADD097F2A9F7173004C14CD /* MapDetailSideMenuViewModel.swift */,
 			);
 			path = SideMenuView;
+			sourceTree = "<group>";
+		};
+		14C18B212AA01FCC004FF809 /* PathTrainingView */ = {
+			isa = PBXGroup;
+			children = (
+				14C18B262AA02005004FF809 /* PathTrainingView.swift */,
+				14C18B272AA02005004FF809 /* PathTrainingGridCellView.swift */,
+			);
+			path = PathTrainingView;
 			sourceTree = "<group>";
 		};
 		14EB6BF02A933DB2006990BE = {
@@ -330,6 +347,8 @@
 			isa = PBXGroup;
 			children = (
 				14EB6C592A95D5EB006990BE /* UIView+Nib.swift */,
+				14C18B2C2AA044C2004FF809 /* UIView+Toast.swift */,
+				14C18B2E2AA06049004FF809 /* UIColor+.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -453,13 +472,6 @@
 				14EB6C6A2A96003E006990BE /* HomePageMapInfoTableViewCell.xib */,
 			);
 			path = HomePageMapInfoTableViewCell;
-			sourceTree = "<group>";
-		};
-		2AE86B0C2A9F877500F1FCEA /* PathTrainingView */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = PathTrainingView;
 			sourceTree = "<group>";
 		};
 		34E419EF86097587509FCEF4 /* Frameworks */ = {
@@ -735,6 +747,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				14C18B2D2AA044C2004FF809 /* UIView+Toast.swift in Sources */,
 				14EB6C672A95F324006990BE /* MapInfoModel.swift in Sources */,
 				14C18B112A9F1824004FF809 /* TactileMapGridModel.swift in Sources */,
 				14C18AF82A9DC958004FF809 /* HomepageViewModel.swift in Sources */,
@@ -742,6 +755,7 @@
 				14EB6C6B2A96003E006990BE /* HomePageMapInfoTableViewCell.swift in Sources */,
 				14C18B042A9ED2CB004FF809 /* TactileMapPageViewController.swift in Sources */,
 				14C18AFF2A9ECA0A004FF809 /* MapInfoListCollectionViewCoordinator.swift in Sources */,
+				14C18B292AA02005004FF809 /* PathTrainingGridCellView.swift in Sources */,
 				14EB6C012A933DB3006990BE /* AppMainCoordinator.swift in Sources */,
 				14EB6C5F2A95E591006990BE /* SingleMapInfoCellView.swift in Sources */,
 				14EB6C632A95F266006990BE /* MapInfoListCollectionView.swift in Sources */,
@@ -765,6 +779,8 @@
 				14C18AFA2A9DE534004FF809 /* HomepageContainerCoordinator.swift in Sources */,
 				14C18B192A9F2771004FF809 /* AVSpeechSynthesizerService.swift in Sources */,
 				14EB6C742A9891EF006990BE /* FileReadWriteService.swift in Sources */,
+				14C18B282AA02005004FF809 /* PathTrainingView.swift in Sources */,
+				14C18B2F2AA06049004FF809 /* UIColor+.swift in Sources */,
 				14EB6C5A2A95D5EB006990BE /* UIView+Nib.swift in Sources */,
 				14EB6C472A95D3E0006990BE /* HomepageContainerViewController.swift in Sources */,
 				14EB6C072A933DB3006990BE /* TactileMap.xcdatamodeld in Sources */,

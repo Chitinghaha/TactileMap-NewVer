@@ -31,10 +31,6 @@ class MapDetailCoordinator: Coordinator {
         self.goToTactileMapPage()
     }
     
-    func showSideMenu() {
-        
-    }
-    
     func goToHomePage() {
         self.parentCoordinators.backToHomePage()
         if let leftMenuNavigationController = self.sideMenuManager.leftMenuNavigationController {
@@ -82,8 +78,8 @@ class MapDetailCoordinator: Coordinator {
     }
     
     func setupSideMenu() {
-        let vm = MapDetailSideMenuViewModel(currentMap: self.mapInfo)
-        let leftSideMenuController = MapDetailSideMenuViewController(coodinator: self, viewModel: vm)
+        let vm = MapDetailSideMenuViewModel(coodinator: self,currentMap: self.mapInfo)
+        let leftSideMenuController = MapDetailSideMenuViewController(viewModel: vm)
         
         self.leftMenuNavigationController = SideMenuNavigationController(rootViewController: leftSideMenuController)
         
@@ -92,7 +88,7 @@ class MapDetailCoordinator: Coordinator {
 
         var settings = SideMenuSettings()
         settings.presentationStyle = presentationStyle
-        settings.menuWidth = 700
+        settings.menuWidth = 600
         leftMenuNavigationController.settings = settings
         
         self.sideMenuManager.leftMenuNavigationController = leftMenuNavigationController
@@ -100,4 +96,5 @@ class MapDetailCoordinator: Coordinator {
 
     }
 
+    
 }
