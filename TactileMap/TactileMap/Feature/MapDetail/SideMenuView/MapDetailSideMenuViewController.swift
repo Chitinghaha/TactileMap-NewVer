@@ -73,7 +73,7 @@ class MapDetailSideMenuViewController: UIViewController {
     
     
     @IBAction func onclickGoBackButton(_ sender: Any) {
-        self.coodinator.navigationController.popViewController(animated: false)
+        self.coodinator.goToTactileMapPage()
     }
     
     @IBAction func onClickGoToHomePageButton(_ sender: Any) {

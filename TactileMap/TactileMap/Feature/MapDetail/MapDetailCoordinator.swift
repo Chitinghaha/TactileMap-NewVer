@@ -28,7 +28,7 @@ class MapDetailCoordinator: Coordinator {
     }
     
     func start() {
-        self.goToTactileMapPage(with: self.mapInfo)
+        self.goToTactileMapPage()
     }
     
     func showSideMenu() {
@@ -36,22 +36,29 @@ class MapDetailCoordinator: Coordinator {
     }
     
     func goToHomePage() {
-        
         self.parentCoordinators.backToHomePage()
+        if let leftMenuNavigationController = self.sideMenuManager.leftMenuNavigationController {
+            leftMenuNavigationController.dismiss(animated: false)
+        }
     }
     
-    func goToTactileMapPage(with mapInfo: SingleMapInfoModel) {
+    func goToTactileMapPage() {
         guard Thread.isMainThread else {
             DispatchQueue.main.async {
-                self.goToTactileMapPage(with: mapInfo)
+                self.goToTactileMapPage()
             }
             return
         }
-        
-        let vm = TactileMapPageViewModel(mapInfo: mapInfo)
-        let vc = TactileMapPageViewController(viewModel: vm, coordinator: self)
-        self.navigationController.pushViewController(vc, animated: true)
-        
+        if let oldVC = self.navigationController.viewControllers.first(where: {
+            $0.nibName == "TactileMapPageViewController"
+        }) {
+            self.navigationController.popToViewController(oldVC, animated: false)
+        }
+        else {
+            let vm = TactileMapPageViewModel(mapInfo: self.mapInfo)
+            let vc = TactileMapPageViewController(viewModel: vm, coordinator: self)
+            self.navigationController.pushViewController(vc, animated: true)
+        }
         if let leftMenuNavigationController = self.sideMenuManager.leftMenuNavigationController {
             leftMenuNavigationController.dismiss(animated: false)
         }
