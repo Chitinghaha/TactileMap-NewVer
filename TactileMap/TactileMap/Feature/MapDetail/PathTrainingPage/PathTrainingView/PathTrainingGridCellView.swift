@@ -16,21 +16,21 @@ class PathTrainingViewGridCellView: UIView {
     let label = UILabel()
     
     init(frameRect: CGRect, color: UIColor, name: String) {
-        
         self.frameRect = frameRect
         self.color = color
         self.name = name
 
         super.init(frame: frameRect)
-
+        
+        self.layer.borderColor = UIColor.black.cgColor
+        self.layer.borderWidth = 3
         self.backgroundColor = self.color
 
         self.label.text = name
         self.label.textAlignment = .center
+        
         self.label.font = UIFont.systemFont(ofSize: 24, weight: .bold)
         self.label.textColor = .white
-//        self.label.textColor = self.color.complementaryColor()
-
         self.addSubview(label)
 
         self.label.translatesAutoresizingMaskIntoConstraints = false

@@ -22,7 +22,9 @@ class TactileMapGridCellView: UIView {
         self.name = name
 
         super.init(frame: frameRect)
-
+        
+        self.layer.borderColor = UIColor.black.cgColor
+        self.layer.borderWidth = 3
         self.backgroundColor = self.color
         
         self.label.text = name

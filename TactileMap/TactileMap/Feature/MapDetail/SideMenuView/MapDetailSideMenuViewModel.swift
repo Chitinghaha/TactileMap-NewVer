@@ -28,7 +28,7 @@ class MapDetailSideMenuViewModel {
     @Published var menuPosition: SideMenuContentPosition = .tactileMap
     
     var coodinator: MapDetailCoordinator
-    var pathTrainingViewModel: PathTrainingPageViewModel?
+    var pathTrainingPageViewController: PathTrainingPageViewController?
     
     init(coodinator: MapDetailCoordinator, currentMap: SingleMapInfoModel) {
         self.coodinator = coodinator
@@ -58,6 +58,8 @@ class MapDetailSideMenuViewModel {
     func onclickGoBackButton() {
         self.coodinator.goToTactileMapPage()
         self.menuPosition = .tactileMap
+        self.currentStartPoint = "請選擇"
+        self.currentEndPoint = "請選擇"
     }
     
     func onClickGoToHomePageButton() {
@@ -96,8 +98,9 @@ class MapDetailSideMenuViewModel {
             return
         }
         
-        if let pathTrainingViewModel = self.pathTrainingViewModel {
-            pathTrainingViewModel.startTraining(start: self.currentStartPoint, end: self.currentEndPoint)
+        if let pathTrainingPageViewController = self.pathTrainingPageViewController {
+            pathTrainingPageViewController.startTraining(start: self.currentStartPoint, end: self.currentEndPoint)
+            self.coodinator.hideSideMenu()
         }
     }
 }

@@ -23,6 +23,7 @@ class AVSpeechSynthesizerService: NSObject {
     func speak(content: String) {
         if (self.utterancesInQueues.count > 0) {
             print("執行佇列中")
+            self.continuouslySpeak(content: content)
             return
         }
         
@@ -31,11 +32,13 @@ class AVSpeechSynthesizerService: NSObject {
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
                 let utterance = AVSpeechUtterance(string: content)
                 utterance.voice = AVSpeechSynthesisVoice(language: "zh-TW")
+                utterance.volume = 1.0
                 self.synthesizer.speak(utterance)
             }
         } else {
             let utterance = AVSpeechUtterance(string: content)
             utterance.voice = AVSpeechSynthesisVoice(language: "zh-TW")
+            utterance.volume = 1.0
             self.synthesizer.speak(utterance)
         }
         
@@ -46,7 +49,7 @@ class AVSpeechSynthesizerService: NSObject {
     func continuouslySpeak(content: String) {
         let utterance = AVSpeechUtterance(string: content)
         utterance.voice = AVSpeechSynthesisVoice(language: "zh-TW")
-        
+        utterance.volume = 1.0 
         self.utterancesInQueues.append(utterance)
     }
     
@@ -55,7 +58,6 @@ class AVSpeechSynthesizerService: NSObject {
            !self.synthesizer.isSpeaking {
             self.synthesizer.delegate = self
             self.synthesizer.speak(nextUtterance)
-            print(nextUtterance.speechString)
         }
     }
 }

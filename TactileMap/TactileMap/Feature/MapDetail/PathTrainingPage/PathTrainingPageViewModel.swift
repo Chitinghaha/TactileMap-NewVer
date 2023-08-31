@@ -15,10 +15,6 @@ class PathTrainingPageViewModel {
     var gridModels: [TactileMapGridModel]{ get {
         TactileMapGridViewModel.shared.getGridModels(mapName: self.mapInfo.title)
     }}
-
-    @Published var isTraining: Bool = false
-    @Published var currentStartPoint: String = "請選擇"
-    @Published var currentEndPoint: String = "請選擇"
     
     init(mapInfo: SingleMapInfoModel) {
         self.mapInfo = mapInfo
@@ -36,10 +32,5 @@ class PathTrainingPageViewModel {
         }
         
         return rectangles
-    }
-    
-    func startTraining(start: String, end: String) {
-        self.isTraining = true
-        
     }
 }

@@ -31,6 +31,19 @@ class TouchMapView: UIView {
         selectedRectangleIndex = rectangles.firstIndex { $0.frame.contains(location) }
         if let index = selectedRectangleIndex {
             AVSpeechSynthesizerService.shared.speak(content: rectangles[index].name)
+            
+            let view = self.rectangles[index]
+            if let bgColor = view.backgroundColor {
+                UIView.animate(withDuration: 0.2, animations: {
+                    view.backgroundColor = bgColor.withAlphaComponent(0.6)
+                }) { _ in
+                    // 恢復原來的背景色
+                    UIView.animate(withDuration: 0.2) {
+                        view.backgroundColor = bgColor
+                    }
+                }
+            }
+            
         }
         else {
             AVSpeechSynthesizerService.shared.speak(content: "室外區域")

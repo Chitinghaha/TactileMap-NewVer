@@ -29,6 +29,11 @@
 		14C18B292AA02005004FF809 /* PathTrainingGridCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C18B272AA02005004FF809 /* PathTrainingGridCellView.swift */; };
 		14C18B2D2AA044C2004FF809 /* UIView+Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C18B2C2AA044C2004FF809 /* UIView+Toast.swift */; };
 		14C18B2F2AA06049004FF809 /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C18B2E2AA06049004FF809 /* UIColor+.swift */; };
+		14C18B312AA06A0C004FF809 /* AudioPlayerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C18B302AA06A0C004FF809 /* AudioPlayerService.swift */; };
+		14C18B342AA06B2E004FF809 /* start.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 14C18B332AA06B2E004FF809 /* start.mp3 */; };
+		14C18B392AA0726C004FF809 /* end.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 14C18B382AA0726C004FF809 /* end.mp3 */; };
+		14C18B3C2AA07C01004FF809 /* DegreeDirectionHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C18B3B2AA07C01004FF809 /* DegreeDirectionHelper.swift */; };
+		14C18B3E2AA089C2004FF809 /* SoundEffectConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C18B3D2AA089C2004FF809 /* SoundEffectConstant.swift */; };
 		14EB6BFD2A933DB3006990BE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14EB6BFC2A933DB3006990BE /* AppDelegate.swift */; };
 		14EB6BFF2A933DB3006990BE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14EB6BFE2A933DB3006990BE /* SceneDelegate.swift */; };
 		14EB6C012A933DB3006990BE /* AppMainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14EB6C002A933DB3006990BE /* AppMainCoordinator.swift */; };
@@ -106,6 +111,14 @@
 		14C18B272AA02005004FF809 /* PathTrainingGridCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PathTrainingGridCellView.swift; sourceTree = "<group>"; };
 		14C18B2C2AA044C2004FF809 /* UIView+Toast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Toast.swift"; sourceTree = "<group>"; };
 		14C18B2E2AA06049004FF809 /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
+		14C18B302AA06A0C004FF809 /* AudioPlayerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayerService.swift; sourceTree = "<group>"; };
+		14C18B332AA06B2E004FF809 /* start.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = start.mp3; sourceTree = "<group>"; };
+		14C18B352AA06B31004FF809 /* beep.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = beep.mp3; sourceTree = "<group>"; };
+		14C18B362AA06B31004FF809 /* beep2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = beep2.mp3; sourceTree = "<group>"; };
+		14C18B372AA06B31004FF809 /* beep-08b.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "beep-08b.mp3"; sourceTree = "<group>"; };
+		14C18B382AA0726C004FF809 /* end.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = end.mp3; sourceTree = "<group>"; };
+		14C18B3B2AA07C01004FF809 /* DegreeDirectionHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DegreeDirectionHelper.swift; sourceTree = "<group>"; };
+		14C18B3D2AA089C2004FF809 /* SoundEffectConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundEffectConstant.swift; sourceTree = "<group>"; };
 		14EB6BF92A933DB3006990BE /* TactileMap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TactileMap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		14EB6BFC2A933DB3006990BE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		14EB6BFE2A933DB3006990BE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -244,6 +257,26 @@
 			path = PathTrainingView;
 			sourceTree = "<group>";
 		};
+		14C18B322AA06B24004FF809 /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				14C18B382AA0726C004FF809 /* end.mp3 */,
+				14C18B372AA06B31004FF809 /* beep-08b.mp3 */,
+				14C18B352AA06B31004FF809 /* beep.mp3 */,
+				14C18B362AA06B31004FF809 /* beep2.mp3 */,
+				14C18B332AA06B2E004FF809 /* start.mp3 */,
+			);
+			path = Sounds;
+			sourceTree = "<group>";
+		};
+		14C18B3A2AA07BDC004FF809 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				14C18B3B2AA07C01004FF809 /* DegreeDirectionHelper.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
 		14EB6BF02A933DB2006990BE = {
 			isa = PBXGroup;
 			children = (
@@ -324,6 +357,8 @@
 		14EB6C312A934B31006990BE /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				14C18B3A2AA07BDC004FF809 /* Helper */,
+				14C18B322AA06B24004FF809 /* Sounds */,
 				14EB6C392A935204006990BE /* ViewModel */,
 				14EB6C382A934FCE006990BE /* Service */,
 				14EB6C352A934B53006990BE /* Constant */,
@@ -365,6 +400,7 @@
 		14EB6C352A934B53006990BE /* Constant */ = {
 			isa = PBXGroup;
 			children = (
+				14C18B3D2AA089C2004FF809 /* SoundEffectConstant.swift */,
 			);
 			path = Constant;
 			sourceTree = "<group>";
@@ -374,6 +410,7 @@
 			children = (
 				14EB6C732A9891EF006990BE /* FileReadWriteService.swift */,
 				14C18B182A9F2771004FF809 /* AVSpeechSynthesizerService.swift */,
+				14C18B302AA06A0C004FF809 /* AudioPlayerService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -613,10 +650,12 @@
 				14EB6C092A933DB4006990BE /* Assets.xcassets in Resources */,
 				14EB6C652A95F26F006990BE /* MapInfoListCollectionView.xib in Resources */,
 				14EB6C372A934B70006990BE /* Resource.bundle in Resources */,
+				14C18B342AA06B2E004FF809 /* start.mp3 in Resources */,
 				14C18B052A9ED2CB004FF809 /* TactileMapPageViewController.xib in Resources */,
 				14EB6C4C2A95D579006990BE /* HomepageViewController.xib in Resources */,
 				14C18B092A9ED2D9004FF809 /* PathTrainingPageViewController.xib in Resources */,
 				14EB6C612A95E59C006990BE /* SingleMapInfoCellView.xib in Resources */,
+				14C18B392AA0726C004FF809 /* end.mp3 in Resources */,
 				14EB6C542A95D593006990BE /* SocietyViewController.xib in Resources */,
 				14EB6C582A95D5A6006990BE /* PersonalViewController.xib in Resources */,
 				14EB6C502A95D583006990BE /* MyMapViewController.xib in Resources */,
@@ -773,14 +812,17 @@
 				14EB6BFF2A933DB3006990BE /* SceneDelegate.swift in Sources */,
 				14EB6C532A95D593006990BE /* SocietyViewController.swift in Sources */,
 				14EB6C572A95D5A6006990BE /* PersonalViewController.swift in Sources */,
+				14C18B312AA06A0C004FF809 /* AudioPlayerService.swift in Sources */,
 				14EB6C702A98809D006990BE /* MapInfosViewModel.swift in Sources */,
 				2ADD09802A9F7173004C14CD /* MapDetailSideMenuViewModel.swift in Sources */,
 				14C18B1B2A9F2DCF004FF809 /* MapDetailCoordinator.swift in Sources */,
+				14C18B3E2AA089C2004FF809 /* SoundEffectConstant.swift in Sources */,
 				14C18AFA2A9DE534004FF809 /* HomepageContainerCoordinator.swift in Sources */,
 				14C18B192A9F2771004FF809 /* AVSpeechSynthesizerService.swift in Sources */,
 				14EB6C742A9891EF006990BE /* FileReadWriteService.swift in Sources */,
 				14C18B282AA02005004FF809 /* PathTrainingView.swift in Sources */,
 				14C18B2F2AA06049004FF809 /* UIColor+.swift in Sources */,
+				14C18B3C2AA07C01004FF809 /* DegreeDirectionHelper.swift in Sources */,
 				14EB6C5A2A95D5EB006990BE /* UIView+Nib.swift in Sources */,
 				14EB6C472A95D3E0006990BE /* HomepageContainerViewController.swift in Sources */,
 				14EB6C072A933DB3006990BE /* TactileMap.xcdatamodeld in Sources */,

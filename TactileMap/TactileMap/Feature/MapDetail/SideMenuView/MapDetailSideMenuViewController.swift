@@ -153,4 +153,9 @@ class MapDetailSideMenuViewController: UIViewController {
             }
             .store(in: &cancellables)
     }
+    
+    func clearPath() {
+        self.viewModel.currentStartPoint = "請選擇"
+        self.viewModel.currentEndPoint = "請選擇"
+    }
 }

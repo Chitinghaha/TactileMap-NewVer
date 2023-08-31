@@ -19,6 +19,12 @@ final class TactileMapTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
+    func testAudioPlayer() {
+        AudioPlayerService.shared.playSound(name: "start")
+        
+        XCTAssertEqual(true, true)
+    }
+    
     func testSaveFavoriteMapsToJson() {
         let favorites = FavoriteMaps(mapNames: ["小吃部", "台達館"])
         

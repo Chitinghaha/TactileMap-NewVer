@@ -16,6 +16,7 @@ class MapDetailCoordinator: Coordinator {
     
     var mapInfo: SingleMapInfoModel
     
+    var leftSideMenuController: MapDetailSideMenuViewController?
     var leftMenuNavigationController: SideMenuNavigationController!
     let sideMenuManager = SideMenuManager()
     
@@ -33,9 +34,7 @@ class MapDetailCoordinator: Coordinator {
     
     func goToHomePage() {
         self.parentCoordinators.backToHomePage()
-        if let leftMenuNavigationController = self.sideMenuManager.leftMenuNavigationController {
-            leftMenuNavigationController.dismiss(animated: false)
-        }
+        self.hideSideMenu()
     }
     
     func goToTactileMapPage() {
@@ -48,16 +47,14 @@ class MapDetailCoordinator: Coordinator {
         if let oldVC = self.navigationController.viewControllers.first(where: {
             $0.nibName == "TactileMapPageViewController"
         }) {
-            self.navigationController.popToViewController(oldVC, animated: false)
+            self.navigationController.popToViewController(oldVC, animated: true)
         }
         else {
             let vm = TactileMapPageViewModel(mapInfo: self.mapInfo)
             let vc = TactileMapPageViewController(viewModel: vm, coordinator: self)
             self.navigationController.pushViewController(vc, animated: true)
         }
-        if let leftMenuNavigationController = self.sideMenuManager.leftMenuNavigationController {
-            leftMenuNavigationController.dismiss(animated: false)
-        }
+        self.hideSideMenu()
     }
     
     func goToPathTrainingPage(with mapInfo: SingleMapInfoModel) {
@@ -71,17 +68,19 @@ class MapDetailCoordinator: Coordinator {
         let vm = PathTrainingPageViewModel(mapInfo: self.mapInfo)
         let vc = PathTrainingPageViewController(viewModel: vm, coordinator: self)
         
-        self.navigationController.pushViewController(vc, animated: true)
-        if let leftMenuNavigationController = self.sideMenuManager.leftMenuNavigationController {
-            leftMenuNavigationController.dismiss(animated: false)
+        if let leftSideMenuController = self.leftSideMenuController {
+            leftSideMenuController.viewModel.pathTrainingPageViewController = vc
         }
+        
+        self.navigationController.pushViewController(vc, animated: true)
+        self.hideSideMenu()
     }
     
     func setupSideMenu() {
         let vm = MapDetailSideMenuViewModel(coodinator: self,currentMap: self.mapInfo)
-        let leftSideMenuController = MapDetailSideMenuViewController(viewModel: vm)
+        self.leftSideMenuController = MapDetailSideMenuViewController(viewModel: vm)
         
-        self.leftMenuNavigationController = SideMenuNavigationController(rootViewController: leftSideMenuController)
+        self.leftMenuNavigationController = SideMenuNavigationController(rootViewController: leftSideMenuController!)
         
         let presentationStyle = SideMenuPresentationStyle.menuSlideIn
         presentationStyle.onTopShadowOpacity = 0.8
@@ -96,5 +95,15 @@ class MapDetailCoordinator: Coordinator {
 
     }
 
+    func hideSideMenu() {
+        if let leftMenuNavigationController = self.sideMenuManager.leftMenuNavigationController {
+            leftMenuNavigationController.dismiss(animated: false)
+        }
+    }
     
+    func clearSideMenuPath() {
+        if let leftSideMenuController = self.leftSideMenuController {
+            leftSideMenuController.clearPath()
+        }
+    }
 }

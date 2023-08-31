@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import Combine
+import AVFoundation
 
 class PathTrainingPageViewController: UIViewController {
     
@@ -13,6 +15,9 @@ class PathTrainingPageViewController: UIViewController {
     
     var viewModel: PathTrainingPageViewModel
     var coordinator: MapDetailCoordinator
+    var pathTrainingView: PathTrainingView = PathTrainingView()
+    
+    private var cancellables = Set<AnyCancellable>()
     
     init(viewModel: PathTrainingPageViewModel, coordinator: MapDetailCoordinator) {
         self.viewModel = viewModel
@@ -36,15 +41,26 @@ class PathTrainingPageViewController: UIViewController {
     }
     
     func initView() {
-        let drawRectanglesView = PathTrainingView()
-        drawRectanglesView.rectangles = self.viewModel.getRectangleViews(in: self.view)
+        self.pathTrainingView.rectangles = self.viewModel.getRectangleViews(in: self.view)
 
-        self.mapContainerStackView.addArrangedSubview(drawRectanglesView)
+        self.mapContainerStackView.addArrangedSubview(self.pathTrainingView)
         
     }
 
+    func startTraining(start: String, end: String) {
+        self.pathTrainingView.startTraining(start: start, end: end)
+    }
+    
     func setupBinding() {
-        
+        self.pathTrainingView.$isTraining
+            .removeDuplicates()
+            .sink { [weak self] isTraining in
+                guard let self = self else { return }
+                if (!isTraining) {
+                    self.coordinator.clearSideMenuPath()
+                }
+            }
+            .store(in: &self.cancellables)
     }
     
 }
