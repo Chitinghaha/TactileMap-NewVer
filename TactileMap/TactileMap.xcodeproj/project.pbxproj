@@ -113,8 +113,7 @@
 		14C18B2E2AA06049004FF809 /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
 		14C18B302AA06A0C004FF809 /* AudioPlayerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayerService.swift; sourceTree = "<group>"; };
 		14C18B332AA06B2E004FF809 /* start.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = start.mp3; sourceTree = "<group>"; };
-		14C18B352AA06B31004FF809 /* beep.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = beep.mp3; sourceTree = "<group>"; };
-		14C18B362AA06B31004FF809 /* beep2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = beep2.mp3; sourceTree = "<group>"; };
+		14C18B362AA06B31004FF809 /* beep.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = beep.mp3; sourceTree = "<group>"; };
 		14C18B372AA06B31004FF809 /* beep-08b.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "beep-08b.mp3"; sourceTree = "<group>"; };
 		14C18B382AA0726C004FF809 /* end.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = end.mp3; sourceTree = "<group>"; };
 		14C18B3B2AA07C01004FF809 /* DegreeDirectionHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DegreeDirectionHelper.swift; sourceTree = "<group>"; };
@@ -262,8 +261,7 @@
 			children = (
 				14C18B382AA0726C004FF809 /* end.mp3 */,
 				14C18B372AA06B31004FF809 /* beep-08b.mp3 */,
-				14C18B352AA06B31004FF809 /* beep.mp3 */,
-				14C18B362AA06B31004FF809 /* beep2.mp3 */,
+				14C18B362AA06B31004FF809 /* beep.mp3 */,
 				14C18B332AA06B2E004FF809 /* start.mp3 */,
 			);
 			path = Sounds;

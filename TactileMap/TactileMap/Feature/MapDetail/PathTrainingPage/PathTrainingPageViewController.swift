@@ -41,7 +41,7 @@ class PathTrainingPageViewController: UIViewController {
     }
     
     func initView() {
-        self.pathTrainingView.rectangles = self.viewModel.getRectangleViews(in: self.view)
+        self.pathTrainingView.gridViews = self.viewModel.getRectangleViews(in: self.view)
 
         self.mapContainerStackView.addArrangedSubview(self.pathTrainingView)
         

@@ -34,9 +34,12 @@ class TactileMapPageViewController: UIViewController {
     }
 
     func initView() {
+        self.view.backgroundColor = .black
+        
         let drawRectanglesView = TouchMapView()
         drawRectanglesView.rectangles = self.viewModel.getRectangleViews(in: self.view)
-
+        drawRectanglesView.backgroundColor = .clear
+        
         self.mapContainerStackView.addArrangedSubview(drawRectanglesView)
     }
 }

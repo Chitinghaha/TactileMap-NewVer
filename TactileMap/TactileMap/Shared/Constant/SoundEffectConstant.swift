@@ -8,5 +8,6 @@
 struct SoundEffectConstant {
     static let start = "start"
     static let end = "end"
+    static let walking = "beep"
     
 }

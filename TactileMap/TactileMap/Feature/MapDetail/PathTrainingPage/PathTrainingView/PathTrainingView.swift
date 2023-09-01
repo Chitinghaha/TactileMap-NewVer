@@ -11,9 +11,9 @@ import Combine
 
 class PathTrainingView: UIView {
     
-    var rectangles: [PathTrainingViewGridCellView] = []
-    var enterPointArrows: [UIImageView] = []
-    var selectedRectangleIndex: Int? = nil
+    var gridViews: [PathTrainingViewGridCellView] = []
+    //    var enterPointArrows: [UIImageView] = []
+    var selectedViewIndex: Int? = nil
     
     @Published var isTraining: Bool = false
     var currentStartPoint: String = ""
@@ -38,14 +38,13 @@ class PathTrainingView: UIView {
                 self.stopTraining()
             }
         }
-        
     }
     
     override func draw(_ rect: CGRect) {
         super.draw(rect)
         
         if (self.subviews.count == 0) {
-            self.rectangles.forEach {
+            self.gridViews.forEach {
                 $0.isUserInteractionEnabled = false
                 self.addSubview($0)
                 
@@ -55,7 +54,7 @@ class PathTrainingView: UIView {
                         AVSpeechSynthesizerService.shared.continuouslySpeak(content: "\($0.name)在左邊")
                     }
                     else if ($0.frame.minX > self.frame.width * 0.8) { // 在右邊
-                        AVSpeechSynthesizerService.shared.continuouslySpeak(content: "\($0.name)在右邊")
+                        AVSpeechSynthesizerService.shared.continuouslySpeak(content: "\($0.name) 在右邊")
                         
                     }
                     else if ($0.frame.minY < self.frame.height * 0.2) { // 在上方
@@ -69,7 +68,6 @@ class PathTrainingView: UIView {
                     //                }
                 }
             }
-            AVSpeechSynthesizerService.shared.speakNextUtterance()
         }
         
         //        for (index, rectangle) in rectangles.enumerated() {
@@ -92,13 +90,12 @@ class PathTrainingView: UIView {
         }
         
         let location = touch.location(in: self)
-        selectedRectangleIndex = rectangles.firstIndex { $0.frame.contains(location) }
-        if let index = selectedRectangleIndex {
-            
-            let view = self.rectangles[index]
-            if( view.name == self.currentStartPoint) {
+        selectedViewIndex = gridViews.firstIndex { $0.frame.contains(location) }
+        if let index = selectedViewIndex {
+            let view = self.gridViews[index]
+            // 點到起點亮一下
+            if(view.name == self.currentStartPoint) {
                 AudioPlayerService.shared.playSound(name: SoundEffectConstant.start)
-
                 if let bgColor = view.backgroundColor {
                     UIView.animate(withDuration: 0.2, animations: {
                         view.backgroundColor = bgColor.withAlphaComponent(0.6)
@@ -115,30 +112,65 @@ class PathTrainingView: UIView {
     }
     
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
-        //        print("touchesMoved, touches=\(touches)")
-        
-        guard let touch = touches.first, let index = selectedRectangleIndex else {
+        guard let touch = touches.first, let index = selectedViewIndex else {
             return
         }
         
-        //        let location = touch.location(in: self)
-        //        let prevLocation = touch.previousLocation(in: self)
+        let location = touch.location(in: self)
+        let prevLocation = touch.previousLocation(in: self)
+        let prevViewIndex = self.gridViews.firstIndex { $0.frame.contains(prevLocation) }
+        self.selectedViewIndex = self.gridViews.firstIndex { $0.frame.contains(location) }
+        
+        if let index = selectedViewIndex,
+           let prevViewIndex = prevViewIndex {
+            
+            let view = self.gridViews[index]
+            let prevView = self.gridViews[prevViewIndex]
+            
+            if (view.name == prevView.name) {
+                return
+            }
+            
+            if(view.name == self.currentStartPoint) {
+                AudioPlayerService.shared.stopSound()
+                AVSpeechSynthesizerService.shared.continuouslySpeak(content: "您已進入起點\(view.name)")
+            }
+            else if (view.name == self.currentEndPoint) {
+                AudioPlayerService.shared.stopSound()
+                AVSpeechSynthesizerService.shared.stop()
+                AVSpeechSynthesizerService.shared.continuouslySpeak(content: "您已抵達終點\(view.name)")
+                AVSpeechSynthesizerService.shared.continuouslySpeak(content: "訓練結束")
+                self.stopTraining()
+            }
+            else if (view.name == "走道"){
+                AVSpeechSynthesizerService.shared.stop()
+                AudioPlayerService.shared.playLoopSound(name: SoundEffectConstant.walking)
+            }
+            else {
+                AudioPlayerService.shared.stopSound()
+                AVSpeechSynthesizerService.shared.stop()
+                AVSpeechSynthesizerService.shared.speak(content: "您已進入\(view.name)")
+            }
+            
+        }
         
         //        rectangles[index].frame.origin = CGPoint(x: location.x - rectangles[index].frame.width / 2, y: location.y - rectangles[index].frame.height / 2)
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        selectedRectangleIndex = nil
+        selectedViewIndex = nil
+        AudioPlayerService.shared.stopSound()
     }
     
     func startTraining(start: String, end: String) {
         AVSpeechSynthesizerService.shared.continuouslySpeak(content: "訓練開始")
-
+        
         self.isTraining = true
         self.currentStartPoint = start
         self.currentEndPoint = end
         let direction = self.getDirection(name: end)
         AVSpeechSynthesizerService.shared.continuouslySpeak(content: "\(end)在\(direction)方向")
+        
     }
     
     func stopTraining() {
@@ -147,7 +179,7 @@ class PathTrainingView: UIView {
     }
     
     func getDirection(name: String) -> String {
-        guard let rectangle = self.rectangles.first(where: { $0.name == name })
+        guard let rectangle = self.gridViews.first(where: { $0.name == name })
         else { return "" }
         
         let point = CGPoint(x: rectangle.frame.midX, y: rectangle.frame.minY)

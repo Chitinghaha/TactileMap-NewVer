@@ -22,8 +22,11 @@ class PathTrainingViewGridCellView: UIView {
 
         super.init(frame: frameRect)
         
-        self.layer.borderColor = UIColor.black.cgColor
-        self.layer.borderWidth = 3
+        if (!self.name.contains("走道")) {
+            self.layer.borderColor = UIColor.white.cgColor
+            self.layer.borderWidth = 3
+        }
+        
         self.backgroundColor = self.color
 
         self.label.text = name

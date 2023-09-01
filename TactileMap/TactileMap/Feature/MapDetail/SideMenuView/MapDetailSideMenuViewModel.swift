@@ -36,6 +36,9 @@ class MapDetailSideMenuViewModel {
         self.allMapInfo = MapInfosViewModel.shared.allMapsInfo
         self.mapPoints = TactileMapGridViewModel.shared.getGridModels(mapName: currentMap.title)
             .map { $0.name }
+            .filter {
+                !$0.contains("走道")
+            }
             .sorted(by: { str1, str2 in
                 if (str1.contains("入口")) {
                     if (str2.contains("入口")) {
