@@ -23,10 +23,16 @@ class PathTrainingPageViewModel {
     func getRectangleViews(in view: UIView) -> [PathTrainingViewGridCellView]{
         var rectangles: [PathTrainingViewGridCellView] = []
         
-        let gridModels = self.gridModels
-        
-        gridModels.forEach {
-            let frame = CGRect(x: $0.x * view.frame.width, y: $0.y * view.frame.height, width: $0.width * view.frame.width, height: $0.height * view.frame.height)
+        let maxHeight: Double = self.gridModels.map { $0.height + $0.y }.max() ?? 1.0
+        let maxWidth: Double = self.gridModels.map { $0.width + $0.x }.max() ?? 1.0
+
+        self.gridModels.forEach {
+            let x = ($0.x / maxWidth) * view.frame.width
+            let y = ($0.y / maxHeight) * view.frame.height
+            let width = ($0.width / maxWidth) * view.frame.width
+            let height = ($0.height / maxHeight) * view.frame.height
+            
+            let frame = CGRect(x: x, y: y, width: width, height: height)
             let view = PathTrainingViewGridCellView(frameRect: frame, color: UIColor(hex: $0.color), name: $0.name)
             rectangles.append(view)
         }

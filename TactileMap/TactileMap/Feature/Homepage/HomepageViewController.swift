@@ -45,6 +45,7 @@ class HomepageViewController: UIViewController {
         super.viewDidLoad()
         
         self.initTableView()
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {

@@ -4,14 +4,14 @@
 			"title": "常用區域",
 			"infos": [
 				{
-				    "imageName": "tmpImage1",
+				    "imageName": "小吃部",
 				    "title": "小吃部",
 				    "description": "20230809",
 				    "descriptionIconName": "clock"
 				},
 				{
-				    "imageName": "tmpImage2",
-				    "title": "台達館",
+				    "imageName": "台達館一樓",
+				    "title": "台達館一樓",
 				    "description": "20230810",
 				    "descriptionIconName": "clock"
 				}
