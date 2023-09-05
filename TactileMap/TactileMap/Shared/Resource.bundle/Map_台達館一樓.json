@@ -5,7 +5,8 @@
         "y": 0,
         "width": 487,
         "height": 464,
-        "color": "#CE742E"
+        "color": "#CE742E",
+        "description": ""
     },
     {
         "name": "中庭廣場",
@@ -13,7 +14,8 @@
         "y": 140,
         "width": 190,
         "height": 185,
-        "color": "#34a938"
+        "color": "#34a938",
+        "description": ""
     },
     {
         "name": "入口一",
@@ -21,7 +23,8 @@
         "y": 0,
         "width": 30,
         "height": 40,
-        "color": "#0651DD"
+        "color": "#0651DD",
+        "description": ""
     },
     {
         "name": "入口二",
@@ -29,7 +32,8 @@
         "y": 423,
         "width": 27,
         "height": 42,
-        "color": "#0651DD"
+        "color": "#0651DD",
+        "description": ""
     },
     {
         "name": "入口三",
@@ -37,7 +41,8 @@
         "y": 0,
         "width": 27,
         "height": 40,
-        "color": "#0651DD"
+        "color": "#0651DD",
+        "description": ""
     },
     {
         "name": "入口四",
@@ -45,7 +50,8 @@
         "y": 220,
         "width": 27,
         "height": 35,
-        "color": "#0651DD"
+        "color": "#0651DD",
+        "description": ""
     },
     {
         "name": "女廁一",
@@ -53,7 +59,8 @@
         "y": 0,
         "width": 30,
         "height": 60,
-        "color": "#995533"
+        "color": "#995533",
+        "description": ""
     },
     {
         "name": "女廁二",
@@ -61,7 +68,8 @@
         "y": 400,
         "width": 30,
         "height": 60,
-        "color": "#995533"
+        "color": "#995533",
+        "description": ""
     },
     {
         "name": "女廁三",
@@ -69,7 +77,8 @@
         "y": 50,
         "width": 55,
         "height": 30,
-        "color": "#995533"
+        "color": "#995533",
+        "description": ""
     },
     {
         "name": "男廁一",
@@ -77,7 +86,8 @@
         "y": 0,
         "width": 30,
         "height": 60,
-        "color": "#335599"
+        "color": "#335599",
+        "description": ""
     },
     {
         "name": "男廁二",
@@ -85,7 +95,8 @@
         "y": 400,
         "width": 30,
         "height": 60,
-        "color": "#335599"
+        "color": "#335599",
+        "description": ""
     },
     {
         "name": "男廁三",
@@ -93,7 +104,8 @@
         "y": 80,
         "width": 55,
         "height": 30,
-        "color": "#335599"
+        "color": "#335599",
+        "description": ""
     },
     {
         "name": "無障礙廁所",
@@ -101,7 +113,8 @@
         "y": 70,
         "width": 25,
         "height": 25,
-        "color": "#459453"
+        "color": "#459453",
+        "description": ""
     },
     {
         "name": "樓梯一",
@@ -109,7 +122,8 @@
         "y": 0,
         "width": 60,
         "height": 60,
-        "color": "#575636"
+        "color": "#575636",
+        "description": ""
     },
     {
         "name": "樓梯二",
@@ -117,7 +131,8 @@
         "y": 400,
         "width": 60,
         "height": 60,
-        "color": "#575636"
+        "color": "#575636",
+        "description": ""
     },
     {
         "name": "樓梯三",
@@ -125,7 +140,8 @@
         "y": 130,
         "width": 50,
         "height": 50,
-        "color": "#575636"
+        "color": "#575636",
+        "description": ""
     },
     {
         "name": "樓梯四",
@@ -133,7 +149,8 @@
         "y": 350,
         "width": 27,
         "height": 86,
-        "color": "#575636"
+        "color": "#575636",
+        "description": ""
     },
     {
         "name": "教室107",
@@ -141,7 +158,8 @@
         "y": 80,
         "width": 120,
         "height": 105,
-        "color": "#345469"
+        "color": "#345469",
+        "description": ""
     },
     {
         "name": "教室106",
@@ -149,7 +167,8 @@
         "y": 185,
         "width": 120,
         "height": 90,
-        "color": "#345469"
+        "color": "#345469",
+        "description": ""
     },
     {
         "name": "教室105",
@@ -157,7 +176,8 @@
         "y": 275,
         "width": 120,
         "height": 105,
-        "color": "#345469"
+        "color": "#345469",
+        "description": ""
     },
     {
         "name": "教室108",
@@ -165,7 +185,8 @@
         "y": 0,
         "width": 105,
         "height": 115,
-        "color": "#345469"
+        "color": "#345469",
+        "description": ""
     },
     {
         "name": "教室109",
@@ -173,7 +194,8 @@
         "y": 0,
         "width": 105,
         "height": 115,
-        "color": "#345469"
+        "color": "#345469",
+        "description": ""
     },
     {
         "name": "教室104",
@@ -181,7 +203,8 @@
         "y": 350,
         "width": 105,
         "height": 115,
-        "color": "#345469"
+        "color": "#345469",
+        "description": ""
     },
     {
         "name": "教室103",
@@ -189,7 +212,8 @@
         "y": 350,
         "width": 105,
         "height": 115,
-        "color": "#345469"
+        "color": "#345469",
+        "description": ""
     },
     {
         "name": "教室102",
@@ -197,7 +221,8 @@
         "y": 350,
         "width": 90,
         "height": 115,
-        "color": "#345469"
+        "color": "#345469",
+        "description": ""
     },
     {
         "name": "資工系辦112",
@@ -205,7 +230,8 @@
         "y": 0,
         "width": 56,
         "height": 53,
-        "color": "#838501"
+        "color": "#838501",
+        "description": ""
     },
     {
         "name": "資工助教室111",
@@ -213,7 +239,8 @@
         "y": 53,
         "width": 56,
         "height": 32,
-        "color": "#838501"
+        "color": "#838501",
+        "description": ""
     },
     {
         "name": "資工管理室110",
@@ -221,7 +248,8 @@
         "y": 85,
         "width": 56,
         "height": 30,
-        "color": "#838501"
+        "color": "#838501",
+        "description": ""
     },
     {
         "name": "討論區",
@@ -229,7 +257,8 @@
         "y": 0,
         "width": 55,
         "height": 30,
-        "color": "#573043"
+        "color": "#573043",
+        "description": ""
     },
     {
         "name": "茶水間",
@@ -237,16 +266,17 @@
         "y": 30,
         "width": 25,
         "height": 25,
-        "color": "#999933"
+        "color": "#999933",
+        "description": ""
     },
-    
     {
         "name": "通訊室",
         "x": 457,
         "y": 30,
         "width": 30,
         "height": 25,
-        "color": "#567354"
+        "color": "#567354",
+        "description": ""
     },
     {
         "name": "電梯一",
@@ -254,7 +284,8 @@
         "y": 110,
         "width": 30,
         "height": 30,
-        "color": "#547139"
+        "color": "#547139",
+        "description": ""
     },
     {
         "name": "電梯二",
@@ -262,7 +293,8 @@
         "y": 140,
         "width": 47,
         "height": 20,
-        "color": "#547139"
+        "color": "#547139",
+        "description": ""
     },
     {
         "name": "電氣室",
@@ -270,6 +302,7 @@
         "y": 110,
         "width": 25,
         "height": 30,
-        "color": "#74392"
+        "color": "#74392",
+        "description": ""
     }
 ]

@@ -166,10 +166,14 @@ class PathTrainingView: UIView {
         AVSpeechSynthesizerService.shared.continuouslySpeak(content: "訓練開始")
         
         self.isTraining = true
+        
         self.currentStartPoint = start
+        var direction = self.getDirection(name: start)
+        AVSpeechSynthesizerService.shared.continuouslySpeak(content: "起點\(start)在\(direction)方向")
+        
         self.currentEndPoint = end
-        let direction = self.getDirection(name: end)
-        AVSpeechSynthesizerService.shared.continuouslySpeak(content: "\(end)在\(direction)方向")
+        direction = self.getDirection(name: end)
+        AVSpeechSynthesizerService.shared.continuouslySpeak(content: "終點\(end)在\(direction)方向")
         
     }
     

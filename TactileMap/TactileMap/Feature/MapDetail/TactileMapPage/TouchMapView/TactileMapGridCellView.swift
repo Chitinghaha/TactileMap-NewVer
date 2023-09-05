@@ -14,13 +14,14 @@ class TactileMapGridCellView: UIView {
     let color: UIColor
     let name: String
     let label = UILabel()
+    let mapDescription: String?
     
-    init(frameRect: CGRect, color: UIColor, name: String) {
-        
+    init(frameRect: CGRect, color: UIColor, name: String, description: String? = nil) {
         self.frameRect = frameRect
         self.color = color
         self.name = name
-
+        self.mapDescription = description
+        
         super.init(frame: frameRect)
         
         if (!self.name.contains("走道")) {

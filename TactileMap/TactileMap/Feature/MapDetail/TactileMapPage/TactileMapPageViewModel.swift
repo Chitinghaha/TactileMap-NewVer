@@ -45,7 +45,7 @@ class TactileMapPageViewModel {
             let height = ($0.height / maxHeight) * view.frame.height
             
             let frame = CGRect(x: x, y: y, width: width, height: height)
-            let view = TactileMapGridCellView(frameRect: frame, color: UIColor(hex: $0.color), name: $0.name)
+            let view = TactileMapGridCellView(frameRect: frame, color: UIColor(hex: $0.color), name: $0.name, description: $0.description)
             rectangles.append(view)
         }
         

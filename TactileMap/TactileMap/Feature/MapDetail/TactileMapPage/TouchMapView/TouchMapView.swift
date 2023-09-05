@@ -33,8 +33,14 @@ class TouchMapView: UIView {
         let location = touch.location(in: self)
         selectedRectangleIndex = rectangles.lastIndex { $0.frame.contains(location) }
         if let index = selectedRectangleIndex {
-//            AVSpeechSynthesizerService.shared.speak(content: rectangles[index].name)
-            AVSpeechSynthesizerService.shared.speak(content: "測試用描述")
+            if let description = rectangles[index].mapDescription,
+               description.count > 0 {
+                AVSpeechSynthesizerService.shared.speak(content: description)
+            }
+            else {
+                AVSpeechSynthesizerService.shared.speak(content: "缺少\(rectangles[index].name)的相關描述")
+
+            }
             let view = self.rectangles[index]
             if let bgColor = view.backgroundColor {
                 UIView.animate(withDuration: 0.2, animations: {

@@ -5,7 +5,8 @@
         "y": 0.4,
         "width": 0.05,
         "height": 0.15,
-        "color": "#0651DD"
+        "color": "#0651DD",
+        "description": "這是入口一的描述"
     },
     {
         "name": "入口二",
@@ -13,7 +14,8 @@
         "y": 0.4,
         "width": 0.05,
         "height": 0.15,
-        "color": "#0651DD"
+        "color": "#0651DD",
+        "description": ""
     },
     {
         "name": "入口三",
@@ -21,7 +23,8 @@
         "y": 0.88,
         "width": 0.09,
         "height": 0.12,
-        "color": "#0651DD"
+        "color": "#0651DD",
+        "description": ""
     },
     {
         "name": "餐廳一",
@@ -29,7 +32,8 @@
         "y": 0.0,
         "width": 0.1,
         "height": 0.4,
-        "color": "#344192"
+        "color": "#344192",
+        "description": ""
     },
     {
         "name": "餐廳二",
@@ -37,7 +41,8 @@
         "y": 0.0,
         "width": 0.095,
         "height": 0.4,
-        "color": "#344192"
+        "color": "#344192",
+        "description": ""
     },
     {
         "name": "餐廳三",
@@ -45,7 +50,8 @@
         "y": 0.0,
         "width": 0.095,
         "height": 0.4,
-        "color": "#344192"
+        "color": "#344192",
+        "description": ""
     },
     {
         "name": "餐廳四",
@@ -53,7 +59,8 @@
         "y": 0.0,
         "width": 0.095,
         "height": 0.4,
-        "color": "#344192"
+        "color": "#344192",
+        "description": ""
     },
     {
         "name": "餐廳五",
@@ -61,7 +68,8 @@
         "y": 0.0,
         "width": 0.095,
         "height": 0.4,
-        "color": "#344192"
+        "color": "#344192",
+        "description": ""
     },
     {
         "name": "餐廳六",
@@ -69,7 +77,8 @@
         "y": 0.0,
         "width": 0.1,
         "height": 0.4,
-        "color": "#344192"
+        "color": "#344192",
+        "description": ""
     },
     {
         "name": "餐廳七",
@@ -77,7 +86,8 @@
         "y": 0.83,
         "width": 0.12,
         "height": 0.25,
-        "color": "#344192"
+        "color": "#344192",
+        "description": ""
     },
     {
         "name": "餐廳八",
@@ -85,7 +95,8 @@
         "y": 0.83,
         "width": 0.12,
         "height": 0.25,
-        "color": "#344192"
+        "color": "#344192",
+        "description": ""
     },
     {
         "name": "垃圾回收區",
@@ -93,7 +104,8 @@
         "y": 0.3,
         "width": 0.15,
         "height": 0.1,
-        "color": "#57273F"
+        "color": "#57273F",
+        "description": ""
     },
     {
         "name": "小七",
@@ -101,7 +113,8 @@
         "y": 0.0,
         "width": 0.27,
         "height": 0.4,
-        "color": "#572F48"
+        "color": "#572F48",
+        "description": ""
     },
     {
         "name": "走道",
@@ -109,7 +122,8 @@
         "y": 0.4,
         "width": 0.9,
         "height": 0.15,
-        "color": "#CE742E"
+        "color": "#CE742E",
+        "description": ""
     },
     {
         "name": "男廁",
@@ -117,7 +131,8 @@
         "y": 0.55,
         "width": 0.07,
         "height": 0.18,
-        "color": "#8C5665"
+        "color": "#8C5665",
+        "description": ""
     },
     {
         "name": "女廁",
@@ -125,7 +140,8 @@
         "y": 0.55,
         "width": 0.07,
         "height": 0.18,
-        "color": "#8C5665"
+        "color": "#8C5665",
+        "description": ""
     },
     {
         "name": "麥當勞",
@@ -133,7 +149,8 @@
         "y": 0.55,
         "width": 0.19,
         "height": 0.37,
-        "color": "#5F7064"
+        "color": "#5F7064",
+        "description": ""
     },
     {
         "name": "走道",
@@ -141,7 +158,8 @@
         "y": 0.55,
         "width": 0.05,
         "height": 0.22,
-        "color": "#CE742E"
+        "color": "#CE742E",
+        "description": ""
     },
     {
         "name": "用餐區",
@@ -149,7 +167,8 @@
         "y": 0.55,
         "width": 0.57,
         "height": 0.22,
-        "color": "#85535F"
+        "color": "#85535F",
+        "description": ""
     },
     {
         "name": "走道",
@@ -157,7 +176,8 @@
         "y": 0.55,
         "width": 0.05,
         "height": 0.22,
-        "color": "#CE742E"
+        "color": "#CE742E",
+        "description": ""
     },
     {
         "name": "無障礙廁所",
@@ -165,7 +185,8 @@
         "y": 0.73,
         "width": 0.14,
         "height": 0.2,
-        "color": "#96015A"
+        "color": "#96015A",
+        "description": ""
     },
     {
         "name": "走道",
@@ -173,7 +194,8 @@
         "y": 0.77,
         "width": 0.67,
         "height": 0.06,
-        "color": "#CE742E"
+        "color": "#CE742E",
+        "description": ""
     },
     {
         "name": "走道",
@@ -181,7 +203,8 @@
         "y": 0.83,
         "width": 0.09,
         "height": 0.05,
-        "color": "#CE742E"
+        "color": "#CE742E",
+        "description": ""
     },
     {
         "name": "用餐區",
@@ -189,7 +212,8 @@
         "y": 0.83,
         "width": 0.24,
         "height": 0.25,
-        "color": "#85535F"
+        "color": "#85535F",
+        "description": ""
     },
     {
         "name": "辦公室",
@@ -197,7 +221,8 @@
         "y": 0.0,
         "width": 0.15,
         "height": 0.3,
-        "color": "#575636"
+        "color": "#575636",
+        "description": ""
     },
     {
         "name": "機房",
@@ -205,6 +230,7 @@
         "y": 0.83,
         "width": 0.1,
         "height": 0.25,
-        "color": "#5E8391"
+        "color": "#5E8391",
+        "description": ""
     }
 ]

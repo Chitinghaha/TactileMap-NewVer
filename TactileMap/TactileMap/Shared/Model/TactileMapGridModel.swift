@@ -10,5 +10,6 @@ struct TactileMapGridModel: Codable {
     let name: String
     let x, y, width, height: Double
     let color: String
+    let description: String?
 //    let hasWall: Bool
 }
