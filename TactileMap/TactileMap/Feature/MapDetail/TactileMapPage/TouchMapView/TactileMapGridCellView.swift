@@ -32,6 +32,7 @@ class TactileMapGridCellView: UIView {
         self.label.text = name
         self.label.textAlignment = .center
         self.label.textColor = .white
+        self.label.isAccessibilityElement = false
 //        self.label.textColor = self.color.complementaryColor()
         
         self.addSubview(label)
