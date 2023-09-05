@@ -90,7 +90,7 @@ class PathTrainingView: UIView {
         }
         
         let location = touch.location(in: self)
-        selectedViewIndex = gridViews.firstIndex { $0.frame.contains(location) }
+        selectedViewIndex = gridViews.lastIndex { $0.frame.contains(location) }
         if let index = selectedViewIndex {
             let view = self.gridViews[index]
             // 點到起點亮一下
@@ -118,8 +118,8 @@ class PathTrainingView: UIView {
         
         let location = touch.location(in: self)
         let prevLocation = touch.previousLocation(in: self)
-        let prevViewIndex = self.gridViews.firstIndex { $0.frame.contains(prevLocation) }
-        self.selectedViewIndex = self.gridViews.firstIndex { $0.frame.contains(location) }
+        let prevViewIndex = self.gridViews.lastIndex { $0.frame.contains(prevLocation) }
+        self.selectedViewIndex = self.gridViews.lastIndex { $0.frame.contains(location) }
         
         if let index = selectedViewIndex,
            let prevViewIndex = prevViewIndex {

@@ -28,7 +28,7 @@ class TouchMapView: UIView {
             return
         }
         let location = touch.location(in: self)
-        selectedRectangleIndex = rectangles.firstIndex { $0.frame.contains(location) }
+        selectedRectangleIndex = rectangles.lastIndex { $0.frame.contains(location) }
         if let index = selectedRectangleIndex {
             AVSpeechSynthesizerService.shared.speak(content: rectangles[index].name)
             
