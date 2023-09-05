@@ -100,7 +100,7 @@ extension HomepageViewController: UITableViewDelegate {
         
         headerTitleLabel.text = self.tableDataSource.snapshot().sectionIdentifiers[section].title
         headerTitleLabel.font = .systemFont(ofSize: 36)
-        headerTitleLabel.textColor = UIColor(named: "defaultFontColor")
+        headerTitleLabel.textColor = UIColor.systemBackground
         headerView.centerXAnchor.constraint(equalTo: headerView.centerXAnchor).isActive = true
         
         return headerView

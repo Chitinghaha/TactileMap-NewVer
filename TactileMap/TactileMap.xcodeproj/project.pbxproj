@@ -34,6 +34,7 @@
 		14C18B392AA0726C004FF809 /* end.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 14C18B382AA0726C004FF809 /* end.mp3 */; };
 		14C18B3C2AA07C01004FF809 /* DegreeDirectionHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C18B3B2AA07C01004FF809 /* DegreeDirectionHelper.swift */; };
 		14C18B3E2AA089C2004FF809 /* SoundEffectConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C18B3D2AA089C2004FF809 /* SoundEffectConstant.swift */; };
+		14E1D5882AA6DF2500582EC7 /* MapColorSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E1D5872AA6DF2500582EC7 /* MapColorSet.swift */; };
 		14EB6BFD2A933DB3006990BE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14EB6BFC2A933DB3006990BE /* AppDelegate.swift */; };
 		14EB6BFF2A933DB3006990BE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14EB6BFE2A933DB3006990BE /* SceneDelegate.swift */; };
 		14EB6C012A933DB3006990BE /* AppMainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14EB6C002A933DB3006990BE /* AppMainCoordinator.swift */; };
@@ -118,6 +119,7 @@
 		14C18B382AA0726C004FF809 /* end.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = end.mp3; sourceTree = "<group>"; };
 		14C18B3B2AA07C01004FF809 /* DegreeDirectionHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DegreeDirectionHelper.swift; sourceTree = "<group>"; };
 		14C18B3D2AA089C2004FF809 /* SoundEffectConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundEffectConstant.swift; sourceTree = "<group>"; };
+		14E1D5872AA6DF2500582EC7 /* MapColorSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapColorSet.swift; sourceTree = "<group>"; };
 		14EB6BF92A933DB3006990BE /* TactileMap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TactileMap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		14EB6BFC2A933DB3006990BE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		14EB6BFE2A933DB3006990BE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -399,6 +401,7 @@
 			isa = PBXGroup;
 			children = (
 				14C18B3D2AA089C2004FF809 /* SoundEffectConstant.swift */,
+				14E1D5872AA6DF2500582EC7 /* MapColorSet.swift */,
 			);
 			path = Constant;
 			sourceTree = "<group>";
@@ -791,6 +794,7 @@
 				14C18B0D2A9ED405004FF809 /* TactileMapGridCellView.swift in Sources */,
 				14EB6C6B2A96003E006990BE /* HomePageMapInfoTableViewCell.swift in Sources */,
 				14C18B042A9ED2CB004FF809 /* TactileMapPageViewController.swift in Sources */,
+				14E1D5882AA6DF2500582EC7 /* MapColorSet.swift in Sources */,
 				14C18AFF2A9ECA0A004FF809 /* MapInfoListCollectionViewCoordinator.swift in Sources */,
 				14C18B292AA02005004FF809 /* PathTrainingGridCellView.swift in Sources */,
 				14EB6C012A933DB3006990BE /* AppMainCoordinator.swift in Sources */,

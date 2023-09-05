@@ -39,20 +39,20 @@ class MapDetailSideMenuViewModel {
             .filter {
                 !$0.contains("走道")
             }
-            .sorted(by: { str1, str2 in
-                if (str1.contains("入口")) {
-                    if (str2.contains("入口")) {
-                        return str1 > str2
-                    }
-                    return true
-                }
-                else if (str2.contains("入口")) {
-                    return false
-                }
-                else {
-                    return str1 > str2
-                }
-            })
+//            .sorted(by: { str1, str2 in
+//                if (str1.contains("入口")) {
+//                    if (str2.contains("入口")) {
+//                        return str1 > str2
+//                    }
+//                    return true
+//                }
+//                else if (str2.contains("入口")) {
+//                    return false
+//                }
+//                else {
+//                    return str1 > str2
+//                }
+//            })
         
         self.dropDown.textFont = UIFont.systemFont(ofSize: 24)
         self.dropDown.cornerRadius = 8
