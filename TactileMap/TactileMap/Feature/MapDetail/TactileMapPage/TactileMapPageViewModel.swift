@@ -37,13 +37,18 @@ class TactileMapPageViewModel {
         
         let maxHeight: Double = self.gridModels.map { $0.height + $0.y }.max() ?? 1.0
         let maxWidth: Double = self.gridModels.map { $0.width + $0.x }.max() ?? 1.0
+        let minHeight: Double = self.gridModels.map { $0.y }.min() ?? 1.0
+        let minWidth: Double = self.gridModels.map { $0.x }.min() ?? 1.0
 
+        let totalHeight = maxHeight - minHeight
+        let totalWidth = maxWidth - minWidth
+        
         self.gridModels.forEach {
-            let x = ($0.x / maxWidth) * view.frame.width
-            let y = ($0.y / maxHeight) * view.frame.height
-            let width = ($0.width / maxWidth) * view.frame.width
-            let height = ($0.height / maxHeight) * view.frame.height
-            
+            let x = (($0.x - minWidth) / totalWidth) * view.frame.width
+            let y = (($0.y - minHeight) / totalHeight) * view.frame.height
+            let width = ($0.width / totalWidth) * view.frame.width
+            let height = ($0.height / totalHeight) * view.frame.height
+
             let frame = CGRect(x: x, y: y, width: width, height: height)
             let view = TactileMapGridCellView(frameRect: frame, color: UIColor(hex: $0.color), name: $0.name, description: $0.description)
             rectangles.append(view)

@@ -21,7 +21,9 @@ class AVSpeechSynthesizerService: NSObject {
     }
     
     func stop() {
+        self.utterancesInQueues.removeAll()
         self.synthesizer.stopSpeaking(at: .immediate)
+        
     }
     
     func speak(content: String) {
