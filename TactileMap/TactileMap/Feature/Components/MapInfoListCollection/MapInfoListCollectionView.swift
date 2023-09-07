@@ -52,7 +52,7 @@ fileprivate extension MapInfoListCollectionView {
             
             let cell: SingleMapInfoCellView = collectionView.dequeueReusableCell(withReuseIdentifier: "SingleMapInfoCellView", for: indexPath) as! SingleMapInfoCellView
             
-            cell.mapImageView.image = UIImage(named: model.imageName)
+            cell.mapImageView.image = UIImage(named: model.imageName) ?? UIImage(named: "defaultMapThumbnail")
             cell.mapTitleLabel.text = model.title
             cell.subtitleLabel.text = model.description
 

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="ipad10_9rounded" orientation="landscape" layout="fullscreen" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -20,17 +20,29 @@
             <rect key="frame" x="0.0" y="0.0" width="1180" height="820"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="FZG-bb-gdl">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EuC-IR-uK7">
                     <rect key="frame" x="0.0" y="24" width="1180" height="776"/>
-                </stackView>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="FZG-bb-gdl">
+                            <rect key="frame" x="3" y="3" width="1174" height="770"/>
+                        </stackView>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="FZG-bb-gdl" secondAttribute="bottom" constant="3" id="FtB-nr-hIY"/>
+                        <constraint firstAttribute="trailing" secondItem="FZG-bb-gdl" secondAttribute="trailing" constant="3" id="W0Y-Rv-YRr"/>
+                        <constraint firstItem="FZG-bb-gdl" firstAttribute="leading" secondItem="EuC-IR-uK7" secondAttribute="leading" constant="3" id="Xxj-dW-zCt"/>
+                        <constraint firstItem="FZG-bb-gdl" firstAttribute="top" secondItem="EuC-IR-uK7" secondAttribute="top" constant="3" id="sA9-0T-ycu"/>
+                    </constraints>
+                </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="FZG-bb-gdl" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="1RX-9B-8h6"/>
-                <constraint firstItem="FZG-bb-gdl" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="Nua-6S-NVZ"/>
-                <constraint firstItem="FZG-bb-gdl" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="X4K-7J-mKv"/>
-                <constraint firstItem="FZG-bb-gdl" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="tfR-Pa-tib"/>
+                <constraint firstItem="EuC-IR-uK7" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="KOJ-Ba-uZF"/>
+                <constraint firstItem="EuC-IR-uK7" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Kna-7V-zzD"/>
+                <constraint firstItem="EuC-IR-uK7" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="O37-Zr-DT9"/>
+                <constraint firstItem="EuC-IR-uK7" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="fZq-H4-V4R"/>
             </constraints>
             <point key="canvasLocation" x="-18" y="-12"/>
         </view>

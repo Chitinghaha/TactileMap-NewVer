@@ -7,7 +7,6 @@
 
 import UIKit
 import Combine
-import AVFoundation
 
 class PathTrainingPageViewController: UIViewController {
     
@@ -41,14 +40,14 @@ class PathTrainingPageViewController: UIViewController {
     }
     
     func initView() {
-        self.pathTrainingView.gridViews = self.viewModel.getRectangleViews(in: self.view)
+        self.pathTrainingView.gridViews = self.viewModel.getRectangleViews(in: self.mapContainerStackView)
 
         self.mapContainerStackView.addArrangedSubview(self.pathTrainingView)
         
     }
 
     func startTraining(start: String, end: String) {
-        self.pathTrainingView.startTraining(start: start, end: end)
+        self.pathTrainingView.prepairTraining(start: start, end: end)
     }
     
     func setupBinding() {

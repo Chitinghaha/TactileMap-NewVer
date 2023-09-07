@@ -12,7 +12,7 @@ class AudioPlayerService {
     
     static let shared = AudioPlayerService()
     
-    private var audioPlayer: AVAudioPlayer?
+    var audioPlayer: AVAudioPlayer?
     
     init() {
         do {

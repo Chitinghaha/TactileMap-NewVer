@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		029EC6CA9B95591A8FDED52C /* Pods_TactileMap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 794FCFBF6C9E380A67D8C47C /* Pods_TactileMap.framework */; };
+		149CC0162AA9A0CA0019A771 /* ErrorHandlerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149CC0152AA9A0CA0019A771 /* ErrorHandlerService.swift */; };
 		14C18AF82A9DC958004FF809 /* HomepageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C18AF72A9DC958004FF809 /* HomepageViewModel.swift */; };
 		14C18AFA2A9DE534004FF809 /* HomepageContainerCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C18AF92A9DE534004FF809 /* HomepageContainerCoordinator.swift */; };
 		14C18AFF2A9ECA0A004FF809 /* MapInfoListCollectionViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C18AFE2A9ECA0A004FF809 /* MapInfoListCollectionViewCoordinator.swift */; };
@@ -91,6 +92,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		149CC0152AA9A0CA0019A771 /* ErrorHandlerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorHandlerService.swift; sourceTree = "<group>"; };
 		14C18AF72A9DC958004FF809 /* HomepageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomepageViewModel.swift; sourceTree = "<group>"; };
 		14C18AF92A9DE534004FF809 /* HomepageContainerCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomepageContainerCoordinator.swift; sourceTree = "<group>"; };
 		14C18AFE2A9ECA0A004FF809 /* MapInfoListCollectionViewCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapInfoListCollectionViewCoordinator.swift; sourceTree = "<group>"; };
@@ -412,6 +414,7 @@
 				14EB6C732A9891EF006990BE /* FileReadWriteService.swift */,
 				14C18B182A9F2771004FF809 /* AVSpeechSynthesizerService.swift */,
 				14C18B302AA06A0C004FF809 /* AudioPlayerService.swift */,
+				149CC0152AA9A0CA0019A771 /* ErrorHandlerService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -807,6 +810,7 @@
 				14EB6C4B2A95D579006990BE /* HomepageViewController.swift in Sources */,
 				14C18B132A9F1C3B004FF809 /* TactileMapGridViewModel.swift in Sources */,
 				14C18B162A9F226E004FF809 /* TouchMapView.swift in Sources */,
+				149CC0162AA9A0CA0019A771 /* ErrorHandlerService.swift in Sources */,
 				14EB6C722A98844F006990BE /* SocietyInfoViewModel.swift in Sources */,
 				14C18B0F2A9EDC76004FF809 /* HomepageCoordinator.swift in Sources */,
 				2AE86B0B2A9F831900F1FCEA /* PathTrainingPageViewModel.swift in Sources */,
@@ -1004,9 +1008,9 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIRequiresFullScreen = NO;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeRight UIInterfaceOrientationLandscapeLeft";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationLandscapeLeft;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1038,9 +1042,9 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIRequiresFullScreen = NO;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeRight UIInterfaceOrientationLandscapeLeft";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationLandscapeLeft;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

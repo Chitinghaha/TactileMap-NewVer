@@ -11,11 +11,19 @@ import Combine
 
 class PathTrainingView: UIView {
     
+    private var cancellables = Set<AnyCancellable>()
+
     var gridViews: [PathTrainingViewGridCellView] = []
     //    var enterPointArrows: [UIImageView] = []
     var selectedViewIndex: Int? = nil
     
     @Published var isTraining: Bool = false
+    var isPreparingTraing: Bool = false
+    
+    // 起點終點是否已確認
+    @Published var didConfirmStartPoint: Bool = false
+    @Published var didConfirmEndPoint: Bool = false
+
     var currentStartPoint: String = ""
     var currentEndPoint: String = ""
     
@@ -26,6 +34,8 @@ class PathTrainingView: UIView {
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleDoubleTap(_:)))
         tapGesture.numberOfTapsRequired = 2 // Detect double tap
         self.addGestureRecognizer(tapGesture)
+        
+        self.setupBinding()
     }
     
     required init?(coder: NSCoder) {
@@ -44,6 +54,8 @@ class PathTrainingView: UIView {
         super.draw(rect)
         
         if (self.subviews.count == 0) {
+            AVSpeechSynthesizerService.shared.continuouslySpeak(content: "進入路徑訓練模式")
+
             self.gridViews.forEach {
                 $0.isUserInteractionEnabled = false
                 self.addSubview($0)
@@ -85,34 +97,46 @@ class PathTrainingView: UIView {
         guard let touch = touches.first else {
             return
         }
-        if (!self.isTraining) {
+        if (!self.isPreparingTraing) {
             return
         }
         
         let location = touch.location(in: self)
-        selectedViewIndex = gridViews.lastIndex { $0.frame.contains(location) }
-        if let index = selectedViewIndex {
+    
+        if let index = gridViews.lastIndex(where: { $0.frame.contains(location) }) {
+            AVSpeechSynthesizerService.shared.stop()
             let view = self.gridViews[index]
-            // 點到起點亮一下
-            if(view.name == self.currentStartPoint) {
-                AudioPlayerService.shared.playSound(name: SoundEffectConstant.start)
-                if let bgColor = view.backgroundColor {
-                    UIView.animate(withDuration: 0.2, animations: {
-                        view.backgroundColor = bgColor.withAlphaComponent(0.6)
-                    }) { _ in
-                        // 恢復原來的背景色
-                        UIView.animate(withDuration: 0.2) {
-                            view.backgroundColor = bgColor
-                        }
+            if let bgColor = view.backgroundColor {
+                UIView.animate(withDuration: 0.2, animations: {
+                    view.backgroundColor = bgColor.withAlphaComponent(0.6)
+                }) { _ in
+                    // 恢復原來的背景色
+                    UIView.animate(withDuration: 0.2) {
+                        view.backgroundColor = bgColor
                     }
                 }
             }
+            
+            if(view.name == self.currentStartPoint) {
+                AVSpeechSynthesizerService.shared.continuouslySpeak(content: "起點\(view.name)已確認")
+                self.didConfirmStartPoint = true
+
+                
+            }
+            else if (view.name == self.currentEndPoint) {
+                AVSpeechSynthesizerService.shared.continuouslySpeak(content: "終點\(view.name)已確認")
+                self.didConfirmEndPoint = true
+            }
+            else {
+                AVSpeechSynthesizerService.shared.continuouslySpeak(content: "\(view.name)")
+            }
+            
         }
         
     }
     
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
-        guard let touch = touches.first, let index = selectedViewIndex else {
+        guard let touch = touches.first, self.isTraining else {
             return
         }
         
@@ -127,28 +151,25 @@ class PathTrainingView: UIView {
             let view = self.gridViews[index]
             let prevView = self.gridViews[prevViewIndex]
             
-            if (view.name == prevView.name) {
+            if ((AudioPlayerService.shared.audioPlayer?.isPlaying ?? false || AVSpeechSynthesizerService.shared.synthesizer.isSpeaking) && view.name == prevView.name) {
                 return
             }
             
+            AudioPlayerService.shared.stopSound()
+            AVSpeechSynthesizerService.shared.stop()
+
             if(view.name == self.currentStartPoint) {
-                AudioPlayerService.shared.stopSound()
                 AVSpeechSynthesizerService.shared.continuouslySpeak(content: "您已進入起點\(view.name)")
             }
             else if (view.name == self.currentEndPoint) {
-                AudioPlayerService.shared.stopSound()
-                AVSpeechSynthesizerService.shared.stop()
                 AVSpeechSynthesizerService.shared.continuouslySpeak(content: "您已抵達終點\(view.name)")
                 AVSpeechSynthesizerService.shared.continuouslySpeak(content: "訓練結束")
                 self.stopTraining()
             }
             else if (view.name == "走道"){
-                AVSpeechSynthesizerService.shared.stop()
                 AudioPlayerService.shared.playLoopSound(name: SoundEffectConstant.walking)
             }
             else {
-                AudioPlayerService.shared.stopSound()
-                AVSpeechSynthesizerService.shared.stop()
                 AVSpeechSynthesizerService.shared.speak(content: "您已進入\(view.name)")
             }
             
@@ -159,22 +180,39 @@ class PathTrainingView: UIView {
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         selectedViewIndex = nil
-        AudioPlayerService.shared.stopSound()
+//        AudioPlayerService.shared.stopSound()
     }
     
-    func startTraining(start: String, end: String) {
-        AVSpeechSynthesizerService.shared.continuouslySpeak(content: "訓練開始")
+    func prepairTraining(start: String, end: String) {
+        if (start.count == 0 || end.count == 0) {
+            AVSpeechSynthesizerService.shared.continuouslySpeak(content: "起點終點條件異常")
+        }
         
-        self.isTraining = true
+        AVSpeechSynthesizerService.shared.stop()
+
+        self.isPreparingTraing = true
+        self.didConfirmStartPoint = false
+        self.didConfirmEndPoint = false
         
         self.currentStartPoint = start
         var direction = self.getDirection(name: start)
-        AVSpeechSynthesizerService.shared.continuouslySpeak(content: "起點\(start)在\(direction)方向")
+        AVSpeechSynthesizerService.shared.continuouslySpeak(content: "起點\(start)位於畫面的\(direction)方向")
         
         self.currentEndPoint = end
         direction = self.getDirection(name: end)
-        AVSpeechSynthesizerService.shared.continuouslySpeak(content: "終點\(end)在\(direction)方向")
+        AVSpeechSynthesizerService.shared.continuouslySpeak(content: "終點\(end)位於畫面的\(direction)方向")
+        AVSpeechSynthesizerService.shared.continuouslySpeak(content: "請點擊畫面確認起點終點位置")
+    }
+    
+    func startTraining() {
+        self.isPreparingTraing = false
+        self.isTraining = true
+        AudioPlayerService.shared.playSound(name: SoundEffectConstant.start)
+        AVSpeechSynthesizerService.shared.continuouslySpeak(content: "訓練開始")
         
+        let direction = self.getDirection(name: self.currentEndPoint, compareTo: self.currentStartPoint)
+        AVSpeechSynthesizerService.shared.continuouslySpeak(content: "終點位於起點的\(direction)方向")
+
     }
     
     func stopTraining() {
@@ -182,22 +220,43 @@ class PathTrainingView: UIView {
         AudioPlayerService.shared.playSound(name: SoundEffectConstant.end)
     }
     
-    func getDirection(name: String) -> String {
+    func getDirection(name: String, compareTo specifiedTarget: String? = nil) -> String {
         guard let rectangle = self.gridViews.first(where: { $0.name == name })
         else { return "" }
         
-        let point = CGPoint(x: rectangle.frame.midX, y: rectangle.frame.minY)
-        //        let convertedPoint = rectangle.convert(point, to: self)
+        var targetPoint: CGPoint
+        
+        if let specifiedTarget = specifiedTarget,
+           let specifiedPoint = self.gridViews.first(where: { $0.name == specifiedTarget })?.center {
+            targetPoint = specifiedPoint
+        }
+        else {
+            targetPoint = self.center
+        }
+        
+        let point = rectangle.center
         
         // Calculate the angle between the converted point and the center of the view
-        let angle = atan2(point.y - self.center.y, point.x - self.center.x)
+        let angle = atan2(point.y - targetPoint.y, point.x - targetPoint.x)
         
         // Convert the angle to degrees
         let degrees = angle * (180.0 / .pi)
-        print("point = \(point), angle=\(angle), degrees=\(degrees)")
-        //        print("point = \(point), convertedPoint=\(convertedPoint), angle=\(angle), degrees=\(degrees)")
         
         // Determine the direction based on the angle
         return degrees.clockDirection()
     }
+}
+
+extension PathTrainingView {
+    
+    func setupBinding() {
+        self.$didConfirmStartPoint.combineLatest(self.$didConfirmEndPoint)
+            .sink { (didConfirmStartPoint, didConfirmEndPoint) in
+                if (didConfirmStartPoint == true && didConfirmEndPoint == true) {
+                    self.startTraining()
+                }
+            }
+            .store(in: &cancellables)
+    }
+    
 }
