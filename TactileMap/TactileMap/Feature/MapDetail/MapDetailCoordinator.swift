@@ -96,8 +96,8 @@ class MapDetailCoordinator: Coordinator {
     }
 
     func hideSideMenu() {
-        AudioPlayerService.shared.stopSound()
-        AVSpeechSynthesizerService.shared.stop()
+//        AudioPlayerService.shared.stopSound()
+//        AVSpeechSynthesizerService.shared.stop()
 
         if let leftMenuNavigationController = self.sideMenuManager.leftMenuNavigationController {
             leftMenuNavigationController.dismiss(animated: false)
