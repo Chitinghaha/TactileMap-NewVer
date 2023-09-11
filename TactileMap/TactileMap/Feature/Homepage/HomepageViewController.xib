@@ -13,6 +13,7 @@
             <connections>
                 <outlet property="mainImageView" destination="oPf-k1-tk7" id="h9x-ps-8sB"/>
                 <outlet property="mapContentsTableView" destination="agH-Az-vbK" id="zby-To-Ibd"/>
+                <outlet property="mapContentsTableViewHeightConstraint" destination="78i-7j-juQ" id="Ht3-l6-fuo"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -21,10 +22,10 @@
             <rect key="frame" x="0.0" y="0.0" width="1180" height="820"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wcZ-WM-pYW">
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wcZ-WM-pYW">
                     <rect key="frame" x="0.0" y="24" width="1180" height="776"/>
                     <subviews>
-                        <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="aoR-Rq-ou2">
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="aoR-Rq-ou2">
                             <rect key="frame" x="0.0" y="0.0" width="1180" height="1565"/>
                             <subviews>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="homepageAD" translatesAutoresizingMaskIntoConstraints="NO" id="oPf-k1-tk7">
@@ -33,10 +34,13 @@
                                         <constraint firstAttribute="height" constant="500" id="ZRk-Bt-LVy"/>
                                     </constraints>
                                 </imageView>
-                                <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" showsVerticalScrollIndicator="NO" style="plain" rowHeight="400" estimatedRowHeight="-1" sectionHeaderHeight="28" estimatedSectionHeaderHeight="-1" sectionFooterHeight="28" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="agH-Az-vbK">
+                                <tableView clipsSubviews="YES" contentMode="scaleToFill" showsVerticalScrollIndicator="NO" style="plain" rowHeight="400" estimatedRowHeight="-1" sectionHeaderHeight="28" estimatedSectionHeaderHeight="-1" sectionFooterHeight="28" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="agH-Az-vbK">
                                     <rect key="frame" x="30" y="535" width="1120" height="1000"/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="1000" id="78i-7j-juQ"/>
+                                    </constraints>
                                     <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </tableView>
                             </subviews>

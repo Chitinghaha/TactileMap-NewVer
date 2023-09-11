@@ -24,18 +24,31 @@ class SingleMapInfoCellView: UICollectionViewCell {
     
     @IBOutlet weak var subtitleLabel: UILabel!
     
+    @Published var isFavorite: Bool = false
+    
+    var cancellables = Set<AnyCancellable>()
+    
     override func awakeFromNib() {
         super.awakeFromNib()
+        
         self.setupBinding()
     }
     
     func setupBinding() {
-        
+        self.$isFavorite
+            .receive(on: RunLoop.main)
+            .sink {
+                self.favoriteButton.isSelected = $0
+                self.favoriteImageView.image = $0 ? UIImage(systemName: "bookmark.fill") : UIImage(systemName: "bookmark")
+            }
+            .store(in: &cancellables)
     }
     
     @IBAction func onClickFavoriteButton(_ sender: UIButton) {
         sender.isSelected.toggle()
-        self.favoriteImageView.image = sender.isSelected ? UIImage(systemName: "heart.fill") : UIImage(systemName: "heart")
+        self.isFavorite = sender.isSelected
+        MapInfosViewModel.shared.updateFavoriteMaps(mapTitle: self.mapTitleLabel.text ?? "", isFavorite: sender.isSelected)
+
         //todo: send save favorite event
     }
     /*

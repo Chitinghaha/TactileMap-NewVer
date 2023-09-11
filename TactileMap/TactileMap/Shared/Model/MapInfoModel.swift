@@ -7,20 +7,18 @@
 
 import Foundation
 
-struct FavoriteMaps: Hashable, Codable {
-    let mapNames: [String]
-}
+//struct FavoriteMaps: Hashable, Codable {
+//    let mapNames: [String]
+//}
 
 struct SingleMapInfoModel: Hashable, Decodable {
     let imageName: String
     let title: String
     let description: String
     let descriptionIconName: String
-    var favoriteEnabled: Bool?
     var isFavorite: Bool?
     
-    mutating func updateFavorite(favoriteEnabled: Bool, isFavorite: Bool) {
-        self.favoriteEnabled = favoriteEnabled
+    mutating func updateFavorite(isFavorite: Bool) {
         self.isFavorite = isFavorite
     }
 }

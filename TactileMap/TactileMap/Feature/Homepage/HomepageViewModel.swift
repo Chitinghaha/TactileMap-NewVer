@@ -10,11 +10,20 @@ import Combine
 
 class HomepageViewModel {
     
-    var mapInfoListModels: MultiMapInfoListModel
+    @Published var mapInfoListModels: MultiMapInfoListModel = MultiMapInfoListModel(contents: [])
+    var viewWillApear = PassthroughSubject<Void, Never>()
+    
+    private var cancellable = Set<AnyCancellable>()
     
     init() {
-        self.mapInfoListModels = MapInfosViewModel.shared.getMapLists(withClock: true, canSetFavorite: false)
+        
+        self.viewWillApear
+            .sink {
+                self.mapInfoListModels = MapInfosViewModel.shared.mapInfoLists
+//                self.mapInfoListModels = MapInfosViewModel.shared.getMapListsFake(withClock: true, canSetFavorite: true)
+
+            }
+            .store(in: &cancellable)
+        
     }
-    
-    
 }

@@ -6,9 +6,11 @@
 //
 
 import UIKit
+import Combine
 
 class MyMapViewController: UIViewController {
     
+    private var cancellable = Set<AnyCancellable>()
     
     @IBOutlet weak var contentStackView: UIStackView!
     
@@ -20,15 +22,22 @@ class MyMapViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-        let maps = MapInfosViewModel.shared.getMapsFake(withClock: true, canSetFavorite: true)
+        self.initView()
         
+        self.setupBinding()
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.setNavigationBarHidden(true, animated: animated)
+
+    }
+    
+    func initView() {
         self.mapInfoListCollectionView = MapInfoListCollectionView.loadFromNib()
-        //        self.view.addSubview(self.mapInfoListCollectionView)
-        
-        self.mapInfoListCollectionView.setUp(mapsInfo: maps)
         
         self.mapInfoListCollectionView.frame = CGRect(x: 0, y: 0, width: self.view.bounds.width, height: self.view.bounds.height)
-        
+                
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
         layout.sectionInset = UIEdgeInsets(top: 10, left: 20, bottom: 10, right: 20)
         layout.itemSize = CGSize(width: (self.mapInfoListCollectionView.frame.size.width - 100) / 3, height: self.collectionViewHeight)
@@ -37,18 +46,22 @@ class MyMapViewController: UIViewController {
         layout.scrollDirection = UICollectionView.ScrollDirection.vertical
         self.mapInfoListCollectionView.collectionViewLayout = layout
         self.mapInfoListCollectionView.setContentOffset(CGPoint(x: 0.0, y: 0.0), animated: false)
-        let estimatedHeight = CGFloat(maps.count / 3 + 1) * (self.collectionViewHeight + 50)
-        
-        self.mapInfoListCollectionView.heightAnchor.constraint(equalToConstant: estimatedHeight).isActive = true
         
         self.contentStackView.addArrangedSubview(self.mapInfoListCollectionView)
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        self.navigationController?.setNavigationBarHidden(true, animated: animated)
 
     }
     
+    func setupBinding() {
+        MapInfosViewModel.shared.$favoriteMaps
+            .receive(on: RunLoop.main)
+            .sink { _ in
+                let maps = MapInfosViewModel.shared.getMyMapList()
+                self.mapInfoListCollectionView.setUp(mapsInfo: maps)
+                
+            }
+            .store(in: &cancellable)
+
+    }
 //    override func viewWillDisappear(_ animated: Bool) {
 //        self.navigationController?.setNavigationBarHidden(false, animated: animated)
 //
