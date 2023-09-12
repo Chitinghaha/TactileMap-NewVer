@@ -10,6 +10,8 @@ import Combine
 
 class MyMapViewController: UIViewController {
     
+    var coordinator: MapInfoListCollectionViewCoordinator
+
     private var cancellable = Set<AnyCancellable>()
     
     @IBOutlet weak var contentStackView: UIStackView!
@@ -17,6 +19,15 @@ class MyMapViewController: UIViewController {
     var mapInfoListCollectionView: MapInfoListCollectionView!
     
     let collectionViewHeight: CGFloat = 400
+    
+    init(coordinator: MapInfoListCollectionViewCoordinator) {
+        self.coordinator = coordinator
+        super.init(nibName: String(describing: Self.self), bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,7 +46,7 @@ class MyMapViewController: UIViewController {
     
     func initView() {
         self.mapInfoListCollectionView = MapInfoListCollectionView.loadFromNib()
-        
+        self.mapInfoListCollectionView.coordinator = self.coordinator
         self.mapInfoListCollectionView.frame = CGRect(x: 0, y: 0, width: self.view.bounds.width, height: self.view.bounds.height)
                 
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
