@@ -25,20 +25,20 @@ final class TactileMapTests: XCTestCase {
         XCTAssertEqual(true, true)
     }
     
-//    func testSaveFavoriteMapsToJson() {
-//        let favorites = FavoriteMaps(mapNames: ["小吃部", "台達館"])
-//        
-//        XCTAssertEqual(fileService.saveFavoritesJson(favorites: favorites), true)
-//        
-//    }
-//    
-//    func testReadFavoriteMapsToJson() {
-//        let favorites = FavoriteMaps(mapNames: ["小吃部", "台達館"])
-//        
-//        XCTAssertEqual(fileService.saveFavoritesJson(favorites: favorites), true)
-//        XCTAssertEqual(fileService.readFavoritesJson(), favorites)
-//        
-//    }
+    func testSaveFavoriteMapsToJson() {
+        let favorites = FavoriteMaps(mapNames: ["小吃部", "台達館"])
+        
+        XCTAssertEqual(fileService.saveFavoritesJson(favorites: favorites), true)
+        
+    }
+    
+    func testReadFavoriteMapsToJson() {
+        let favorites = FavoriteMaps(mapNames: ["小吃部", "台達館"])
+        
+        XCTAssertEqual(fileService.saveFavoritesJson(favorites: favorites), true)
+        XCTAssertEqual(fileService.readFavoritesJson(), favorites)
+        
+    }
     
     func testExample() throws {
         

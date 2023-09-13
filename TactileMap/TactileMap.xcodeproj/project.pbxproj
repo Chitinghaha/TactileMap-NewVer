@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		029EC6CA9B95591A8FDED52C /* Pods_TactileMap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 794FCFBF6C9E380A67D8C47C /* Pods_TactileMap.framework */; };
 		149CC0162AA9A0CA0019A771 /* ErrorHandlerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149CC0152AA9A0CA0019A771 /* ErrorHandlerService.swift */; };
-		14BFEDDB2AAEE70E005DD6FB /* FavoriteMapDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BFEDDA2AAEE70E005DD6FB /* FavoriteMapDataService.swift */; };
-		14BFEDDD2AAEE71F005DD6FB /* CoreDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BFEDDC2AAEE71F005DD6FB /* CoreDataService.swift */; };
 		14C18AF82A9DC958004FF809 /* HomepageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C18AF72A9DC958004FF809 /* HomepageViewModel.swift */; };
 		14C18AFA2A9DE534004FF809 /* HomepageContainerCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C18AF92A9DE534004FF809 /* HomepageContainerCoordinator.swift */; };
 		14C18AFF2A9ECA0A004FF809 /* MapInfoListCollectionViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C18AFE2A9ECA0A004FF809 /* MapInfoListCollectionViewCoordinator.swift */; };
@@ -95,8 +93,6 @@
 
 /* Begin PBXFileReference section */
 		149CC0152AA9A0CA0019A771 /* ErrorHandlerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorHandlerService.swift; sourceTree = "<group>"; };
-		14BFEDDA2AAEE70E005DD6FB /* FavoriteMapDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteMapDataService.swift; sourceTree = "<group>"; };
-		14BFEDDC2AAEE71F005DD6FB /* CoreDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataService.swift; sourceTree = "<group>"; };
 		14C18AF72A9DC958004FF809 /* HomepageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomepageViewModel.swift; sourceTree = "<group>"; };
 		14C18AF92A9DE534004FF809 /* HomepageContainerCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomepageContainerCoordinator.swift; sourceTree = "<group>"; };
 		14C18AFE2A9ECA0A004FF809 /* MapInfoListCollectionViewCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapInfoListCollectionViewCoordinator.swift; sourceTree = "<group>"; };
@@ -203,13 +199,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		14BFEDCB2AAEE30E005DD6FB /* Database */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Database;
-			sourceTree = "<group>";
-		};
 		14C18AFB2A9DEA6F004FF809 /* MapDetail */ = {
 			isa = PBXGroup;
 			children = (
@@ -370,7 +359,6 @@
 		14EB6C312A934B31006990BE /* Shared */ = {
 			isa = PBXGroup;
 			children = (
-				14BFEDCB2AAEE30E005DD6FB /* Database */,
 				14C18B3A2AA07BDC004FF809 /* Helper */,
 				14C18B322AA06B24004FF809 /* Sounds */,
 				14EB6C392A935204006990BE /* ViewModel */,
@@ -388,7 +376,6 @@
 			isa = PBXGroup;
 			children = (
 				14EB6C3E2A95D0A0006990BE /* Coordinator.swift */,
-				14BFEDDC2AAEE71F005DD6FB /* CoreDataService.swift */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -428,7 +415,6 @@
 				14C18B182A9F2771004FF809 /* AVSpeechSynthesizerService.swift */,
 				14C18B302AA06A0C004FF809 /* AudioPlayerService.swift */,
 				149CC0152AA9A0CA0019A771 /* ErrorHandlerService.swift */,
-				14BFEDDA2AAEE70E005DD6FB /* FavoriteMapDataService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -512,10 +498,10 @@
 		14EB6C5D2A95DD95006990BE /* MapInfoListCollection */ = {
 			isa = PBXGroup;
 			children = (
-				14C18AFE2A9ECA0A004FF809 /* MapInfoListCollectionViewCoordinator.swift */,
 				14EB6C622A95F266006990BE /* MapInfoListCollectionView.swift */,
 				14EB6C642A95F26F006990BE /* MapInfoListCollectionView.xib */,
 				14EB6C5C2A95DD61006990BE /* MapInfoCollectionCell */,
+				14C18AFE2A9ECA0A004FF809 /* MapInfoListCollectionViewCoordinator.swift */,
 			);
 			path = MapInfoListCollection;
 			sourceTree = "<group>";
@@ -804,14 +790,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				14BFEDDB2AAEE70E005DD6FB /* FavoriteMapDataService.swift in Sources */,
 				14C18B2D2AA044C2004FF809 /* UIView+Toast.swift in Sources */,
 				14EB6C672A95F324006990BE /* MapInfoModel.swift in Sources */,
 				14C18B112A9F1824004FF809 /* TactileMapGridModel.swift in Sources */,
 				14C18AF82A9DC958004FF809 /* HomepageViewModel.swift in Sources */,
 				14C18B0D2A9ED405004FF809 /* TactileMapGridCellView.swift in Sources */,
 				14EB6C6B2A96003E006990BE /* HomePageMapInfoTableViewCell.swift in Sources */,
-				14BFEDDD2AAEE71F005DD6FB /* CoreDataService.swift in Sources */,
 				14C18B042A9ED2CB004FF809 /* TactileMapPageViewController.swift in Sources */,
 				14E1D5882AA6DF2500582EC7 /* MapColorSet.swift in Sources */,
 				14C18AFF2A9ECA0A004FF809 /* MapInfoListCollectionViewCoordinator.swift in Sources */,

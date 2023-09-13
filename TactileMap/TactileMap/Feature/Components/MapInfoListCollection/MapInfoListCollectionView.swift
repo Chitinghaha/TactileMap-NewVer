@@ -6,15 +6,12 @@
 //
 
 import UIKit
-import Combine
 
 fileprivate enum Section: CaseIterable {
     case main
 }
 
 class MapInfoListCollectionView: UICollectionView {
-    
-    private var cancellables = Set<AnyCancellable>()
     
     // Create a Diffable Data Source
     private lazy var diffableDataSource: UICollectionViewDiffableDataSource<Section, SingleMapInfoModel> = makeDataSource()
@@ -66,9 +63,31 @@ fileprivate extension MapInfoListCollectionView {
             else {
                 cell.subtitleIconImageView.isHidden = true
             }
+            
+            if let favoriteEnabled = model.favoriteEnabled,
+               let isFavorite = model.isFavorite {
+                if (favoriteEnabled) {
+                    cell.favoriteButton.isHidden = false
+                    cell.favoriteButton.isSelected = isFavorite
+                    cell.favoriteImageView.isHidden = false
+                }
+                else {
+                    cell.favoriteButton.isHidden = true
+                    cell.favoriteImageView.isHidden = true
+                }
+                
+                if (isFavorite) {
+                    cell.favoriteImageView.image = UIImage(systemName: "heart.fill")
+                }
+                else {
+                    cell.favoriteImageView.image = UIImage(systemName: "heart")
+                }
+            }
+            else {
+                cell.favoriteButton.isHidden = true
+                cell.favoriteImageView.isHidden = true
+            }
 
-            cell.isFavorite = model.isFavorite ?? false
-       
             return cell
         }
     }

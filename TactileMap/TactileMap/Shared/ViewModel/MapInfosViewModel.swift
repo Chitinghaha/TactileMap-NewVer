@@ -6,95 +6,40 @@
 //
 
 import Foundation
-import Combine
+
 
 class MapInfosViewModel {
     
-    let throttleInterval: TimeInterval = 2.0
-    
     static let shared = MapInfosViewModel()
     
-    @Published var mapInfoLists: MultiMapInfoListModel
+    let mapInfoLists: MultiMapInfoListModel
     
-    var allMapsInfo: [SingleMapInfoModel] { get {
-        self.mapInfoLists.contents.flatMap {
-            $0.infos
+    let allMapsInfo: [SingleMapInfoModel]
+    
+    var myMapsInfo: [SingleMapInfoModel] { get {
+        var myMapsInfo: [SingleMapInfoModel] = []
+        
+        self.mapInfoLists.contents.forEach { mapList in
+            mapList.infos.forEach {
+                if (self.favoriteMaps.mapNames.contains($0.imageName)) {
+                    myMapsInfo.append($0)
+                }
+            }
         }
+        
+        return myMapsInfo
     }}
     
-    @Published var favoriteMaps: [FavoriteMap]
-        
-    private var cancellable = Set<AnyCancellable>()
+    var favoriteMaps: FavoriteMaps
     
     init() {
         self.mapInfoLists = FileReadWriteService.shared.getAllMapInfomation()
         
-        self.favoriteMaps = FavoriteMapDataService.shared.fetchAll()
-        
-        self.setupBiding()
-        
-        for i in 0..<self.mapInfoLists.contents.count {
-            for j in 0..<self.mapInfoLists.contents[i].infos.count {
-                let isFavorite = self.favoriteMaps.contains { $0.mapTitle == self.mapInfoLists.contents[i].infos[j].title }
-                
-                self.mapInfoLists.contents[i].infos[j].updateFavorite(isFavorite: isFavorite)
-            }
-        }
-    }
-    
-    func setupBiding() {
-        self.$favoriteMaps
-//            .print("favoriteMaps sink:")
-            .sink {
-                for i in 0..<self.mapInfoLists.contents.count {
-                    for j in 0..<self.mapInfoLists.contents[i].infos.count {
-                        let isFavorite = $0.contains { $0.mapTitle == self.mapInfoLists.contents[i].infos[j].title }
-                        
-                        self.mapInfoLists.contents[i].infos[j].updateFavorite(isFavorite: isFavorite)
-                    }
-                }
-            }
-            .store(in: &cancellable)
-    }
-    
-    func updateFavoriteMaps(mapTitle: String, isFavorite: Bool) {
-        if (isFavorite) {
-            if (!self.favoriteMaps.contains{ $0.mapTitle == mapTitle }) {
-                let newFavorite = FavoriteMap(context: FavoriteMapDataService.shared.context)
-                newFavorite.mapTitle = mapTitle
-                self.favoriteMaps.append(newFavorite)
-                FavoriteMapDataService.shared.create(entity: newFavorite)
-                
-            }
-        }
-        else {
-            if let favorite = self.favoriteMaps.first(where: { favoriteMap in
-                favoriteMap.mapTitle == mapTitle
-            }) {
-                self.favoriteMaps.removeAll{ favoriteMap in
-                    favoriteMap.mapTitle == mapTitle
-                }
-                FavoriteMapDataService.shared.delete(entity: favorite)
-            }
-        }
-    }
-    
-    func getMyMapList() -> [SingleMapInfoModel] {
-        var myMapsInfo: [SingleMapInfoModel] = []
-        
-        self.mapInfoLists.contents.forEach { mapList in
-            mapList.infos.forEach { info in
-                if (self.favoriteMaps.contains { $0.mapTitle == info.title }) {
-                    myMapsInfo.append(info)
-                }
-            }
+        self.allMapsInfo = mapInfoLists.contents.flatMap {
+            $0.infos
         }
         
-        for i in 0..<myMapsInfo.count {
-            myMapsInfo[i].updateFavorite(isFavorite: true)
-        }
-        
-        return myMapsInfo
+        self.favoriteMaps = FileReadWriteService.shared.readFavoritesJson() ?? FavoriteMaps(mapNames: [])
     }
     
     func getMapLists(withClock: Bool, canSetFavorite: Bool) -> MultiMapInfoListModel  {
@@ -102,9 +47,9 @@ class MapInfosViewModel {
         
         for i in 0..<lists.contents.count {
             for j in 0..<lists.contents[i].infos.count {
-                let isFavorite = self.favoriteMaps.contains { $0.mapTitle == lists.contents[i].infos[j].title }
+                let isFavorite = self.favoriteMaps.mapNames.contains(lists.contents[i].infos[j].imageName)
                 
-                lists.contents[i].infos[j].updateFavorite(isFavorite: isFavorite)
+                lists.contents[i].infos[j].updateFavorite(favoriteEnabled: canSetFavorite, isFavorite: isFavorite)
             }
         }
         
@@ -119,7 +64,7 @@ class MapInfosViewModel {
                 title: "資電",
                 description: withClock ? "20230808" : "胡吃海喝",
                 descriptionIconName: withClock ? "1" : "",
-                
+                favoriteEnabled: canSetFavorite,
                 isFavorite: Bool.random()
             ),
             SingleMapInfoModel(
@@ -127,7 +72,7 @@ class MapInfosViewModel {
                 title: "台達",
                 description: withClock ? "20230808" : "胡吃海喝",
                 descriptionIconName: withClock ? "1" : "",
-                
+                favoriteEnabled: canSetFavorite,
                 isFavorite: Bool.random()
             ),
             SingleMapInfoModel(
@@ -135,7 +80,7 @@ class MapInfosViewModel {
                 title: "物理",
                 description: withClock ? "20230808" : "胡吃海喝",
                 descriptionIconName: withClock ? "1" : "",
-                
+                favoriteEnabled: canSetFavorite,
                 isFavorite: Bool.random()
             ),
             SingleMapInfoModel(
@@ -143,7 +88,7 @@ class MapInfosViewModel {
                 title: "人社",
                 description: withClock ? "20230808" : "胡吃海喝",
                 descriptionIconName: withClock ? "1" : "",
-                
+                favoriteEnabled: canSetFavorite,
                 isFavorite: Bool.random()
             ),
             SingleMapInfoModel(
@@ -151,7 +96,7 @@ class MapInfosViewModel {
                 title: "testTitle1",
                 description: withClock ? "20230808" : "胡吃海喝",
                 descriptionIconName: withClock ? "1" : "",
-                
+                favoriteEnabled: canSetFavorite,
                 isFavorite: Bool.random()
             )
         ]
@@ -171,7 +116,7 @@ class MapInfosViewModel {
                             title: "小吃部",
                             description: withClock ? "20230808" : "胡吃海喝",
                             descriptionIconName: withClock ? "1" : "",
-                            
+                            favoriteEnabled: canSetFavorite,
                             isFavorite: Bool.random()
                         ),
                         SingleMapInfoModel(
@@ -179,7 +124,7 @@ class MapInfosViewModel {
                             title: "風雲",
                             description: withClock ? "20230808" : "胡吃海喝",
                             descriptionIconName: withClock ? "1" : "",
-                            
+                            favoriteEnabled: canSetFavorite,
                             isFavorite: Bool.random()
                         ),
                         SingleMapInfoModel(
@@ -187,7 +132,7 @@ class MapInfosViewModel {
                             title: "水木",
                             description: withClock ? "20230808" : "胡吃海喝",
                             descriptionIconName: withClock ? "1" : "",
-                            
+                            favoriteEnabled: canSetFavorite,
                             isFavorite: Bool.random()
                             
                         ),
@@ -196,7 +141,7 @@ class MapInfosViewModel {
                             title: "人社",
                             description: withClock ? "20230808" : "胡吃海喝",
                             descriptionIconName: withClock ? "1" : "",
-                            
+                            favoriteEnabled: canSetFavorite,
                             isFavorite: Bool.random()
                         ),
                         SingleMapInfoModel(
@@ -204,7 +149,7 @@ class MapInfosViewModel {
                             title: "testTitle1",
                             description: withClock ? "20230808" : "胡吃海喝",
                             descriptionIconName: withClock ? "1" : "",
-                            
+                            favoriteEnabled: canSetFavorite,
                             isFavorite: Bool.random())
                     ]
                 ),
@@ -216,7 +161,7 @@ class MapInfosViewModel {
                             title: "資電",
                             description: withClock ? "20230808" : "胡吃海喝",
                             descriptionIconName: withClock ? "1" : "",
-                            
+                            favoriteEnabled: canSetFavorite,
                             isFavorite: Bool.random()
                         ),
                         SingleMapInfoModel(
@@ -224,7 +169,7 @@ class MapInfosViewModel {
                             title: "台達",
                             description: withClock ? "20230808" : "胡吃海喝",
                             descriptionIconName: withClock ? "1" : "",
-                            
+                            favoriteEnabled: canSetFavorite,
                             isFavorite: Bool.random()
                         ),
                         SingleMapInfoModel(
@@ -232,7 +177,7 @@ class MapInfosViewModel {
                             title: "物理",
                             description: withClock ? "20230808" : "胡吃海喝",
                             descriptionIconName: withClock ? "1" : "",
-                            
+                            favoriteEnabled: canSetFavorite,
                             isFavorite: Bool.random()
                         ),
                         SingleMapInfoModel(
@@ -240,7 +185,7 @@ class MapInfosViewModel {
                             title: "人社",
                             description: withClock ? "20230808" : "胡吃海喝",
                             descriptionIconName: withClock ? "1" : "",
-                            
+                            favoriteEnabled: canSetFavorite,
                             isFavorite: Bool.random()
                         ),
                         SingleMapInfoModel(
@@ -248,7 +193,7 @@ class MapInfosViewModel {
                             title: "testTitle1",
                             description: withClock ? "20230808" : "胡吃海喝",
                             descriptionIconName: withClock ? "1" : "",
-                            
+                            favoriteEnabled: canSetFavorite,
                             isFavorite: Bool.random()
                         )
                     ]
@@ -261,7 +206,7 @@ class MapInfosViewModel {
                             title: "小吃部",
                             description: withClock ? "20230808" : "胡吃海喝",
                             descriptionIconName: withClock ? "1" : "",
-                            
+                            favoriteEnabled: canSetFavorite,
                             isFavorite: Bool.random()
                         ),
                         SingleMapInfoModel(
@@ -269,7 +214,7 @@ class MapInfosViewModel {
                             title: "資電館",
                             description: withClock ? "20230808" : "胡吃海喝",
                             descriptionIconName: withClock ? "1" : "",
-                            
+                            favoriteEnabled: canSetFavorite,
                             isFavorite: Bool.random()
                         ),
                         SingleMapInfoModel(
@@ -277,7 +222,7 @@ class MapInfosViewModel {
                             title: "水木",
                             description: withClock ? "20230808" : "胡吃海喝",
                             descriptionIconName: withClock ? "1" : "",
-                            
+                            favoriteEnabled: canSetFavorite,
                             isFavorite: Bool.random()
                         ),
                         SingleMapInfoModel(
@@ -285,7 +230,7 @@ class MapInfosViewModel {
                             title: "人社",
                             description: withClock ? "20230808" : "胡吃海喝",
                             descriptionIconName: withClock ? "1" : "",
-                            
+                            favoriteEnabled: canSetFavorite,
                             isFavorite: Bool.random()
                         ),
                         SingleMapInfoModel(
@@ -293,7 +238,7 @@ class MapInfosViewModel {
                             title: "testTitle1",
                             description: withClock ? "20230808" : "胡吃海喝",
                             descriptionIconName: withClock ? "1" : "",
-                            
+                            favoriteEnabled: canSetFavorite,
                             isFavorite: Bool.random()
                         )
                     ]

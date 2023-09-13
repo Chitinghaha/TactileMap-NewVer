@@ -39,7 +39,7 @@ class HomePageMapInfoTableViewCell: UITableViewCell {
     
     func setupMapInfoListModel(mapsInfo: [SingleMapInfoModel] ) {
         self.mapsInfo = mapsInfo
-//        print("cell mapsInfo:\(mapsInfo)")
+        
         self.mapInfoListCollectionView.setUp(mapsInfo: self.mapsInfo!)
     }
 }
