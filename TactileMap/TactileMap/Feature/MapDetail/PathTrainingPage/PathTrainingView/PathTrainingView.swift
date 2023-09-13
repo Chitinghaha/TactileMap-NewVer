@@ -31,9 +31,9 @@ class PathTrainingView: UIView {
         super.init(frame: .zero)
         
         self.isUserInteractionEnabled = true
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleDoubleTap(_:)))
-        tapGesture.numberOfTapsRequired = 2 // Detect double tap
-        self.addGestureRecognizer(tapGesture)
+//        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleDoubleTap(_:)))
+//        tapGesture.numberOfTapsRequired = 2 // Detect double tap
+//        self.addGestureRecognizer(tapGesture)
         
         self.setupBinding()
     }
@@ -59,7 +59,9 @@ class PathTrainingView: UIView {
             self.gridViews.forEach {
                 $0.isUserInteractionEnabled = false
                 self.addSubview($0)
-                
+//                $0.accessibilityValue = $0.name
+//                $0.isAccessibilityElement = true
+
                 if ($0.name.contains("入口")) {
                     // 在左邊
                     if ($0.frame.minX < self.frame.width * 0.2) {
@@ -93,86 +95,104 @@ class PathTrainingView: UIView {
         //        }
     }
     
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        guard let touch = touches.first else {
-            return
-        }
-        if (!self.isPreparingTraing) {
-            return
-        }
-        
-        let location = touch.location(in: self)
-    
-        if let index = gridViews.lastIndex(where: { $0.frame.contains(location) }) {
-            AVSpeechSynthesizerService.shared.stop()
-            let view = self.gridViews[index]
-            if let bgColor = view.backgroundColor {
-                UIView.animate(withDuration: 0.2, animations: {
-                    view.backgroundColor = bgColor.withAlphaComponent(0.6)
-                }) { _ in
-                    // 恢復原來的背景色
-                    UIView.animate(withDuration: 0.2) {
-                        view.backgroundColor = bgColor
-                    }
-                }
-            }
-            
-            if(view.name == self.currentStartPoint) {
-                AVSpeechSynthesizerService.shared.continuouslySpeak(content: "起點\(view.name)已確認")
-                self.didConfirmStartPoint = true
-
-                
-            }
-            else if (view.name == self.currentEndPoint) {
-                AVSpeechSynthesizerService.shared.continuouslySpeak(content: "終點\(view.name)已確認")
-                self.didConfirmEndPoint = true
-            }
-            else {
-                AVSpeechSynthesizerService.shared.continuouslySpeak(content: "\(view.name)")
-            }
-            
-        }
-        
-    }
+//    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+//        guard let touch = touches.first else {
+//            return
+//        }
+//        if (!self.isPreparingTraing) {
+//            return
+//        }
+//
+//        let location = touch.location(in: self)
+//
+//        if let index = gridViews.lastIndex(where: { $0.frame.contains(location) }) {
+//            AVSpeechSynthesizerService.shared.stop()
+//            let view = self.gridViews[index]
+////            if let bgColor = view.backgroundColor {
+////                UIView.animate(withDuration: 0.2, animations: {
+////                    view.backgroundColor = bgColor.withAlphaComponent(0.6)
+////                }) { _ in
+////                    // 恢復原來的背景色
+////                    UIView.animate(withDuration: 0.2) {
+////                        view.backgroundColor = bgColor
+////                    }
+////                }
+////            }
+//
+//            if(view.name == self.currentStartPoint) {
+//                AVSpeechSynthesizerService.shared.continuouslySpeak(content: "起點\(view.name)已確認")
+//                self.didConfirmStartPoint = true
+//            }
+//            else if (view.name == self.currentEndPoint) {
+//                AVSpeechSynthesizerService.shared.continuouslySpeak(content: "終點\(view.name)已確認")
+//                self.didConfirmEndPoint = true
+//            }
+//            else {
+//                AVSpeechSynthesizerService.shared.continuouslySpeak(content: "\(view.name)")
+//            }
+//
+//        }
+//
+//    }
     
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
-        guard let touch = touches.first, self.isTraining else {
+        guard let touch = touches.first, (self.isPreparingTraing || self.isTraining) else {
             return
         }
-        
+        print("touch = :\(touch)")
         let location = touch.location(in: self)
         let prevLocation = touch.previousLocation(in: self)
         let prevViewIndex = self.gridViews.lastIndex { $0.frame.contains(prevLocation) }
         self.selectedViewIndex = self.gridViews.lastIndex { $0.frame.contains(location) }
         
-        if let index = selectedViewIndex,
+        if let index = self.selectedViewIndex,
            let prevViewIndex = prevViewIndex {
             
             let view = self.gridViews[index]
             let prevView = self.gridViews[prevViewIndex]
-            
-            if ((AudioPlayerService.shared.audioPlayer?.isPlaying ?? false || AVSpeechSynthesizerService.shared.synthesizer.isSpeaking) && view.name == prevView.name) {
+            if ((AudioPlayerService.shared.audioPlayer?.isPlaying ?? false
+                || AVSpeechSynthesizerService.shared.synthesizer.isSpeaking)
+                && view.name == prevView.name) {
                 return
             }
-            
             AudioPlayerService.shared.stopSound()
             AVSpeechSynthesizerService.shared.stop()
 
-            if(view.name == self.currentStartPoint) {
-                AVSpeechSynthesizerService.shared.continuouslySpeak(content: "您已進入起點\(view.name)")
-            }
-            else if (view.name == self.currentEndPoint) {
-                AVSpeechSynthesizerService.shared.continuouslySpeak(content: "您已抵達終點\(view.name)")
-                AVSpeechSynthesizerService.shared.continuouslySpeak(content: "訓練結束")
-                self.stopTraining()
-            }
-            else if (view.name == "走道"){
-                AudioPlayerService.shared.playLoopSound(name: SoundEffectConstant.walking)
+            if (self.isPreparingTraing) {
+                if(view.name == self.currentStartPoint) {
+                    AVSpeechSynthesizerService.shared.continuouslySpeak(content: "起點\(view.name)已確認")
+                    self.didConfirmStartPoint = true
+                }
+                else if (view.name == self.currentEndPoint) {
+                    AVSpeechSynthesizerService.shared.continuouslySpeak(content: "終點\(view.name)已確認")
+                    self.didConfirmEndPoint = true
+                }
+                else {
+                    AVSpeechSynthesizerService.shared.continuouslySpeak(content: "\(view.name)")
+                }
             }
             else {
-                AVSpeechSynthesizerService.shared.speak(content: "您已進入\(view.name)")
+                if(view.name == self.currentStartPoint) {
+                    AVSpeechSynthesizerService.shared.continuouslySpeak(content: "您已進入起點\(view.name)")
+                }
+                else if (view.name == self.currentEndPoint) {
+                    AVSpeechSynthesizerService.shared.continuouslySpeak(content: "您已抵達終點\(view.name)")
+                    AVSpeechSynthesizerService.shared.continuouslySpeak(content: "訓練結束")
+                    self.stopTraining()
+                }
+                else if (view.name == "走道"){
+                    AudioPlayerService.shared.playLoopSound(name: SoundEffectConstant.walking)
+                }
+                else {
+                    AVSpeechSynthesizerService.shared.speak(content: "您已進入\(view.name)")
+                }
             }
-            
+        }
+        else if (self.selectedViewIndex != prevViewIndex){
+            if (AVSpeechSynthesizerService.shared.synthesizer.isSpeaking) {
+                return
+            }
+            AVSpeechSynthesizerService.shared.speak(content: "超出地圖邊界")
         }
         
         //        rectangles[index].frame.origin = CGPoint(x: location.x - rectangles[index].frame.width / 2, y: location.y - rectangles[index].frame.height / 2)

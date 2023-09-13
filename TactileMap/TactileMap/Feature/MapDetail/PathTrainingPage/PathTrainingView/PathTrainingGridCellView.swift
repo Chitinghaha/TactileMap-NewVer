@@ -31,7 +31,8 @@ class PathTrainingViewGridCellView: UIView {
 
         self.label.text = name
         self.label.textAlignment = .center
-        
+        self.label.isAccessibilityElement = false
+
         self.label.font = UIFont.systemFont(ofSize: 24, weight: .bold)
         self.label.textColor = .white
         self.addSubview(label)

@@ -54,7 +54,7 @@ class AVSpeechSynthesizerService: NSObject {
         utterance.voice = AVSpeechSynthesisVoice(language: "zh-TW")
         utterance.volume = 1.0 
         self.utterancesInQueues.append(utterance)
-        if (self.utterancesInQueues.count == 1) {
+        if (self.utterancesInQueues.count == 1 && !self.synthesizer.isSpeaking) {
             self.speakNextUtterance()
         }
     }
@@ -75,6 +75,8 @@ extension AVSpeechSynthesizerService: AVSpeechSynthesizerDelegate {
         }
         
         // Speak the next utterance
-        speakNextUtterance()
+        DispatchQueue.global().asyncAfter(deadline: .now() + 0.2) {
+            self.speakNextUtterance()
+        }
     }
 }

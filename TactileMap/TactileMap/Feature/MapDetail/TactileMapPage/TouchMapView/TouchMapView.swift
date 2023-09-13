@@ -21,7 +21,7 @@ class TouchMapView: UIView {
                 self.addSubview($0)
                 $0.accessibilityValue = $0.name
                 $0.isAccessibilityElement = true
-                $0.accessibilityTraits.insert(.startsMediaSession)
+//                $0.accessibilityTraits.insert(.startsMediaSession)
             }
         }
     }
@@ -35,10 +35,16 @@ class TouchMapView: UIView {
         if let index = selectedRectangleIndex {
             if let description = rectangles[index].mapDescription,
                description.count > 0 {
-                AVSpeechSynthesizerService.shared.speak(content: description)
+                DispatchQueue.global().asyncAfter(deadline: .now() + 0.1) {
+                    UIAccessibility.post(notification: .announcement, argument: description)
+                }
+//                AVSpeechSynthesizerService.shared.speak(content: description)
             }
             else {
-                AVSpeechSynthesizerService.shared.speak(content: "缺少\(rectangles[index].name)的相關描述")
+                DispatchQueue.global().asyncAfter(deadline: .now() + 0.1) {
+                    UIAccessibility.post(notification: .announcement, argument: "缺少\(self.rectangles[index].name)的相關描述")
+                }
+//                AVSpeechSynthesizerService.shared.speak(content: "缺少\(rectangles[index].name)的相關描述")
 
             }
             let view = self.rectangles[index]
@@ -55,7 +61,7 @@ class TouchMapView: UIView {
             
         }
         else {
-            AVSpeechSynthesizerService.shared.speak(content: "室外區域")
+            AVSpeechSynthesizerService.shared.speak(content: "超出地圖邊界")
         }
     }
     
