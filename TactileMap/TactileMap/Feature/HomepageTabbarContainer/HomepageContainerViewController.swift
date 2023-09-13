@@ -30,7 +30,7 @@ class HomepageContainerViewController: UITabBarController {
         let homepageVC = HomepageViewController(viewModel: homepageVM, coordinator: self.homepageCoordinator)
         homepageVC.tabBarItem = UITabBarItem(title: "首頁", image: UIImage(systemName: "house"), selectedImage: UIImage(systemName: "house.fill"))
         
-        let myMapVC = MyMapViewController(coordinator: self.homepageCoordinator)
+        let myMapVC = MyMapViewController(nibName: "MyMapViewController", bundle: nil)
         myMapVC.tabBarItem = UITabBarItem(title: "我的地圖", image: UIImage(systemName: "map"), selectedImage: UIImage(systemName: "map.fill"))
 //
 //        let societyVC = SocietyViewController(nibName: "SocietyViewController", bundle: nil)
