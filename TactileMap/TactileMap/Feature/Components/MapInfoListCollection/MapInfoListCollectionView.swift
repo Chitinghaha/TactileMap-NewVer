@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Combine
 
 fileprivate enum Section: CaseIterable {
     case main
@@ -13,10 +14,11 @@ fileprivate enum Section: CaseIterable {
 
 class MapInfoListCollectionView: UICollectionView {
     
-    // Create a Diffable Data Source
-    private lazy var diffableDataSource: UICollectionViewDiffableDataSource<Section, SingleMapInfoModel> = makeDataSource()
+    private var cancellable = Set<AnyCancellable>()
+
+    private lazy var diffableDataSource: UICollectionViewDiffableDataSource<Section, Int> = makeDataSource()
     
-    var mapsInfo: [SingleMapInfoModel]!
+    var mapsInfo: [Map]!
     var coordinator: MapInfoListCollectionViewCoordinator!
     
     override func awakeFromNib() {
@@ -26,16 +28,15 @@ class MapInfoListCollectionView: UICollectionView {
         self.showsVerticalScrollIndicator = false
     }
     
-    func setUp(mapsInfo: [SingleMapInfoModel]) {
+    func setUp(mapsInfo: [Map]) {
         self.mapsInfo = mapsInfo
         
         self.register(UINib(nibName: "SingleMapInfoCellView", bundle: nil), forCellWithReuseIdentifier: "SingleMapInfoCellView")
         
-        // Load initial data
-        var snapshot = NSDiffableDataSourceSnapshot<Section, SingleMapInfoModel>()
+        var snapshot = NSDiffableDataSourceSnapshot<Section, Int>()
         snapshot.appendSections([.main])
         snapshot.appendItems(
-            self.mapsInfo
+            self.mapsInfo.map { $0.id }
         )
         self.diffableDataSource.apply(snapshot, animatingDifferences: false)
     }
@@ -45,11 +46,11 @@ class MapInfoListCollectionView: UICollectionView {
 // MARK: - UITableView DiffableData Source
 fileprivate extension MapInfoListCollectionView {
     
-    func makeDataSource() -> UICollectionViewDiffableDataSource<Section, SingleMapInfoModel> {
+    func makeDataSource() -> UICollectionViewDiffableDataSource<Section, Int> {
         
-        return UICollectionViewDiffableDataSource<Section, SingleMapInfoModel>(collectionView: self) {
-            (collectionView: UICollectionView, indexPath: IndexPath, model: SingleMapInfoModel) -> UICollectionViewCell in
-            
+        return UICollectionViewDiffableDataSource<Section, Int>(collectionView: self) {
+            (collectionView: UICollectionView, indexPath: IndexPath, id: Int) -> UICollectionViewCell in
+            let model = MapInfoDataStore.shared.allMapsInfo.first(where: { $0.id == id })!
             let cell: SingleMapInfoCellView = collectionView.dequeueReusableCell(withReuseIdentifier: "SingleMapInfoCellView", for: indexPath) as! SingleMapInfoCellView
             
             cell.mapImageView.image = UIImage(named: model.imageName) ?? UIImage(named: "defaultMapThumbnail")
@@ -63,31 +64,9 @@ fileprivate extension MapInfoListCollectionView {
             else {
                 cell.subtitleIconImageView.isHidden = true
             }
-            
-            if let favoriteEnabled = model.favoriteEnabled,
-               let isFavorite = model.isFavorite {
-                if (favoriteEnabled) {
-                    cell.favoriteButton.isHidden = false
-                    cell.favoriteButton.isSelected = isFavorite
-                    cell.favoriteImageView.isHidden = false
-                }
-                else {
-                    cell.favoriteButton.isHidden = true
-                    cell.favoriteImageView.isHidden = true
-                }
-                
-                if (isFavorite) {
-                    cell.favoriteImageView.image = UIImage(systemName: "heart.fill")
-                }
-                else {
-                    cell.favoriteImageView.image = UIImage(systemName: "heart")
-                }
-            }
-            else {
-                cell.favoriteButton.isHidden = true
-                cell.favoriteImageView.isHidden = true
-            }
 
+            cell.isFavorite = model.isFavorite ?? false
+       
             return cell
         }
     }
@@ -96,5 +75,21 @@ fileprivate extension MapInfoListCollectionView {
 extension MapInfoListCollectionView: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         self.coordinator.goToMapDetail(with: self.mapsInfo[indexPath.row])
+    }
+}
+
+extension MapInfoListCollectionView {
+    func setupBinding() {
+        MapInfoDataStore.shared.didUpdateMap
+            .receive(on: RunLoop.main)
+            .sink{ map in
+                var snapshot = self.diffableDataSource.snapshot()
+                if (snapshot.itemIdentifiers.contains(map.id)) {
+                    snapshot.reloadItems([map.id])
+                    self.diffableDataSource.apply(snapshot, animatingDifferences: true)
+                }
+            }
+            .store(in: &cancellable)
+
     }
 }

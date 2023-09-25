@@ -16,7 +16,7 @@ class TactileMapGridViewModel {
         
         do {
             if let url = Bundle.main.url(
-                forResource: "Resource.bundle/Map_\(mapName)",
+                forResource: "Map_\(mapName)",
                 withExtension: "json"
             ) {
                 let data = try Data(contentsOf: url, options: .alwaysMapped)

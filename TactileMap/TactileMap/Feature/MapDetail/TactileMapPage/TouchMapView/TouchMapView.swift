@@ -21,7 +21,6 @@ class TouchMapView: UIView {
                 self.addSubview($0)
                 $0.accessibilityValue = $0.name
                 $0.isAccessibilityElement = true
-//                $0.accessibilityTraits.insert(.startsMediaSession)
             }
         }
     }
@@ -38,15 +37,13 @@ class TouchMapView: UIView {
                 DispatchQueue.global().asyncAfter(deadline: .now() + 0.1) {
                     UIAccessibility.post(notification: .announcement, argument: description)
                 }
-//                AVSpeechSynthesizerService.shared.speak(content: description)
             }
             else {
                 DispatchQueue.global().asyncAfter(deadline: .now() + 0.1) {
                     UIAccessibility.post(notification: .announcement, argument: "缺少\(self.rectangles[index].name)的相關描述")
                 }
-//                AVSpeechSynthesizerService.shared.speak(content: "缺少\(rectangles[index].name)的相關描述")
-
             }
+            
             let view = self.rectangles[index]
             if let bgColor = view.backgroundColor {
                 UIView.animate(withDuration: 0.2, animations: {

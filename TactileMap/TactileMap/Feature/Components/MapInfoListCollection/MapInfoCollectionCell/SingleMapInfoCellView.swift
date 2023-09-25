@@ -24,26 +24,30 @@ class SingleMapInfoCellView: UICollectionViewCell {
     
     @IBOutlet weak var subtitleLabel: UILabel!
     
+    @Published var isFavorite: Bool = false
+    
+    var cancellables = Set<AnyCancellable>()
+    
     override func awakeFromNib() {
         super.awakeFromNib()
+        
         self.setupBinding()
     }
     
     func setupBinding() {
-        
+        self.$isFavorite
+            .receive(on: RunLoop.main)
+            .sink {
+                self.favoriteButton.isSelected = $0
+                self.favoriteImageView.image = $0 ? UIImage(systemName: "bookmark.fill") : UIImage(systemName: "bookmark")
+            }
+            .store(in: &cancellables)
     }
     
     @IBAction func onClickFavoriteButton(_ sender: UIButton) {
         sender.isSelected.toggle()
-        self.favoriteImageView.image = sender.isSelected ? UIImage(systemName: "heart.fill") : UIImage(systemName: "heart")
-        //todo: send save favorite event
+        self.isFavorite = sender.isSelected
+        MapInfoDataStore.shared.updateFavoriteMaps(mapTitle: self.mapTitleLabel.text ?? "", isFavorite: sender.isSelected)
     }
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
-    }
-    */
 
 }

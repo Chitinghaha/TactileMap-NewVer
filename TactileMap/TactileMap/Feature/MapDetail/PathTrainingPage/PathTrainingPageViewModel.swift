@@ -10,13 +10,13 @@ import UIKit
 import Combine
 
 class PathTrainingPageViewModel {
-    var mapInfo: SingleMapInfoModel
+    var mapInfo: Map
     
     var gridModels: [TactileMapGridModel]{ get {
         TactileMapGridViewModel.shared.getGridModels(mapName: self.mapInfo.title)
     }}
     
-    init(mapInfo: SingleMapInfoModel) {
+    init(mapInfo: Map) {
         self.mapInfo = mapInfo
     }
     

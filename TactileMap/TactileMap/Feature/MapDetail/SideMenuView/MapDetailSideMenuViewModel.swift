@@ -18,8 +18,7 @@ enum SideMenuContentPosition {
 class MapDetailSideMenuViewModel {
     var dropDown = DropDown()
     
-    var allMapInfo: [SingleMapInfoModel]
-    var currentMap: SingleMapInfoModel
+    var currentMap: Map
     var mapPoints: [String]
     
     @Published var currentStartPoint: String = "請選擇"
@@ -30,29 +29,14 @@ class MapDetailSideMenuViewModel {
     var coodinator: MapDetailCoordinator
     var pathTrainingPageViewController: PathTrainingPageViewController?
     
-    init(coodinator: MapDetailCoordinator, currentMap: SingleMapInfoModel) {
+    init(coodinator: MapDetailCoordinator, currentMap: Map) {
         self.coodinator = coodinator
         self.currentMap = currentMap
-        self.allMapInfo = MapInfosViewModel.shared.allMapsInfo
         self.mapPoints = TactileMapGridViewModel.shared.getGridModels(mapName: currentMap.title)
             .map { $0.name }
             .filter {
                 !$0.contains("走道")
             }
-//            .sorted(by: { str1, str2 in
-//                if (str1.contains("入口")) {
-//                    if (str2.contains("入口")) {
-//                        return str1 > str2
-//                    }
-//                    return true
-//                }
-//                else if (str2.contains("入口")) {
-//                    return false
-//                }
-//                else {
-//                    return str1 > str2
-//                }
-//            })
         
         self.dropDown.textFont = UIFont.systemFont(ofSize: 24)
         self.dropDown.cornerRadius = 8

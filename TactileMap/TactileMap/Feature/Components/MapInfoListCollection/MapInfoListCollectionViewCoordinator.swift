@@ -8,5 +8,5 @@
 import Foundation
 
 protocol MapInfoListCollectionViewCoordinator: Coordinator {
-    func goToMapDetail(with mapInfo: SingleMapInfoModel)
+    func goToMapDetail(with mapInfo: Map)
 }

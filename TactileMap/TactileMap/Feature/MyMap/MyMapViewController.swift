@@ -6,9 +6,13 @@
 //
 
 import UIKit
+import Combine
 
 class MyMapViewController: UIViewController {
     
+    var coordinator: MapInfoListCollectionViewCoordinator
+
+    private var cancellable = Set<AnyCancellable>()
     
     @IBOutlet weak var contentStackView: UIStackView!
     
@@ -16,19 +20,33 @@ class MyMapViewController: UIViewController {
     
     let collectionViewHeight: CGFloat = 400
     
+    init(coordinator: MapInfoListCollectionViewCoordinator) {
+        self.coordinator = coordinator
+        super.init(nibName: String(describing: Self.self), bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
         
-        let maps = MapInfosViewModel.shared.getMapsFake(withClock: true, canSetFavorite: true)
+        self.initView()
         
+        self.setupBinding()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.setNavigationBarHidden(true, animated: animated)
+
+    }
+    
+    func initView() {
         self.mapInfoListCollectionView = MapInfoListCollectionView.loadFromNib()
-        //        self.view.addSubview(self.mapInfoListCollectionView)
-        
-        self.mapInfoListCollectionView.setUp(mapsInfo: maps)
-        
+        self.mapInfoListCollectionView.coordinator = self.coordinator
         self.mapInfoListCollectionView.frame = CGRect(x: 0, y: 0, width: self.view.bounds.width, height: self.view.bounds.height)
-        
+                
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
         layout.sectionInset = UIEdgeInsets(top: 10, left: 20, bottom: 10, right: 20)
         layout.itemSize = CGSize(width: (self.mapInfoListCollectionView.frame.size.width - 100) / 3, height: self.collectionViewHeight)
@@ -37,30 +55,23 @@ class MyMapViewController: UIViewController {
         layout.scrollDirection = UICollectionView.ScrollDirection.vertical
         self.mapInfoListCollectionView.collectionViewLayout = layout
         self.mapInfoListCollectionView.setContentOffset(CGPoint(x: 0.0, y: 0.0), animated: false)
-        let estimatedHeight = CGFloat(maps.count / 3 + 1) * (self.collectionViewHeight + 50)
-        
-        self.mapInfoListCollectionView.heightAnchor.constraint(equalToConstant: estimatedHeight).isActive = true
         
         self.contentStackView.addArrangedSubview(self.mapInfoListCollectionView)
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        self.navigationController?.setNavigationBarHidden(true, animated: animated)
+
+        let maps = MapInfoDataStore.shared.getFavoriteMaps()
+        self.mapInfoListCollectionView.setUp(mapsInfo: maps)
 
     }
     
-//    override func viewWillDisappear(_ animated: Bool) {
-//        self.navigationController?.setNavigationBarHidden(false, animated: animated)
-//
-//    }
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
-    
+    func setupBinding() {
+        MapInfoDataStore.shared.didUpdateMap
+            .receive(on: RunLoop.main)
+            .sink{ map in
+                let maps = MapInfoDataStore.shared.getFavoriteMaps()
+                self.mapInfoListCollectionView.setUp(mapsInfo: maps)
+            }
+            .store(in: &cancellable)
+
+    }
+
 }

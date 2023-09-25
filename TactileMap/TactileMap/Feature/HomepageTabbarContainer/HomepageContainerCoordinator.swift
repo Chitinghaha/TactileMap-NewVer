@@ -35,7 +35,7 @@ class HomepageContainerCoordinator: Coordinator, MapInfoListCollectionViewCoordi
         }
     }
     
-    func goToMapDetail(with mapInfo: SingleMapInfoModel) {
+    func goToMapDetail(with mapInfo: Map) {
         let mapDetailCoordinator = MapDetailCoordinator(parentCoordinators: self, navigationController: self.navigationController, mapInfo: mapInfo)
         self.childCoordinators.append(mapDetailCoordinator)
         

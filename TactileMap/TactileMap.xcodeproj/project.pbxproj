@@ -8,8 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		029EC6CA9B95591A8FDED52C /* Pods_TactileMap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 794FCFBF6C9E380A67D8C47C /* Pods_TactileMap.framework */; };
+		147927BA2ABD70C500D8AB30 /* MapInfoDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147927B92ABD70C500D8AB30 /* MapInfoDataStore.swift */; };
 		149CC0162AA9A0CA0019A771 /* ErrorHandlerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149CC0152AA9A0CA0019A771 /* ErrorHandlerService.swift */; };
-		14C18AF82A9DC958004FF809 /* HomepageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C18AF72A9DC958004FF809 /* HomepageViewModel.swift */; };
+		14AFC57F2AC158CB00F251D3 /* Map_小吃部.json in Resources */ = {isa = PBXBuildFile; fileRef = 14AFC57B2AC158CB00F251D3 /* Map_小吃部.json */; };
+		14AFC5802AC158CB00F251D3 /* AllMapsInfomation.json in Resources */ = {isa = PBXBuildFile; fileRef = 14AFC57C2AC158CB00F251D3 /* AllMapsInfomation.json */; };
+		14AFC5812AC158CB00F251D3 /* AllMapsInfomationExample.json in Resources */ = {isa = PBXBuildFile; fileRef = 14AFC57D2AC158CB00F251D3 /* AllMapsInfomationExample.json */; };
+		14AFC5822AC158CB00F251D3 /* Map_台達館一樓.json in Resources */ = {isa = PBXBuildFile; fileRef = 14AFC57E2AC158CB00F251D3 /* Map_台達館一樓.json */; };
+		14BFEDDB2AAEE70E005DD6FB /* FavoriteMapDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BFEDDA2AAEE70E005DD6FB /* FavoriteMapDataService.swift */; };
+		14BFEDDD2AAEE71F005DD6FB /* CoreDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BFEDDC2AAEE71F005DD6FB /* CoreDataService.swift */; };
 		14C18AFA2A9DE534004FF809 /* HomepageContainerCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C18AF92A9DE534004FF809 /* HomepageContainerCoordinator.swift */; };
 		14C18AFF2A9ECA0A004FF809 /* MapInfoListCollectionViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C18AFE2A9ECA0A004FF809 /* MapInfoListCollectionViewCoordinator.swift */; };
 		14C18B042A9ED2CB004FF809 /* TactileMapPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C18B022A9ED2CB004FF809 /* TactileMapPageViewController.swift */; };
@@ -45,7 +51,6 @@
 		14EB6C172A933DB4006990BE /* TactileMapTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14EB6C162A933DB4006990BE /* TactileMapTests.swift */; };
 		14EB6C212A933DB4006990BE /* TactileMapUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14EB6C202A933DB4006990BE /* TactileMapUITests.swift */; };
 		14EB6C232A933DB4006990BE /* TactileMapUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14EB6C222A933DB4006990BE /* TactileMapUITestsLaunchTests.swift */; };
-		14EB6C372A934B70006990BE /* Resource.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 14EB6C362A934B70006990BE /* Resource.bundle */; };
 		14EB6C3F2A95D0A0006990BE /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14EB6C3E2A95D0A0006990BE /* Coordinator.swift */; };
 		14EB6C472A95D3E0006990BE /* HomepageContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14EB6C452A95D3E0006990BE /* HomepageContainerViewController.swift */; };
 		14EB6C482A95D3E0006990BE /* HomepageContainerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14EB6C462A95D3E0006990BE /* HomepageContainerViewController.xib */; };
@@ -53,8 +58,6 @@
 		14EB6C4C2A95D579006990BE /* HomepageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14EB6C4A2A95D579006990BE /* HomepageViewController.xib */; };
 		14EB6C4F2A95D583006990BE /* MyMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14EB6C4D2A95D583006990BE /* MyMapViewController.swift */; };
 		14EB6C502A95D583006990BE /* MyMapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14EB6C4E2A95D583006990BE /* MyMapViewController.xib */; };
-		14EB6C532A95D593006990BE /* SocietyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14EB6C512A95D593006990BE /* SocietyViewController.swift */; };
-		14EB6C542A95D593006990BE /* SocietyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14EB6C522A95D593006990BE /* SocietyViewController.xib */; };
 		14EB6C572A95D5A6006990BE /* PersonalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14EB6C552A95D5A6006990BE /* PersonalViewController.swift */; };
 		14EB6C582A95D5A6006990BE /* PersonalViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14EB6C562A95D5A6006990BE /* PersonalViewController.xib */; };
 		14EB6C5A2A95D5EB006990BE /* UIView+Nib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14EB6C592A95D5EB006990BE /* UIView+Nib.swift */; };
@@ -65,9 +68,7 @@
 		14EB6C672A95F324006990BE /* MapInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14EB6C662A95F324006990BE /* MapInfoModel.swift */; };
 		14EB6C6B2A96003E006990BE /* HomePageMapInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14EB6C692A96003E006990BE /* HomePageMapInfoTableViewCell.swift */; };
 		14EB6C6C2A96003E006990BE /* HomePageMapInfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14EB6C6A2A96003E006990BE /* HomePageMapInfoTableViewCell.xib */; };
-		14EB6C702A98809D006990BE /* MapInfosViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14EB6C6F2A98809D006990BE /* MapInfosViewModel.swift */; };
-		14EB6C722A98844F006990BE /* SocietyInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14EB6C712A98844F006990BE /* SocietyInfoViewModel.swift */; };
-		14EB6C742A9891EF006990BE /* FileReadWriteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14EB6C732A9891EF006990BE /* FileReadWriteService.swift */; };
+		14EB6C742A9891EF006990BE /* FileService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14EB6C732A9891EF006990BE /* FileService.swift */; };
 		2ADD09802A9F7173004C14CD /* MapDetailSideMenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ADD097F2A9F7173004C14CD /* MapDetailSideMenuViewModel.swift */; };
 		2AE86B0B2A9F831900F1FCEA /* PathTrainingPageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AE86B0A2A9F831900F1FCEA /* PathTrainingPageViewModel.swift */; };
 		9E838E69D2138FAB50C42D3F /* Pods_TactileMap_TactileMapUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F322D48531325E8171EF9A66 /* Pods_TactileMap_TactileMapUITests.framework */; };
@@ -92,8 +93,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		147927B92ABD70C500D8AB30 /* MapInfoDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapInfoDataStore.swift; sourceTree = "<group>"; };
 		149CC0152AA9A0CA0019A771 /* ErrorHandlerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorHandlerService.swift; sourceTree = "<group>"; };
-		14C18AF72A9DC958004FF809 /* HomepageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomepageViewModel.swift; sourceTree = "<group>"; };
+		14AFC57B2AC158CB00F251D3 /* Map_小吃部.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "Map_小吃部.json"; sourceTree = "<group>"; };
+		14AFC57C2AC158CB00F251D3 /* AllMapsInfomation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = AllMapsInfomation.json; sourceTree = "<group>"; };
+		14AFC57D2AC158CB00F251D3 /* AllMapsInfomationExample.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = AllMapsInfomationExample.json; sourceTree = "<group>"; };
+		14AFC57E2AC158CB00F251D3 /* Map_台達館一樓.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "Map_台達館一樓.json"; sourceTree = "<group>"; };
+		14BFEDDA2AAEE70E005DD6FB /* FavoriteMapDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteMapDataService.swift; sourceTree = "<group>"; };
+		14BFEDDC2AAEE71F005DD6FB /* CoreDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataService.swift; sourceTree = "<group>"; };
 		14C18AF92A9DE534004FF809 /* HomepageContainerCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomepageContainerCoordinator.swift; sourceTree = "<group>"; };
 		14C18AFE2A9ECA0A004FF809 /* MapInfoListCollectionViewCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapInfoListCollectionViewCoordinator.swift; sourceTree = "<group>"; };
 		14C18B022A9ED2CB004FF809 /* TactileMapPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TactileMapPageViewController.swift; sourceTree = "<group>"; };
@@ -135,7 +142,6 @@
 		14EB6C1C2A933DB4006990BE /* TactileMapUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TactileMapUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		14EB6C202A933DB4006990BE /* TactileMapUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TactileMapUITests.swift; sourceTree = "<group>"; };
 		14EB6C222A933DB4006990BE /* TactileMapUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TactileMapUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		14EB6C362A934B70006990BE /* Resource.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Resource.bundle; sourceTree = "<group>"; };
 		14EB6C3E2A95D0A0006990BE /* Coordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		14EB6C452A95D3E0006990BE /* HomepageContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomepageContainerViewController.swift; sourceTree = "<group>"; };
 		14EB6C462A95D3E0006990BE /* HomepageContainerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomepageContainerViewController.xib; sourceTree = "<group>"; };
@@ -143,8 +149,6 @@
 		14EB6C4A2A95D579006990BE /* HomepageViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomepageViewController.xib; sourceTree = "<group>"; };
 		14EB6C4D2A95D583006990BE /* MyMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyMapViewController.swift; sourceTree = "<group>"; };
 		14EB6C4E2A95D583006990BE /* MyMapViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyMapViewController.xib; sourceTree = "<group>"; };
-		14EB6C512A95D593006990BE /* SocietyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocietyViewController.swift; sourceTree = "<group>"; };
-		14EB6C522A95D593006990BE /* SocietyViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SocietyViewController.xib; sourceTree = "<group>"; };
 		14EB6C552A95D5A6006990BE /* PersonalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalViewController.swift; sourceTree = "<group>"; };
 		14EB6C562A95D5A6006990BE /* PersonalViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PersonalViewController.xib; sourceTree = "<group>"; };
 		14EB6C592A95D5EB006990BE /* UIView+Nib.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Nib.swift"; sourceTree = "<group>"; };
@@ -155,9 +159,7 @@
 		14EB6C662A95F324006990BE /* MapInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapInfoModel.swift; sourceTree = "<group>"; };
 		14EB6C692A96003E006990BE /* HomePageMapInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageMapInfoTableViewCell.swift; sourceTree = "<group>"; };
 		14EB6C6A2A96003E006990BE /* HomePageMapInfoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomePageMapInfoTableViewCell.xib; sourceTree = "<group>"; };
-		14EB6C6F2A98809D006990BE /* MapInfosViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapInfosViewModel.swift; sourceTree = "<group>"; };
-		14EB6C712A98844F006990BE /* SocietyInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocietyInfoViewModel.swift; sourceTree = "<group>"; };
-		14EB6C732A9891EF006990BE /* FileReadWriteService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileReadWriteService.swift; sourceTree = "<group>"; };
+		14EB6C732A9891EF006990BE /* FileService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileService.swift; sourceTree = "<group>"; };
 		2ADD097F2A9F7173004C14CD /* MapDetailSideMenuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapDetailSideMenuViewModel.swift; sourceTree = "<group>"; };
 		2AE86B0A2A9F831900F1FCEA /* PathTrainingPageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PathTrainingPageViewModel.swift; sourceTree = "<group>"; };
 		2DF67D921E7EC42F874332A4 /* Pods-TactileMapTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TactileMapTests.release.xcconfig"; path = "Target Support Files/Pods-TactileMapTests/Pods-TactileMapTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -199,6 +201,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		14AFC57A2AC158AD00F251D3 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				14AFC57C2AC158CB00F251D3 /* AllMapsInfomation.json */,
+				14AFC57D2AC158CB00F251D3 /* AllMapsInfomationExample.json */,
+				14AFC57B2AC158CB00F251D3 /* Map_小吃部.json */,
+				14AFC57E2AC158CB00F251D3 /* Map_台達館一樓.json */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
 		14C18AFB2A9DEA6F004FF809 /* MapDetail */ = {
 			isa = PBXGroup;
 			children = (
@@ -350,7 +363,6 @@
 				14EB6C412A95D2C7006990BE /* HomepageTabbarContainer */,
 				14EB6C402A95D2BF006990BE /* Homepage */,
 				14EB6C422A95D324006990BE /* MyMap */,
-				14EB6C432A95D395006990BE /* Society */,
 				14EB6C442A95D39C006990BE /* Personal */,
 			);
 			path = Feature;
@@ -359,6 +371,7 @@
 		14EB6C312A934B31006990BE /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				14AFC57A2AC158AD00F251D3 /* Resource */,
 				14C18B3A2AA07BDC004FF809 /* Helper */,
 				14C18B322AA06B24004FF809 /* Sounds */,
 				14EB6C392A935204006990BE /* ViewModel */,
@@ -367,7 +380,6 @@
 				14EB6C342A934B4E006990BE /* Model */,
 				14EB6C332A934B48006990BE /* Extension */,
 				14EB6C322A934B40006990BE /* Protocol */,
-				14EB6C362A934B70006990BE /* Resource.bundle */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -376,6 +388,7 @@
 			isa = PBXGroup;
 			children = (
 				14EB6C3E2A95D0A0006990BE /* Coordinator.swift */,
+				14BFEDDC2AAEE71F005DD6FB /* CoreDataService.swift */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -395,6 +408,7 @@
 			children = (
 				14C18B102A9F1824004FF809 /* TactileMapGridModel.swift */,
 				14EB6C662A95F324006990BE /* MapInfoModel.swift */,
+				147927B92ABD70C500D8AB30 /* MapInfoDataStore.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -411,10 +425,11 @@
 		14EB6C382A934FCE006990BE /* Service */ = {
 			isa = PBXGroup;
 			children = (
-				14EB6C732A9891EF006990BE /* FileReadWriteService.swift */,
+				14EB6C732A9891EF006990BE /* FileService.swift */,
 				14C18B182A9F2771004FF809 /* AVSpeechSynthesizerService.swift */,
 				14C18B302AA06A0C004FF809 /* AudioPlayerService.swift */,
 				149CC0152AA9A0CA0019A771 /* ErrorHandlerService.swift */,
+				14BFEDDA2AAEE70E005DD6FB /* FavoriteMapDataService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -422,8 +437,6 @@
 		14EB6C392A935204006990BE /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				14EB6C6F2A98809D006990BE /* MapInfosViewModel.swift */,
-				14EB6C712A98844F006990BE /* SocietyInfoViewModel.swift */,
 				14C18B122A9F1C3B004FF809 /* TactileMapGridViewModel.swift */,
 			);
 			path = ViewModel;
@@ -434,7 +447,6 @@
 			children = (
 				14EB6C492A95D579006990BE /* HomepageViewController.swift */,
 				14EB6C4A2A95D579006990BE /* HomepageViewController.xib */,
-				14C18AF72A9DC958004FF809 /* HomepageViewModel.swift */,
 				14C18B0E2A9EDC76004FF809 /* HomepageCoordinator.swift */,
 			);
 			path = Homepage;
@@ -457,15 +469,6 @@
 				14EB6C4E2A95D583006990BE /* MyMapViewController.xib */,
 			);
 			path = MyMap;
-			sourceTree = "<group>";
-		};
-		14EB6C432A95D395006990BE /* Society */ = {
-			isa = PBXGroup;
-			children = (
-				14EB6C512A95D593006990BE /* SocietyViewController.swift */,
-				14EB6C522A95D593006990BE /* SocietyViewController.xib */,
-			);
-			path = Society;
 			sourceTree = "<group>";
 		};
 		14EB6C442A95D39C006990BE /* Personal */ = {
@@ -498,10 +501,10 @@
 		14EB6C5D2A95DD95006990BE /* MapInfoListCollection */ = {
 			isa = PBXGroup;
 			children = (
+				14C18AFE2A9ECA0A004FF809 /* MapInfoListCollectionViewCoordinator.swift */,
 				14EB6C622A95F266006990BE /* MapInfoListCollectionView.swift */,
 				14EB6C642A95F26F006990BE /* MapInfoListCollectionView.xib */,
 				14EB6C5C2A95DD61006990BE /* MapInfoCollectionCell */,
-				14C18AFE2A9ECA0A004FF809 /* MapInfoListCollectionViewCoordinator.swift */,
 			);
 			path = MapInfoListCollection;
 			sourceTree = "<group>";
@@ -653,14 +656,16 @@
 				14EB6C0C2A933DB4006990BE /* LaunchScreen.storyboard in Resources */,
 				14EB6C092A933DB4006990BE /* Assets.xcassets in Resources */,
 				14EB6C652A95F26F006990BE /* MapInfoListCollectionView.xib in Resources */,
-				14EB6C372A934B70006990BE /* Resource.bundle in Resources */,
+				14AFC5812AC158CB00F251D3 /* AllMapsInfomationExample.json in Resources */,
+				14AFC5822AC158CB00F251D3 /* Map_台達館一樓.json in Resources */,
 				14C18B342AA06B2E004FF809 /* start.mp3 in Resources */,
 				14C18B052A9ED2CB004FF809 /* TactileMapPageViewController.xib in Resources */,
 				14EB6C4C2A95D579006990BE /* HomepageViewController.xib in Resources */,
+				14AFC5802AC158CB00F251D3 /* AllMapsInfomation.json in Resources */,
 				14C18B092A9ED2D9004FF809 /* PathTrainingPageViewController.xib in Resources */,
+				14AFC57F2AC158CB00F251D3 /* Map_小吃部.json in Resources */,
 				14EB6C612A95E59C006990BE /* SingleMapInfoCellView.xib in Resources */,
 				14C18B392AA0726C004FF809 /* end.mp3 in Resources */,
-				14EB6C542A95D593006990BE /* SocietyViewController.xib in Resources */,
 				14EB6C582A95D5A6006990BE /* PersonalViewController.xib in Resources */,
 				14EB6C502A95D583006990BE /* MyMapViewController.xib in Resources */,
 			);
@@ -790,12 +795,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				14BFEDDB2AAEE70E005DD6FB /* FavoriteMapDataService.swift in Sources */,
 				14C18B2D2AA044C2004FF809 /* UIView+Toast.swift in Sources */,
 				14EB6C672A95F324006990BE /* MapInfoModel.swift in Sources */,
 				14C18B112A9F1824004FF809 /* TactileMapGridModel.swift in Sources */,
-				14C18AF82A9DC958004FF809 /* HomepageViewModel.swift in Sources */,
 				14C18B0D2A9ED405004FF809 /* TactileMapGridCellView.swift in Sources */,
 				14EB6C6B2A96003E006990BE /* HomePageMapInfoTableViewCell.swift in Sources */,
+				14BFEDDD2AAEE71F005DD6FB /* CoreDataService.swift in Sources */,
 				14C18B042A9ED2CB004FF809 /* TactileMapPageViewController.swift in Sources */,
 				14E1D5882AA6DF2500582EC7 /* MapColorSet.swift in Sources */,
 				14C18AFF2A9ECA0A004FF809 /* MapInfoListCollectionViewCoordinator.swift in Sources */,
@@ -809,23 +815,21 @@
 				14C18B082A9ED2D9004FF809 /* PathTrainingPageViewController.swift in Sources */,
 				14EB6C4B2A95D579006990BE /* HomepageViewController.swift in Sources */,
 				14C18B132A9F1C3B004FF809 /* TactileMapGridViewModel.swift in Sources */,
+				147927BA2ABD70C500D8AB30 /* MapInfoDataStore.swift in Sources */,
 				14C18B162A9F226E004FF809 /* TouchMapView.swift in Sources */,
 				149CC0162AA9A0CA0019A771 /* ErrorHandlerService.swift in Sources */,
-				14EB6C722A98844F006990BE /* SocietyInfoViewModel.swift in Sources */,
 				14C18B0F2A9EDC76004FF809 /* HomepageCoordinator.swift in Sources */,
 				2AE86B0B2A9F831900F1FCEA /* PathTrainingPageViewModel.swift in Sources */,
 				14C18B0B2A9ED2F7004FF809 /* TactileMapPageViewModel.swift in Sources */,
 				14EB6BFF2A933DB3006990BE /* SceneDelegate.swift in Sources */,
-				14EB6C532A95D593006990BE /* SocietyViewController.swift in Sources */,
 				14EB6C572A95D5A6006990BE /* PersonalViewController.swift in Sources */,
 				14C18B312AA06A0C004FF809 /* AudioPlayerService.swift in Sources */,
-				14EB6C702A98809D006990BE /* MapInfosViewModel.swift in Sources */,
 				2ADD09802A9F7173004C14CD /* MapDetailSideMenuViewModel.swift in Sources */,
 				14C18B1B2A9F2DCF004FF809 /* MapDetailCoordinator.swift in Sources */,
 				14C18B3E2AA089C2004FF809 /* SoundEffectConstant.swift in Sources */,
 				14C18AFA2A9DE534004FF809 /* HomepageContainerCoordinator.swift in Sources */,
 				14C18B192A9F2771004FF809 /* AVSpeechSynthesizerService.swift in Sources */,
-				14EB6C742A9891EF006990BE /* FileReadWriteService.swift in Sources */,
+				14EB6C742A9891EF006990BE /* FileService.swift in Sources */,
 				14C18B282AA02005004FF809 /* PathTrainingView.swift in Sources */,
 				14C18B2F2AA06049004FF809 /* UIColor+.swift in Sources */,
 				14C18B3C2AA07C01004FF809 /* DegreeDirectionHelper.swift in Sources */,

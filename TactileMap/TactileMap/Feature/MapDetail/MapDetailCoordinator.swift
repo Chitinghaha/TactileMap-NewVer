@@ -14,13 +14,13 @@ class MapDetailCoordinator: Coordinator {
     var parentCoordinators: HomepageCoordinator
     var navigationController: UINavigationController
     
-    var mapInfo: SingleMapInfoModel
+    var mapInfo: Map
     
     var leftSideMenuController: MapDetailSideMenuViewController?
     var leftMenuNavigationController: SideMenuNavigationController!
     let sideMenuManager = SideMenuManager()
     
-    init(parentCoordinators: HomepageCoordinator, navigationController: UINavigationController, mapInfo: SingleMapInfoModel) {
+    init(parentCoordinators: HomepageCoordinator, navigationController: UINavigationController, mapInfo: Map) {
         self.parentCoordinators = parentCoordinators
         self.navigationController = navigationController
         self.mapInfo = mapInfo
@@ -57,7 +57,7 @@ class MapDetailCoordinator: Coordinator {
         self.hideSideMenu()
     }
     
-    func goToPathTrainingPage(with mapInfo: SingleMapInfoModel) {
+    func goToPathTrainingPage(with mapInfo: Map) {
         guard Thread.isMainThread else {
             DispatchQueue.main.async {
                 self.goToPathTrainingPage(with: mapInfo)
@@ -96,9 +96,6 @@ class MapDetailCoordinator: Coordinator {
     }
 
     func hideSideMenu() {
-//        AudioPlayerService.shared.stopSound()
-//        AVSpeechSynthesizerService.shared.stop()
-
         if let leftMenuNavigationController = self.sideMenuManager.leftMenuNavigationController {
             leftMenuNavigationController.dismiss(animated: false)
         }

@@ -31,9 +31,6 @@ class PathTrainingView: UIView {
         super.init(frame: .zero)
         
         self.isUserInteractionEnabled = true
-//        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleDoubleTap(_:)))
-//        tapGesture.numberOfTapsRequired = 2 // Detect double tap
-//        self.addGestureRecognizer(tapGesture)
         
         self.setupBinding()
     }
@@ -77,9 +74,6 @@ class PathTrainingView: UIView {
                     else if ($0.frame.minY > self.frame.height * 0.8) { // 在下方
                         AVSpeechSynthesizerService.shared.continuouslySpeak(content: "\($0.name)在下方")
                     }
-                    //                else { //在中間的其他區域（？？
-                    //                    AVSpeechSynthesizerService.shared.speak(content: "\($0.name)在中間區塊")
-                    //                }
                 }
             }
         }
@@ -94,46 +88,6 @@ class PathTrainingView: UIView {
         //            context.fill(rectangle.frameRect)
         //        }
     }
-    
-//    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-//        guard let touch = touches.first else {
-//            return
-//        }
-//        if (!self.isPreparingTraing) {
-//            return
-//        }
-//
-//        let location = touch.location(in: self)
-//
-//        if let index = gridViews.lastIndex(where: { $0.frame.contains(location) }) {
-//            AVSpeechSynthesizerService.shared.stop()
-//            let view = self.gridViews[index]
-////            if let bgColor = view.backgroundColor {
-////                UIView.animate(withDuration: 0.2, animations: {
-////                    view.backgroundColor = bgColor.withAlphaComponent(0.6)
-////                }) { _ in
-////                    // 恢復原來的背景色
-////                    UIView.animate(withDuration: 0.2) {
-////                        view.backgroundColor = bgColor
-////                    }
-////                }
-////            }
-//
-//            if(view.name == self.currentStartPoint) {
-//                AVSpeechSynthesizerService.shared.continuouslySpeak(content: "起點\(view.name)已確認")
-//                self.didConfirmStartPoint = true
-//            }
-//            else if (view.name == self.currentEndPoint) {
-//                AVSpeechSynthesizerService.shared.continuouslySpeak(content: "終點\(view.name)已確認")
-//                self.didConfirmEndPoint = true
-//            }
-//            else {
-//                AVSpeechSynthesizerService.shared.continuouslySpeak(content: "\(view.name)")
-//            }
-//
-//        }
-//
-//    }
     
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
         guard let touch = touches.first, (self.isPreparingTraing || self.isTraining) else {
@@ -194,13 +148,10 @@ class PathTrainingView: UIView {
             }
             AVSpeechSynthesizerService.shared.speak(content: "超出地圖邊界")
         }
-        
-        //        rectangles[index].frame.origin = CGPoint(x: location.x - rectangles[index].frame.width / 2, y: location.y - rectangles[index].frame.height / 2)
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         selectedViewIndex = nil
-//        AudioPlayerService.shared.stopSound()
     }
     
     func prepairTraining(start: String, end: String) {

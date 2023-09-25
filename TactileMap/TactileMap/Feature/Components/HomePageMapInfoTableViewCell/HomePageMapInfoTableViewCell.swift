@@ -11,7 +11,7 @@ class HomePageMapInfoTableViewCell: UITableViewCell {
         
     var mapInfoListCollectionView: MapInfoListCollectionView!
     
-    var mapsInfo: [SingleMapInfoModel]?
+    var mapsInfo: [Map]?
     
     var coordinator: MapInfoListCollectionViewCoordinator!
 
@@ -37,9 +37,9 @@ class HomePageMapInfoTableViewCell: UITableViewCell {
         self.mapInfoListCollectionView.setContentOffset(CGPoint(x: 0.0, y: 0.0), animated: false)
     }
     
-    func setupMapInfoListModel(mapsInfo: [SingleMapInfoModel] ) {
+    func setupMapInfoListModel(mapsInfo: [Map] ) {
         self.mapsInfo = mapsInfo
-        
         self.mapInfoListCollectionView.setUp(mapsInfo: self.mapsInfo!)
+        self.mapInfoListCollectionView.setupBinding()
     }
 }

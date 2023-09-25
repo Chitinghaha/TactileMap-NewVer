@@ -1,0 +1,22 @@
+[
+    {
+        "id": 100,
+        "title": "常用區域",
+        "infos": [
+            {
+                "id": 101,
+                "imageName": "小吃部",
+                "title": "小吃部",
+                "description": "20230809",
+                "descriptionIconName": "clock"
+            },
+            {
+                "id": 102,
+                "imageName": "台達館一樓",
+                "title": "台達館一樓",
+                "description": "20230810",
+                "descriptionIconName": "clock"
+            }
+        ]
+    }
+]

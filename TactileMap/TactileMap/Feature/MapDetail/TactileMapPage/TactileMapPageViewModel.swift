@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 class TactileMapPageViewModel {
-    var mapInfo: SingleMapInfoModel
+    var mapInfo: Map
     
     var gridModels: [TactileMapGridModel]{ get {
         TactileMapGridViewModel.shared.getGridModels(mapName: self.mapInfo.title)
@@ -22,7 +22,7 @@ class TactileMapPageViewModel {
         }
     }
     
-    init(mapInfo: SingleMapInfoModel) {
+    init(mapInfo: Map) {
         self.mapInfo = mapInfo
     }
     

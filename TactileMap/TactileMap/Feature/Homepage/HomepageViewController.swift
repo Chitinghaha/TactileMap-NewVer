@@ -6,9 +6,10 @@
 //
 
 import UIKit
+import Combine
 
 fileprivate struct Section: Hashable {
-    let id: UUID
+    let id: Int
     let title: String
 }
 
@@ -25,14 +26,16 @@ class HomepageViewController: UIViewController {
     
     @IBOutlet weak var mapContentsTableView: UITableView!
     
+    @IBOutlet weak var mapContentsTableViewHeightConstraint: NSLayoutConstraint!
+    
     // MARK: Member var
     private lazy var tableDataSource = makeDataSource()
-    var viewModel: HomepageViewModel
     var coordinator: HomepageCoordinator
     
+    private var cancellable = Set<AnyCancellable>()
+        
     // MARK: Life Cycle
-    init(viewModel: HomepageViewModel, coordinator: HomepageCoordinator) {
-        self.viewModel = viewModel
+    init(coordinator: HomepageCoordinator) {
         self.coordinator = coordinator
         super.init(nibName: String(describing: Self.self), bundle: nil)
     }
@@ -58,20 +61,25 @@ class HomepageViewController: UIViewController {
         
         mapContentsTableView.register(UINib(nibName: String(describing: HomePageMapInfoTableViewCell.self), bundle: nil), forCellReuseIdentifier: String(describing: HomePageMapInfoTableViewCell.self))
         
-        var snapshot = NSDiffableDataSourceSnapshot<Section, MapInfoListModel>()
+        self.tableDataSource.defaultRowAnimation = .fade
+        self.mapContentsTableViewHeightConstraint.constant = 0
+    
+        var snapshot = NSDiffableDataSourceSnapshot<Section, MapList>()
         
-        self.viewModel.mapInfoListModels.contents.forEach {
-            let section = Section(id: UUID(), title: $0.title)
+        MapInfoDataStore.shared.mapLists.forEach {
+            let section = Section(id: $0.id, title: $0.title)
             snapshot.appendSections([section])
             snapshot.appendItems([$0], toSection: section)
         }
         
-        self.tableDataSource.defaultRowAnimation = .fade
         self.tableDataSource.apply(snapshot, animatingDifferences: true)
         
-        let estimatedHeight = CGFloat(self.viewModel.mapInfoListModels.contents.count) * (self.tableViewCellHeight + self.tableViewHeaderHeight + 50)
+        if (self.mapContentsTableViewHeightConstraint.constant == 0) {
+            let estimatedHeight = CGFloat(MapInfoDataStore.shared.mapLists.count) * (self.tableViewCellHeight + self.tableViewHeaderHeight + 50)
+
+            self.mapContentsTableViewHeightConstraint.constant = estimatedHeight
+        }
         
-        self.mapContentsTableView.heightAnchor.constraint(equalToConstant: estimatedHeight).isActive = true
     }
 }
 
@@ -99,7 +107,7 @@ extension HomepageViewController: UITableViewDelegate {
         headerView.addSubview(headerTitleLabel)
         
         headerTitleLabel.text = self.tableDataSource.snapshot().sectionIdentifiers[section].title
-        headerTitleLabel.font = .systemFont(ofSize: 36)
+        headerTitleLabel.font = UIFont.preferredFont(forTextStyle: .largeTitle)
         headerTitleLabel.textColor = UIColor.systemBackground
         headerView.centerXAnchor.constraint(equalTo: headerView.centerXAnchor).isActive = true
         
@@ -110,7 +118,7 @@ extension HomepageViewController: UITableViewDelegate {
 
 @available(iOS 13.0, *)
 fileprivate extension HomepageViewController {
-    func makeDataSource() -> UITableViewDiffableDataSource<Section, MapInfoListModel> {
+    func makeDataSource() -> UITableViewDiffableDataSource<Section, MapList> {
         return UITableViewDiffableDataSource(
             tableView: self.mapContentsTableView) { tableView, indexPath, listModel in
                 let cell = self.mapContentsTableView.dequeueReusableCell(withIdentifier: String(describing: HomePageMapInfoTableViewCell.self), for: indexPath) as! HomePageMapInfoTableViewCell
@@ -120,4 +128,3 @@ fileprivate extension HomepageViewController {
             }
     }
 }
-

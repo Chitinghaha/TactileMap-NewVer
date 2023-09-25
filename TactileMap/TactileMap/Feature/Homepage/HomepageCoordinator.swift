@@ -8,6 +8,6 @@
 import Foundation
 
 protocol HomepageCoordinator: Coordinator, MapInfoListCollectionViewCoordinator {
-    func goToMapDetail(with mapInfo: SingleMapInfoModel)
+    func goToMapDetail(with mapInfo: Map)
     func backToHomePage()
 }
