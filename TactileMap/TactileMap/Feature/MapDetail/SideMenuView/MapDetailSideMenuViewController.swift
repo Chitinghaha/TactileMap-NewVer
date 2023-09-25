@@ -9,7 +9,7 @@ import UIKit
 import Combine
 
 class MapDetailSideMenuViewController: UIViewController {
-    
+    //MARK: IBs
     @IBOutlet weak var goBackButton: UIButton!
     
     @IBOutlet weak var goToHomePageButton: UIButton!
@@ -30,7 +30,7 @@ class MapDetailSideMenuViewController: UIViewController {
     
     @IBOutlet weak var enterPathPageButton: UIButton!
     
-    @IBOutlet weak var allMapNameStackView: UIStackView!
+    @IBOutlet weak var allMapsTableView: UITableView!
     
     @IBOutlet weak var shouldPlayMapNameSwitch: UISwitch!
     
@@ -57,6 +57,39 @@ class MapDetailSideMenuViewController: UIViewController {
     
     @IBOutlet weak var confirmPathButton: UIButton!
     
+    // Actions
+    @IBAction func onclickGoBackButton(_ sender: Any) {
+        self.viewModel.onclickGoBackButton()
+        
+    }
+    
+    @IBAction func onClickGoToHomePageButton(_ sender: Any) {
+        self.viewModel.onClickGoToHomePageButton()
+    }
+    
+    @IBAction func onclickEnterPathPageButton(_ sender: Any) {
+        self.viewModel.onclickEnterPathPageButton()
+    }
+    
+    @IBAction func onclickShouldPlayMapNameSwitchOutterButton(_ sender: Any) {
+        self.shouldPlayMapName.toggle()
+        self.shouldPlayMapNameSwitch.isOn.toggle()
+    }
+    
+    @IBAction func onClickSelectStartPoint(_ sender: UIButton) {
+        self.viewModel.onClickSelectStartPoint(sender)
+    }
+    
+    @IBAction func onClickSelectEndPoint(_ sender: UIButton) {
+        self.viewModel.onClickSelectEndPoint(sender)
+
+    }
+    
+    @IBAction func onclickConfirmPathButton(_ sender: Any) {
+        self.viewModel.onclickConfirmPathButton()
+    }
+    
+    // MARK: Other members
     var viewModel: MapDetailSideMenuViewModel
     
     var isInTactileMap: Bool = true
@@ -90,46 +123,35 @@ class MapDetailSideMenuViewController: UIViewController {
 
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.setNavigationBarHidden(true, animated: animated)
+    }
+    
+    
     func initView() {
         self.shouldPlayMapNameSwitch.isOn = self.shouldPlayMapName
         
         self.isInTactileMap = true
         self.trainingPathPageRelatedStackView.isHidden = true
         self.tactileMapPageRelatedStackView.isHidden = false
-    }
-    
-    @IBAction func onclickGoBackButton(_ sender: Any) {
-        self.viewModel.onclickGoBackButton()
         
+        // add maps into "所有地圖"
+        // allMapNameStackView.addArragedSubview...
+        self.setupAllMapsTableView()
     }
     
-    @IBAction func onClickGoToHomePageButton(_ sender: Any) {
-        self.viewModel.onClickGoToHomePageButton()
+    func setupAllMapsTableView() {
+        self.allMapsTableView.delegate = self
+        self.allMapsTableView.dataSource = self
     }
     
-    @IBAction func onclickEnterPathPageButton(_ sender: Any) {
-        self.viewModel.onclickEnterPathPageButton()
+    func clearPath() {
+        self.viewModel.currentStartPoint = "請選擇"
+        self.viewModel.currentEndPoint = "請選擇"
     }
-    
-    @IBAction func onclickShouldPlayMapNameSwitchOutterButton(_ sender: Any) {
-        self.shouldPlayMapName.toggle()
-        self.shouldPlayMapNameSwitch.isOn.toggle()
-    }
-    
-    @IBAction func onClickSelectStartPoint(_ sender: UIButton) {
-        self.viewModel.onClickSelectStartPoint(sender)
-    }
-    
-    @IBAction func onClickSelectEndPoint(_ sender: UIButton) {
-        self.viewModel.onClickSelectEndPoint(sender)
+}
 
-    }
-    
-    @IBAction func onclickConfirmPathButton(_ sender: Any) {
-        self.viewModel.onclickConfirmPathButton()
-    }
-    
-    
+extension MapDetailSideMenuViewController {
     func setupBinding() {
         self.viewModel.$currentStartPoint
             .sink { [weak self] in
@@ -153,9 +175,32 @@ class MapDetailSideMenuViewController: UIViewController {
             }
             .store(in: &cancellables)
     }
+}
+
+extension MapDetailSideMenuViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return MapInfoDataStore.shared.allMapsInfo.count
+    }
     
-    func clearPath() {
-        self.viewModel.currentStartPoint = "請選擇"
-        self.viewModel.currentEndPoint = "請選擇"
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let map = MapInfoDataStore.shared.allMapsInfo[indexPath.row]
+        
+        let cell = UITableViewCell(style: .default, reuseIdentifier: nil)
+
+        cell.backgroundColor = .clear
+        var content = cell.defaultContentConfiguration()
+        content.text = map.title
+        content.image = UIImage(systemName: "star")
+        content.textProperties.font = .preferredFont(forTextStyle: .title2)
+        cell.contentConfiguration = content
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 55
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.viewModel.coordinator.goToTactileMapPage(with: MapInfoDataStore.shared.allMapsInfo[indexPath.row])
     }
 }

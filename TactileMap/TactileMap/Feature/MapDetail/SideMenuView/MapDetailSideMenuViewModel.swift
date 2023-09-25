@@ -26,11 +26,11 @@ class MapDetailSideMenuViewModel {
     
     @Published var menuPosition: SideMenuContentPosition = .tactileMap
     
-    var coodinator: MapDetailCoordinator
+    var coordinator: MapDetailCoordinator
     var pathTrainingPageViewController: PathTrainingPageViewController?
     
     init(coodinator: MapDetailCoordinator, currentMap: Map) {
-        self.coodinator = coodinator
+        self.coordinator = coodinator
         self.currentMap = currentMap
         self.mapPoints = TactileMapGridViewModel.shared.getGridModels(mapName: currentMap.title)
             .map { $0.name }
@@ -43,18 +43,18 @@ class MapDetailSideMenuViewModel {
     }
     
     func onclickGoBackButton() {
-        self.coodinator.goToTactileMapPage()
+        self.coordinator.goToTactileMapPage()
         self.menuPosition = .tactileMap
         self.currentStartPoint = "請選擇"
         self.currentEndPoint = "請選擇"
     }
     
     func onClickGoToHomePageButton() {
-        self.coodinator.goToHomePage()
+        self.coordinator.goToHomePage()
     }
     
     func onclickEnterPathPageButton() {
-        self.coodinator.goToPathTrainingPage(with: self.currentMap)
+        self.coordinator.goToPathTrainingPage(with: self.currentMap)
         self.menuPosition = .pathTraining
     }
     
@@ -81,13 +81,13 @@ class MapDetailSideMenuViewModel {
     
     func onclickConfirmPathButton() {
         if (self.currentStartPoint == "請選擇" || self.currentEndPoint == "請選擇") {
-            self.coodinator.showAlert(message: "起點或終點不能為空")
+            self.coordinator.showAlert(message: "起點或終點不能為空")
             return
         }
         
         if let pathTrainingPageViewController = self.pathTrainingPageViewController {
             pathTrainingPageViewController.startTraining(start: self.currentStartPoint, end: self.currentEndPoint)
-            self.coodinator.hideSideMenu()
+            self.coordinator.hideSideMenu()
         }
     }
 }

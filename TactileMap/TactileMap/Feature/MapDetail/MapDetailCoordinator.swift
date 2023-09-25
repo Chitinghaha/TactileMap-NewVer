@@ -37,22 +37,44 @@ class MapDetailCoordinator: Coordinator {
         self.hideSideMenu()
     }
     
-    func goToTactileMapPage() {
+    func goToTactileMapPage(with mapInfo: Map? = nil) {
         guard Thread.isMainThread else {
             DispatchQueue.main.async {
                 self.goToTactileMapPage()
             }
             return
         }
-        if let oldVC = self.navigationController.viewControllers.first(where: {
-            $0.nibName == "TactileMapPageViewController"
-        }) {
-            self.navigationController.popToViewController(oldVC, animated: true)
+        
+        if let mapInfo = mapInfo,
+           mapInfo != self.mapInfo {
+            self.mapInfo = mapInfo
+            
+            let vm = TactileMapPageViewModel(mapInfo: self.mapInfo)
+            let newVC = TactileMapPageViewController(viewModel: vm, coordinator: self)
+            
+            if let oldVC = self.navigationController.viewControllers.first(where: {
+                $0.nibName == "TactileMapPageViewController"
+            }) {
+                self.navigationController.popToViewController(oldVC, animated: false)
+            }
+            
+            var VCs = self.navigationController.viewControllers
+            VCs.removeLast()
+            VCs.append(newVC)
+            self.navigationController.setViewControllers(VCs, animated: true)
+            
         }
         else {
-            let vm = TactileMapPageViewModel(mapInfo: self.mapInfo)
-            let vc = TactileMapPageViewController(viewModel: vm, coordinator: self)
-            self.navigationController.pushViewController(vc, animated: true)
+            if let oldVC = self.navigationController.viewControllers.first(where: {
+                $0.nibName == "TactileMapPageViewController"
+            }) {
+                self.navigationController.popToViewController(oldVC, animated: true)
+            }
+            else {
+                let vm = TactileMapPageViewModel(mapInfo: self.mapInfo)
+                let vc = TactileMapPageViewController(viewModel: vm, coordinator: self)
+                self.navigationController.pushViewController(vc, animated: true)
+            }
         }
         self.hideSideMenu()
     }

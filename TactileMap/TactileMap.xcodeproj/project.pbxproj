@@ -347,9 +347,9 @@
 		14EB6C2F2A93483D006990BE /* App */ = {
 			isa = PBXGroup;
 			children = (
+				14EB6BFC2A933DB3006990BE /* AppDelegate.swift */,
 				14EB6C002A933DB3006990BE /* AppMainCoordinator.swift */,
 				14EB6C0A2A933DB4006990BE /* LaunchScreen.storyboard */,
-				14EB6BFC2A933DB3006990BE /* AppDelegate.swift */,
 				14EB6BFE2A933DB3006990BE /* SceneDelegate.swift */,
 			);
 			path = App;
@@ -358,10 +358,10 @@
 		14EB6C302A9349DA006990BE /* Feature */ = {
 			isa = PBXGroup;
 			children = (
-				14C18AFB2A9DEA6F004FF809 /* MapDetail */,
 				14EB6C5B2A95DD56006990BE /* Components */,
-				14EB6C412A95D2C7006990BE /* HomepageTabbarContainer */,
 				14EB6C402A95D2BF006990BE /* Homepage */,
+				14EB6C412A95D2C7006990BE /* HomepageTabbarContainer */,
+				14C18AFB2A9DEA6F004FF809 /* MapDetail */,
 				14EB6C422A95D324006990BE /* MyMap */,
 				14EB6C442A95D39C006990BE /* Personal */,
 			);
@@ -371,15 +371,15 @@
 		14EB6C312A934B31006990BE /* Shared */ = {
 			isa = PBXGroup;
 			children = (
-				14AFC57A2AC158AD00F251D3 /* Resource */,
+				14EB6C352A934B53006990BE /* Constant */,
+				14EB6C332A934B48006990BE /* Extension */,
 				14C18B3A2AA07BDC004FF809 /* Helper */,
+				14EB6C342A934B4E006990BE /* Model */,
+				14EB6C322A934B40006990BE /* Protocol */,
+				14AFC57A2AC158AD00F251D3 /* Resource */,
+				14EB6C382A934FCE006990BE /* Service */,
 				14C18B322AA06B24004FF809 /* Sounds */,
 				14EB6C392A935204006990BE /* ViewModel */,
-				14EB6C382A934FCE006990BE /* Service */,
-				14EB6C352A934B53006990BE /* Constant */,
-				14EB6C342A934B4E006990BE /* Model */,
-				14EB6C332A934B48006990BE /* Extension */,
-				14EB6C322A934B40006990BE /* Protocol */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -934,7 +934,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -988,7 +988,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -1015,7 +1015,7 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeRight UIInterfaceOrientationLandscapeLeft";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1049,7 +1049,7 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeRight UIInterfaceOrientationLandscapeLeft";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
