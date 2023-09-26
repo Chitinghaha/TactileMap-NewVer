@@ -153,6 +153,15 @@ class MapDetailSideMenuViewController: UIViewController {
 
 extension MapDetailSideMenuViewController {
     func setupBinding() {
+        self.viewModel.$currentMap
+            .receive(on: RunLoop.main)
+            .sink { [weak self] map in
+                guard let self = self else { return }
+                self.mapTitleLabel.text = map.title
+                self.openTimeLabel.text = map.description
+            }
+            .store(in: &cancellables)
+        
         self.viewModel.$currentStartPoint
             .sink { [weak self] in
                 guard let self = self else { return }
@@ -201,6 +210,6 @@ extension MapDetailSideMenuViewController: UITableViewDelegate, UITableViewDataS
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.viewModel.coordinator.goToTactileMapPage(with: MapInfoDataStore.shared.allMapsInfo[indexPath.row])
+        self.viewModel.onclickAllMapTableCell(map: MapInfoDataStore.shared.allMapsInfo[indexPath.row])        
     }
 }

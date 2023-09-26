@@ -18,8 +18,10 @@ enum SideMenuContentPosition {
 class MapDetailSideMenuViewModel {
     var dropDown = DropDown()
     
-    var currentMap: Map
-    var mapPoints: [String]
+    private var cancellable = Set<AnyCancellable>()
+    
+    @Published var currentMap: Map
+    var mapPoints: [String] = []
     
     @Published var currentStartPoint: String = "請選擇"
     @Published var currentEndPoint: String = "請選擇"
@@ -32,11 +34,8 @@ class MapDetailSideMenuViewModel {
     init(coodinator: MapDetailCoordinator, currentMap: Map) {
         self.coordinator = coodinator
         self.currentMap = currentMap
-        self.mapPoints = TactileMapGridViewModel.shared.getGridModels(mapName: currentMap.title)
-            .map { $0.name }
-            .filter {
-                !$0.contains("走道")
-            }
+        
+        self.setupBinding()
         
         self.dropDown.textFont = UIFont.systemFont(ofSize: 24)
         self.dropDown.cornerRadius = 8
@@ -51,6 +50,13 @@ class MapDetailSideMenuViewModel {
     
     func onClickGoToHomePageButton() {
         self.coordinator.goToHomePage()
+    }
+    
+    func onclickAllMapTableCell(map: Map) {
+        if (self.currentMap != map) {
+            self.currentMap = map
+            self.coordinator.changeTactileMapPage(with: map)
+        }
     }
     
     func onclickEnterPathPageButton() {
@@ -89,5 +95,21 @@ class MapDetailSideMenuViewModel {
             pathTrainingPageViewController.startTraining(start: self.currentStartPoint, end: self.currentEndPoint)
             self.coordinator.hideSideMenu()
         }
+    }
+}
+
+extension MapDetailSideMenuViewModel {
+    func setupBinding() {
+        self.$currentMap
+            .sink{ [weak self] map in
+                guard let self = self else { return }
+                
+                self.mapPoints = TactileMapGridViewModel.shared.getGridModels(mapName: map.title)
+                    .map { $0.name }
+                    .filter {
+                        !$0.contains("走道")
+                    }
+            }
+            .store(in: &cancellable)
     }
 }

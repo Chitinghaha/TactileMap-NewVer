@@ -12,12 +12,11 @@ import Combine
 class PathTrainingPageViewModel {
     var mapInfo: Map
     
-    var gridModels: [TactileMapGridModel]{ get {
-        TactileMapGridViewModel.shared.getGridModels(mapName: self.mapInfo.title)
-    }}
+    var gridModels: [TactileMapGridModel]
     
     init(mapInfo: Map) {
         self.mapInfo = mapInfo
+        self.gridModels = TactileMapGridViewModel.shared.getGridModels(mapName: mapInfo.title)
     }
     
     func getRectangleViews(in view: UIView) -> [PathTrainingViewGridCellView]{

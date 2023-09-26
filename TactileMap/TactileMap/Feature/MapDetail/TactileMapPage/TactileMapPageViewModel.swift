@@ -11,9 +11,7 @@ import UIKit
 class TactileMapPageViewModel {
     var mapInfo: Map
     
-    var gridModels: [TactileMapGridModel]{ get {
-        TactileMapGridViewModel.shared.getGridModels(mapName: self.mapInfo.title)
-    }}
+    var gridModels: [TactileMapGridModel]
 
     var shouldPlayMapName: Bool {
         get {
@@ -24,6 +22,7 @@ class TactileMapPageViewModel {
     
     init(mapInfo: Map) {
         self.mapInfo = mapInfo
+        self.gridModels = TactileMapGridViewModel.shared.getGridModels(mapName: mapInfo.title)
     }
     
     func viewDidAppear() {
